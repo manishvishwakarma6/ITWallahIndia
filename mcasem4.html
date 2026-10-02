@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>MCA Semester 4 - IT Wallah India</title>
+    <!-- Font Awesome for Top Header -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/courses.css" rel="stylesheet">
+     <link href="css/mca.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css"/>
+
+</head>
+
+<body>
+    <!-- start Cursor Dot with mouse arrow -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <!-- end Cursor Dot with mouse arrow-->
+
+        <!-- STICKY WRAPPER: Fixed at the top with dynamic component placeholders -->
+    <div class="sticky-top-wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navbar-placeholder"></div>
+    </div>
+    <!-- STICKY WRAPPER END -->
+           <!-- Page Header -->
+    <section class="page-header" style="padding-top: 40px;">
+        <div class="container">
+            <div class="text-start mb-4">
+                <a href="index.html" class="text-white text-decoration-none fw-bold" style="font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Home</a>
+                <span class="text-white fw-bold mx-2" style="font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">/</span>
+                <a href="mcasem1.html" class="text-white text-decoration-none fw-bold" style="font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">MCA</a>
+                <span class="text-white fw-bold mx-2" style="font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">/</span>
+                <a href="mcasem4.html" class="text-white text-decoration-none fw-bold" style="font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">MCA Sem-IV</a>
+            </div>
+            <h1>MCA Semester 4</h1>
+            <p>Semester-wise Notes, Subjects & Downloadable Study Materials for MCA Students.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="container py-5">
+        <div class="row g-4 justify-content-center">
+            <!-- Big Data Analytics -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="subject-card" onclick="loadSubjectData('Big Data Analytics')">
+                    <div class="subject-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h4>Big Data Analytics</h4>
+                    <p>Select a Unit to view and download notes.</p>
+                    <button class="btn btn-download">View Data</button>
+                </div>
+            </div>
+            <!-- Block Chaining & cyptoCurrency -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="subject-card" onclick="loadSubjectData('Block Chaining & cyptoCurrency')">
+                    <div class="subject-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h4>Block Chaining & cyptoCurrency</h4>
+                    <p>Select a Unit to view and download notes.</p>
+                    <button class="btn btn-download">View Data</button>
+                </div>
+            </div>
+            <!-- Cloud Computing Technologies -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="subject-card" onclick="loadSubjectData('Cloud Computing Technologies')">
+                    <div class="subject-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h4>Cloud Computing Technologies</h4>
+                    <p>Select a Unit to view and download notes.</p>
+                    <button class="btn btn-download">View Data</button>
+                </div>
+            </div>
+            <!-- HandWritten -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="subject-card" onclick="loadSubjectData('HandWritten')">
+                    <div class="subject-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h4>HandWritten</h4>
+                    <p>Select a Unit to view and download notes.</p>
+                    <button class="btn btn-download">View Data</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- DataTable Container -->
+        <div id="tableContainer">
+            <div class="table-responsive">
+                <h3 id="tableTitle" class="mb-4 text-center" style="color: #6358e1;">Subject Data</h3>
+                <table id="DataTable" class="display nowrap stripe hover" style="width:100%">
+                   <thead>
+                        <tr>
+                            <th>SN</th>
+                            <th>Course Name</th>
+                            <th>Unit No</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- DYNAMIC FOOTER -->
+    <div id="footer-placeholder"></div>
+    <!-- ========== -->
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components-loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/home-sections.js"></script>
+
+    <!-- jQuery + DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+    <script>
+        let dataTableInstance;
+        const subjectData = {
+            'Big Data Analytics': [
+                [1, 'Big Data Analytics', 'Unit 1', '<a href="https://drive.google.com/file/d/1ziM7rjzeUKUrscGNTuIE1tqi1Plbt4mK/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [2, 'Big Data Analytics', 'Unit 2', '<a href="https://drive.google.com/file/d/1BfP2rwB9HzRDWj3l_P3AamlRvMC2xXqp/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [3, 'Big Data Analytics', 'Unit 3', '<a href="https://drive.google.com/file/d/11pEzaJFBCVpnpx-_EBdczROinp9rQwbb/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [4, 'Big Data Analytics', 'Unit 4', '<a href="https://drive.google.com/file/d/1OJWqMkRzFHYQ-GN9qhAke9pf70JZGEAN/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [5, 'Big Data Analytics', 'Unit 5', '<a href="https://drive.google.com/file/d/1GTOA-3ZdNJEeDSPkjTGSPG_FYIYgLmUW/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>']
+            ],
+            'Block Chaining & cyptoCurrency': [
+                [1, 'Block Chaining & cyptoCurrency', 'Unit 1-5', '<a href="https://drive.google.com/file/d/1ufJQH_aupLpVkf8s1KgUBdkVWzEurTkW/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+            ],
+            'Cloud Computing Technologies': [
+                [1, 'Cloud Computing Technologies', 'Unit 1', '<a href="https://drive.google.com/file/d/1zBLl_tfxhvWuZmraqrVH840h0hJ7RI5a/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [2, 'Cloud Computing Technologies', 'Unit 2', '<a href="https://drive.google.com/file/d/1qi5pAisZei0VLBYzxgrgJK4DsZS5IaLi/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [3, 'Cloud Computing Technologies', 'Unit 3', '<a href="https://drive.google.com/file/d/1iMdbIadp7D5lkKWj3CdWV42CJ4NCYgUQ/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [4, 'Cloud Computing Technologies', 'Unit 4', '<a href="https://drive.google.com/file/d/1MEpqc2XEx0pvlszH5M_ej-rCTg5mmTQB/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [5, 'Cloud Computing Technologies', 'Unit 5', '<a href="https://drive.google.com/file/d/1Jhf_lkOoAYyk0TqyABCSk0hy1PBBL_5z/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [6, 'Cloud Computing Technologies', 'Unit 5', '<a href="https://drive.google.com/file/d/1XQKdWtmH3sIscvjpiBqbV1VK2OtitEe0/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+
+            ],
+            'HandWritten': [
+                [1, 'HandWritten', 'Unit 1-5', '<a href="https://drive.google.com/file/d/1qWdvZPlPXPneeyYXQAG5ucoSerCpGz0q/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [2, 'HandWritten', 'Unit 1-2', '<a href="https://drive.google.com/file/d/1HSiHitSVAYxXIAEwb0faj_-A3Qux-mSq/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [3, 'HandWritten', 'Unit 3', '<a href="https://drive.google.com/file/d/1qqva4rCX2kP7UXVOb67pbALRIeD9zAmb/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [4, 'HandWritten', 'Unit 1-5', '<a href="https://drive.google.com/file/d/1OhTxEeY09PfbYFrTwxmytH-XJU4nZ4as/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>']
+            ]
+        };
+
+        $(document).ready(function() {
+            dataTableInstance = $('#DataTable').DataTable({
+                responsive: true,
+                scrollY: "50vh",
+                scrollX: true,
+                scrollCollapse: true,
+                paging: true,
+                searching: true,
+                ordering: true,
+                info: true,
+                autoWidth: false,
+                lengthMenu: [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]],
+                pageLength: 10,
+                dom: '<"top"Bfl>rt<"bottom"ip>',
+                buttons: [
+                    { extend: 'copy',  text: '<i class="fa fa-copy"></i>',       titleAttr: 'Copy' },
+                    { extend: 'csv',   text: '<i class="fa fa-file-csv"></i>',   titleAttr: 'Export CSV' },
+                    { extend: 'excel', text: '<i class="fa fa-file-excel"></i>', titleAttr: 'Export Excel' },
+                    { 
+                        extend: 'pdfHtml5',
+                        text: '<i class="fa fa-file-pdf"></i>', 
+                        titleAttr: 'Export PDF',
+                        orientation: 'portrait',
+                        pageSize: 'A4',
+                        exportOptions: { columns: ':visible' }
+                    },
+                    { 
+                        extend: 'print',
+                        text: '<i class="fa fa-print"></i>', 
+                        titleAttr: 'Print',
+                        customize: function (win) {
+                            $(win.document.body).find('table')
+                                .addClass('display')
+                                .css('font-size', '10pt')
+                                .css('width', '100%');
+                        }
+                    }
+                ],
+                columnDefs: [{ orderable: true, targets: "_all" }]
+            });
+        });
+
+        function loadSubjectData(subjectName) {
+            $('#tableContainer').slideDown(300);
+            $('#tableTitle').text(subjectName + " Materials");
+            dataTableInstance.clear();
+            if(subjectData[subjectName]) {
+                dataTableInstance.rows.add(subjectData[subjectName]);
+            }
+            dataTableInstance.draw();
+            setTimeout(() => {
+                $('html, body').animate({
+                    scrollTop: $("#tableContainer").offset().top - 120
+                }, 500);
+            }, 50);
+        }
+    </script>
+     </body>
+</html>
+
+

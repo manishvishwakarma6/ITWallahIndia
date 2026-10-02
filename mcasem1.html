@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>MCA Semester 1 - IT Wallah India</title>
+    <!-- Font Awesome for Top Header -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/courses.css" rel="stylesheet">
+    <link href="css/mca.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css"/>
+
+
+
+</head>
+
+<body>
+    <!-- start Cursor Dot with mouse arrow -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <!-- end Cursor Dot with mouse arrow-->
+
+        <!-- STICKY WRAPPER: Fixed at the top with dynamic component placeholders -->
+    <div class="sticky-top-wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navbar-placeholder"></div>
+    </div>
+    <!-- STICKY WRAPPER END -->
+  
+
+        <!-- Page Header -->
+    <section class="page-header" style="padding-top: 40px;">
+        <div class="container">
+            <div class="text-start mb-4">
+                <a href="index.html" class="text-white text-decoration-none fw-bold" style="font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Home</a>
+                <span class="text-white fw-bold mx-2" style="font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">/</span>
+                <a href="mcasem1.html" class="text-white text-decoration-none fw-bold" style="font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">MCA</a>
+                <span class="text-white fw-bold mx-2" style="font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">/</span>
+                <a href="mcasem1.html" class="text-white text-decoration-none fw-bold" style="font-size: 1.1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">MCA Sem-I</a>
+            </div>
+            <h1>MCA Semester 1</h1>
+            <p>Semester-wise Notes, Subjects & Downloadable Study Materials for MCA Students.</p>
+        </div>
+    </section>
+
+
+    <!-- Content Section -->
+    <section class="container py-5">
+        <div class="row g-4 justify-content-center">
+            <!-- C Programming & Data Structure -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="subject-card" onclick="loadSubjectData('C Programming & Data Structure')">
+                    <div class="subject-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h4>C Programming & Data Structure</h4>
+                    <p>Select a Unit to view and download notes.</p>
+                    <button class="btn btn-download">View Data</button>
+                </div>
+            </div>
+            <!-- Operating System -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="subject-card" onclick="loadSubjectData('Operating System')">
+                    <div class="subject-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h4>Operating System</h4>
+                    <p>Select a Unit to view and download notes.</p>
+                    <button class="btn btn-download">View Data</button>
+                </div>
+            </div>
+            <!-- Information Technology -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="subject-card" onclick="loadSubjectData('Information Technology')">
+                    <div class="subject-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h4>Information Technology</h4>
+                    <p>Select a Unit to view and download notes.</p>
+                    <button class="btn btn-download">View Data</button>
+                </div>
+            </div>
+            <!-- Statistical Mathematics -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="subject-card" onclick="loadSubjectData('Statistical Mathematics')">
+                    <div class="subject-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h4>Statistical Mathematics</h4>
+                    <p>Select a Unit to view and download notes.</p>
+                    <button class="btn btn-download">View Data</button>
+                </div>
+            </div>
+            <!-- Communication Skills -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="subject-card" onclick="loadSubjectData('Communication Skills')">
+                    <div class="subject-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h4>Communication Skills</h4>
+                    <p>Select a Unit to view and download notes.</p>
+                    <button class="btn btn-download">View Data</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- DataTable Container -->
+        <div id="tableContainer">
+            <div class="table-responsive">
+                <h3 id="tableTitle" class="mb-4 text-center" style="color: #6358e1;">Subject Data</h3>
+                <table id="DataTable" class="display nowrap stripe hover" style="width:100%">
+                   <thead>
+                        <tr>
+                            <th>SN</th>
+                            <th>Course Name</th>
+                            <th>Unit No</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- DYNAMIC FOOTER -->
+    <div id="footer-placeholder"></div>
+    <!-- ========== -->
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components-loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/home-sections.js"></script>
+
+    <!-- jQuery + DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+    <script>
+        let dataTableInstance;
+        const subjectData = {
+            'C Programming & Data Structure': [
+                [1, 'C Programming & Data Structure', 'Unit 1', '<a href="https://drive.google.com/file/d/1ZU0PDJ4eLRofk1A6mrG4yw4cMRNDbI1s/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [2, 'C Programming & Data Structure', 'Unit 1', '<a href="https://drive.google.com/file/d/1Mmth6__dEBmgVPHJf9hS4g6J0ghMaEMo/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [3, 'C Programming & Data Structure', 'Unit 2', '<a href="https://drive.google.com/file/d/1NJl-8YagYe4Ysk3ic5pEmoSV0g9-neKR/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [4, 'C Programming & Data Structure', 'Unit 3', '<a href="https://drive.google.com/file/d/1SzlKhOASmOwQQsU2hX6TzUtDnGoD3VB1/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [5, 'C Programming & Data Structure', 'Unit 4', '<a href="https://drive.google.com/file/d/1OwGB8tA1ffI5i1o-qv-5DW88EHedlnyz/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [6, 'C Programming & Data Structure', 'Unit 5', '<a href="https://drive.google.com/file/d/1zL7Rqf3dpsob6_TcGMn0tfirctmzHanL/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>']
+            ],
+            'Operating System': [
+                [1, 'Operating System', 'Unit 1', '<a href="https://drive.google.com/file/d/165-6zE070N47EnrWbO9tsWOmDioat4Qb/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [2, 'Operating System', 'Unit 2', '<a href="https://drive.google.com/file/d/1dmy2zqSmtewr5TzHGw1qmZHoFCg1lz4I/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [3, 'Operating System', 'Unit 2', '<a href="https://drive.google.com/file/d/1V2S74vZSzDOkQy4n39oUS-6ITiYZ6pe9/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [4, 'Operating System', 'Unit 3', '<a href="https://drive.google.com/file/d/1_eH-wkXmg8Gh8Odmt0G3_wsfnftG4yTg/viewf" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [5, 'Operating System', 'Unit 4', '<a href="https://drive.google.com/file/d/1bwPPRvEkPz7sAZ2IhOCnZEpL9HpyrH8M/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [6, 'Operating System', 'Unit 5', '<a href="https://drive.google.com/file/d/18ulq8f7_KT_CB_TcWKXfDmMh8BshKiZs/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+            ],
+            'Information Technology': [
+                [1, 'Information Technology', 'Unit 1-5', '<a href="https://drive.google.com/file/d/1LTU0maunLu4L2U_BZaMh3FPFAW4_JbAN/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+            ],
+            'Statistical Mathematics': [
+                [1, 'Statistical Mathematics', 'Unit 1', '<a href="https://drive.google.com/file/d/1dHntZZfBZdzPs7jcuV3AIlUDEOm9hPoD/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [2, 'Statistical Mathematics', 'Unit 2', '<a href="https://drive.google.com/file/d/1NarWyU0Mi8RH6dFw8Ww1nmTujPyzq4jU/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [3, 'Statistical Mathematics', 'Unit 3', '<a href="https://drive.google.com/file/d/1T65f5AOTj-d4c3k4vdFl6Fi6e4WJnxvw/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [4, 'Statistical Mathematics', 'Unit 4', '<a href="https://drive.google.com/file/d/1vfRFpLAZTK8wdToIzl1LIu-Q0Bf3NQq0/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [5, 'Statistical Mathematics', 'Unit 5', '<a href="https://drive.google.com/file/d/1jaIm13M0Etk2apNBuGvhLJk0aiNDY7cg/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+
+            ],
+            'Communication Skills': [
+                [1, 'Communication Skills', 'Unit 1', '<a href="https://drive.google.com/file/d/1zR7dG_Wxdb-R7gfR4ApHTsmDqMvDOOh5/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [2, 'Communication Skills', 'Unit 1', '<a href="https://drive.google.com/file/d/1IueTJdnnATydFFm6qvsm2v6R2orRhei1/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [3, 'Communication Skills', 'Unit 2', '<a href="https://drive.google.com/file/d/1-ACgNE_mjB4dLxloAEZJorMmk613aozd/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [4, 'Communication Skills', 'Unit 3', '<a href="https://drive.google.com/file/d/1LG4-M2ughkYPerBJfnFF1NpGRwFjDMKD/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+                [5, 'Communication Skills', 'Unit 4', '<a href="https://drive.google.com/file/d/12-lMv_VmVuBbx3Hj57giKJGcdR97RWNR/view" class="btn btn-sm" style="background-color: #6358e1; color: white;" target="_blank">View <i class="fa-solid fa-eye ms-1"></i></a>'],
+            ]
+        };
+
+        $(document).ready(function() {
+            dataTableInstance = $('#DataTable').DataTable({
+                responsive: true,
+                scrollY: "50vh",
+                scrollX: true,
+                scrollCollapse: true,
+                paging: true,
+                searching: true,
+                ordering: true,
+                info: true,
+                autoWidth: false,
+                lengthMenu: [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]],
+                pageLength: 10,
+                dom: '<"top"Bfl>rt<"bottom"ip>',
+                buttons: [
+                    { extend: 'copy',  text: '<i class="fa fa-copy"></i>',       titleAttr: 'Copy' },
+                    { extend: 'csv',   text: '<i class="fa fa-file-csv"></i>',   titleAttr: 'Export CSV' },
+                    { extend: 'excel', text: '<i class="fa fa-file-excel"></i>', titleAttr: 'Export Excel' },
+                    { 
+                        extend: 'pdfHtml5',
+                        text: '<i class="fa fa-file-pdf"></i>', 
+                        titleAttr: 'Export PDF',
+                        orientation: 'portrait',
+                        pageSize: 'A4',
+                        exportOptions: { columns: ':visible' }
+                    },
+                    { 
+                        extend: 'print',
+                        text: '<i class="fa fa-print"></i>', 
+                        titleAttr: 'Print',
+                        customize: function (win) {
+                            $(win.document.body).find('table')
+                                .addClass('display')
+                                .css('font-size', '10pt')
+                                .css('width', '100%');
+                        }
+                    }
+                ],
+                columnDefs: [{ orderable: true, targets: "_all" }]
+            });
+        });
+
+        function loadSubjectData(subjectName) {
+            $('#tableContainer').slideDown(300);
+            $('#tableTitle').text(subjectName + " Materials");
+            dataTableInstance.clear();
+            if(subjectData[subjectName]) {
+                dataTableInstance.rows.add(subjectData[subjectName]);
+            }
+            dataTableInstance.draw();
+            setTimeout(() => {
+                $('html, body').animate({
+                    scrollTop: $("#tableContainer").offset().top - 120
+                }, 500);
+            }, 50);
+        }
+    </script>
+     </body>
+</html>
+
+

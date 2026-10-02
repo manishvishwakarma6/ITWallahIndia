@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>Blogs - IT Wallah India</title>
+    <!-- Font Awesome for Top Header -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/blogs.css" rel="stylesheet">
+    <style>
+        .blog-meta {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+
+        .blog-meta i {
+            margin-right: 5px;
+            color: #4f46e5;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- start Cursor Dot with mouse arrow -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <!-- end Cursor Dot with mouse arrow-->
+
+    <!-- STICKY WRAPPER: Fixed at the top with dynamic component placeholders -->
+    <div class="sticky-top-wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navbar-placeholder"></div>
+    </div>
+    <!-- STICKY WRAPPER END -->
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Tech Blogs</h1>
+            <p>Read the latest articles about coding, tech trends, real-world bug fixes, and development tips.</p>
+        </div>
+    </section>
+
+    <!-- Blogs Content -->
+    <section class="container pb-5">
+        <div class="row g-4">
+
+
+
+            <!-- Blog 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="custom-card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge bg-danger">ZohoBook API Integration</span>
+                        <img src="images/zohobook.jpeg" alt="zohobook">
+                    </div>
+                    <div class="card-body-content">
+                        <div class="blog-meta">
+                            <i class="fa-regular fa-calendar"></i> June 16, 2026 &nbsp;
+                            <i class="fa-regular fa-user"></i> By Mr. Manish Kumar
+                        </div>
+                        <h3>Automating Invoice Creation with Zoho Books API Integration</h3>
+                        <p>In this project, I integrated the Zoho Books Invoice API to automatically generate invoices
+                            from a web application.
+                            The system communicates with Zoho Books using secure API requests to create and manage
+                            invoices dynamically.
+                            This integration helps businesses streamline their billing process and reduce manual work
+                            through automation.</p>
+                        <div class="card-footer-action">
+                            <a href="zohobook.html" class="btn-custom">Read Article <i
+                                    class="fa-solid fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Blog 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="custom-card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge bg-success">Face Detection</span>
+                        <img src="images/facedetection.jpeg" alt="Face Detection">
+                    </div>
+                    <div class="card-body-content">
+                        <div class="blog-meta">
+                            <i class="fa-regular fa-calendar"></i> July 16, 2026 &nbsp;
+                            <i class="fa-regular fa-user"></i> By Mr. Manish Kumar
+                        </div>
+                        <h3>Building a Real-Time Face Detection System Using Python, OpenCV and RetinaFace</h3>
+                        <p>This project demonstrates how to build a real-time face detection system using Python and
+                            OpenCV.
+                            The application uses computer vision techniques to detect human faces from images or live
+                            webcam video.
+                            It processes frames, identifies facial patterns using pre-trained models, and highlights
+                            detected faces
+                            instantly. This project is a great introduction to AI and computer vision applications.</p>
+                        <div class="card-footer-action">
+                            <a href="faceDetection.html" class="btn-custom">Read Article <i
+                                    class="fa-solid fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog 3-->
+            <div class="col-lg-4 col-md-6">
+                <div class="custom-card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge bg-primary">ChatBot</span>
+                        <img src="images/chatbot.jpeg" alt="chatBot">
+                    </div>
+                    <div class="card-body-content">
+                        <div class="blog-meta">
+                            <i class="fa-regular fa-calendar"></i> August 16, 2026 &nbsp;
+                            <i class="fa-regular fa-user"></i> By Mr. Manish Kumar
+                        </div>
+                        <h3>Developing a QA Based Chatbot Using Python and NLP</h3>
+                        <p>This project focuses on building QA chatbot using Python and Natural Language Processing
+                            (NLP).
+                            The chatbot can understand user queries and find a best answer responses.
+                            It is designed to simulate real conversations and can be integrated into websites or
+                            applications
+                            to provide automated assistance and improve user interaction.</p>
+                        <div class="card-footer-action">
+                            <a href="chatbot.html" class="btn-custom">Read Article <i
+                                    class="fa-solid fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <!-- Blog 4-->
+            <div class="col-lg-4 col-md-6">
+                <div class="custom-card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge bg-primary">AI Text Detection</span>
+                      <img src="images/aitextdetect.png" alt="AI Text Detection">
+                    </div>
+                    <div class="card-body-content">
+                        <div class="blog-meta">
+                            <i class="fa-regular fa-calendar"></i> September 16, 2026 &nbsp;
+                            <i class="fa-regular fa-user"></i> By Mr. Manish Kumar
+                        </div>
+                        <h3>Developing a Rest API for AI Text Detection </h3>
+                        <p>This article explains how AI text detectors work, the techniques they use to analyze writing patterns, 
+                            their benefits and limitations, and why AI detection results should not always be considered 100% accurate.
+                             It also explores the challenges of distinguishing human-written content from AI-generated text and the
+                              future of AI detection technology.</p>
+                        <div class="card-footer-action">
+                            <a href="aiTextDetection.html" class="btn-custom">Read Article <i
+                                    class="fa-solid fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DYNAMIC FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components-loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/home-sections.js"></script>
+    </body>
+
+</html>

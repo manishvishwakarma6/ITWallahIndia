@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>AI Chatbot - IT Wallah India</title>
+    <!-- Font Awesome for Top Header -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/blogSidebar.css" rel="stylesheet">
+    <link href="css/chatbot.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- start Cursor Dot with mouse arrow -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <!-- end Cursor Dot with mouse arrow-->
+    <!-- Gradient overlay moved outside to prevent z-index issues -->
+    <div class="bg-overlay"></div>
+    <!-- STICKY WRAPPER: Fixed at the top with dynamic component placeholders -->
+    <div class="sticky-top-wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navbar-placeholder"></div>
+    </div>
+    <!-- STICKY WRAPPER END -->
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>AI Chatbot API</h1>
+            <p>Creating a AI Chatbot Flask API using Python, Flask, NLP, FAISS & Voice.</p>
+        </div>
+    </section>
+
+    <!-- Blogs Section  -->
+    <div class="container-fluid mb-5 px-3 px-lg-5">
+        <div class="site-content">
+            <div class="section-container">
+                <div class="row blog-main justify-content-between align-items-start">
+                    <!-- TODO ================= MAIN POST ================= -->
+                    <main class="col-12 col-lg-8 site-main order-2 mt-5 mt-lg-0">
+                        <article class="post">
+<div class="post-img mb-4">
+    <img src="images/chatbot.png" alt="Image AI Chatbot" class="zoomable-img">
+</div>
+<h3 class="card-heading text-bold text-underline">Creating a AI Chatbot Flask API using Python, Flask, NLP, FAISS & Voice</h3>
+<div class="entry-meta">
+    <span><i class="fa-solid fa-calendar-days"></i> 16 August 2026</span>
+    <span><i class="fa-solid fa-user"></i> Mr. Manish Kumar</span>
+</div>
+
+<div class="entry-content mt-4">
+    <p>In this blog, we'll guide you step by step on how to create a – AI chatbot including dynamic learning, voice chat, history storage, suggestions, semantic search, and REST APIs.</p>
+    <h4 class="font-heading">Chatbot Features</h4>
+    <ul class="create-points">
+        <li><i class="fa-solid fa-check-double"></i> <strong>Dynamic Tokenizer</strong> &mdash; Stores new questions in tokenizer.json.</li>
+        <li><i class="fa-solid fa-check-double"></i> <strong>Automatic Word Variation Generator</strong> using base_words.txt.</li>
+        <li><i class="fa-solid fa-check-double"></i> <strong>Semantic Search</strong> using Sentence Transformers and FAISS.</li>
+        <li><i class="fa-solid fa-check-double"></i> <strong>Exact Match, Substring Match, and Order-Insensitive Search.</strong></li>
+        <li><i class="fa-solid fa-check-double"></i> <strong>Voice Chat</strong> using SpeechRecognition.</li>
+        <li><i class="fa-solid fa-check-double"></i> <strong>Chat History Storage</strong> in JSON files.</li>
+        <li><i class="fa-solid fa-check-double"></i> <strong>Autocomplete and Next Word Suggestions.</strong></li>
+        <li><i class="fa-solid fa-check-double"></i> <strong>Redis Caching</strong> for high performance.</li>
+        <li><i class="fa-solid fa-check-double"></i> <strong>REST APIs</strong> using Flask.</li>
+        <li><i class="fa-solid fa-check-double"></i> <strong>Dynamic Learning</strong> from unknown user inputs.</li>
+        <li><i class="fa-solid fa-check-double"></i> <strong>Contraction Expansion</strong> and Text Preprocessing.</li>
+        <li><i class="fa-solid fa-check-double"></i> <strong>Scalable architecture</strong> for web integration.</li>
+    </ul>
+</div>
+<hr>
+
+<div class="entry-content">
+    <h4 class="font-heading text-left">Chapter 1 - Project Overview</h4>
+    <p>In this Blog we will build an advanced chatbot application from scratch. By the end of this guide you will have a fully working chatbot with semantic search, voice chat, history management, and dynamic learning capabilities.</p>
+    <p><strong>Developer Note:</strong> Follow the steps in this chapter sequentially before moving to the next chapter. Each module depends on the previous and configuration.</p>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 2 - Software Installation</h4>
+    
+    <p class="p-bold mt-3">Step 1: Install Python 3.8+</p>
+    <ul>
+        <li>Download Python from python.org - You can download it from <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a></li>
+        <li>Check 'Add Python to PATH'.</li>
+        <li>Verify:</li>
+    </ul>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">python --version<br>pip --version</code>
+    </div>
+
+    <p class="p-bold mt-3">Step 2: Install Visual Studio Code</p>
+    <ul>
+        <li>Download VS Code - Install this extension from the VS Code Marketplace.</li>
+        <li>Install extensions: Python, Pylance, JSON, Thunder Client</li>
+    </ul>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 3 - Create Project Folder</h4>
+    <p>Create:</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">D:\Python_Workspace\ChatBotAPI</code>
+    </div>
+    <p>Open the folder in VS Code and create the following structure:</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">ChatBotAPI<br>├── chat.py<br>├── tokenizer.py<br>├── generate_variations.py<br>├── generate_embeddings.py<br>├── data.json<br>├── tokenizer.json<br>├── my_word_model.json<br>├── base_words.txt<br>├── contractions.json<br>├── requirements.txt<br>├── nltk_data<br>├── ChatHistory<br>├── static<br>└── templates</code>
+    </div>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 4 - Create Virtual Environment</h4>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">python -m venv venv</code>
+    </div>
+    <p>Windows:</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">venv\Scripts\activate</code>
+    </div>
+    <p>Linux:</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">source venv/bin/activate</code>
+    </div>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 5 - Install All Required Libraries</h4>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">pip install flask<br>pip install flask-cors<br>pip install flask-caching<br>pip install redis<br>pip install nltk<br>pip install numpy<br>pip install faiss-cpu<br>pip install sentence-transformers<br>pip install speechrecognition<br>pip install prompt-toolkit<br>pip install torch<br>pip install transformers</code>
+    </div>
+    <p>Create requirements.txt:</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">pip freeze > requirements.txt</code>
+    </div>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 6 - Install Redis Server</h4>
+    <p>Install Redis and start the server.</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">redis-server<br>redis-cli ping</code>
+    </div>
+    <p>Output:</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">PONG</code>
+    </div>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 7 - Download NLTK Models</h4>
+    <p>Create download_nltk.py:</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">import nltk<br>nltk.download('punkt')<br>nltk.download('wordnet')<br>nltk.download('words')</code>
+    </div>
+    <p>Run:</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">python download_nltk.py</code>
+    </div>
+    <p>The models will be stored inside nltk_data folder.</p>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 8 - Create Dataset</h4>
+    <p>Create data.json and add prompt-response pairs.</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">{<br>&nbsp;&nbsp;"prompt":"hello",<br>&nbsp;&nbsp;"response":"Hello, how can I help you?"<br>}</code>
+    </div>
+    <p>Continue adding all chatbot questions and responses.</p>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 9 - Create contractions.json</h4>
+    <p>Store short forms and expanded forms.</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">{<br>&nbsp;&nbsp;"can't":"cannot",<br>&nbsp;&nbsp;"i'm":"i am",<br>&nbsp;&nbsp;"don't":"do not"<br>}</code>
+    </div>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 10 - Create base_words.txt</h4>
+    <p>Add base words that will generate variations.</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">hello<br>python<br>flask<br>database<br>java</code>
+    </div>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 11 - Build generate_variations.py</h4>
+    <ul>
+        <li>Read base_words.txt.</li>
+        <li>Generate related words and synonyms.</li>
+        <li>Store them inside my_word_model.json.</li>
+    </ul>
+    <p>Flow:<br>
+    base_words.txt &rarr; generate_variations.py &rarr; my_word_model.json</p>
+    <p>Code:</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea"># generate_variations.py<br>import json<br>import nltk<br>from nltk.corpus import wordnet<br>nltk.download('wordnet')<br>word_model = {}<br>with open("base_words.txt", "r", encoding="utf-8") as file:<br>&nbsp;&nbsp;&nbsp;&nbsp;words = [word.strip().lower() for word in file.readlines()]<br>for word in words:<br>&nbsp;&nbsp;&nbsp;&nbsp;variations = set()<br>&nbsp;&nbsp;&nbsp;&nbsp;variations.add(word)<br>&nbsp;&nbsp;&nbsp;&nbsp;for syn in wordnet.synsets(word):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for lemma in syn.lemmas():<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;variations.add(lemma.name().replace("_", " ").lower())<br>&nbsp;&nbsp;&nbsp;&nbsp;word_model[word] = list(variations)<br>with open("my_word_model.json", "w", encoding="utf-8") as file:<br>&nbsp;&nbsp;&nbsp;&nbsp;json.dump(word_model, file, indent=4)<br>print("Word variations generated successfully.")</code>
+    </div>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 12 - Build tokenizer.py</h4>
+    <p>Purpose: Store unmatched user questions.</p>
+    <p>Flow:<br>
+    Unknown Input &rarr; tokenizer.json &rarr; Administrator Reviews &rarr; Dataset Update</p>
+    <p>tokenizer.py</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea"># tokenizer.py<br>import json<br>import os<br>TOKENIZER_FILE = "tokenizer.json"<br>def save_unknown_question(question):<br>&nbsp;&nbsp;&nbsp;&nbsp;if os.path.exists(TOKENIZER_FILE):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open(TOKENIZER_FILE, "r", encoding="utf-8") as file:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data = json.load(file)<br>&nbsp;&nbsp;&nbsp;&nbsp;else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data = []<br>&nbsp;&nbsp;&nbsp;&nbsp;if question not in data:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data.append(question)<br>&nbsp;&nbsp;&nbsp;&nbsp;with open(TOKENIZER_FILE, "w", encoding="utf-8") as file:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;json.dump(data, file, indent=4)<br>&nbsp;&nbsp;&nbsp;&nbsp;print("Unknown question stored.")</code>
+    </div>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 13 - Generate Embeddings</h4>
+    <p>Create generate_embeddings.py.</p>
+    <ul>
+        <li>Load data.json.</li>
+        <li>Generate embeddings using all-MiniLM-L6-v2.</li>
+        <li>Store: precomputed_embeddings.npy, prompts_order.npy</li>
+    </ul>
+    <p>generate_embeddings.py</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea"># generate_embeddings.py <br>import json <br>import numpy as np <br>from sentence_transformers import SentenceTransformer <br><br>model = SentenceTransformer('all-MiniLM-L6-v2') <br>with open('data.json', 'r', encoding='utf-8') as file: <br>&nbsp;&nbsp;&nbsp;&nbsp;data = json.load(file) <br>prompts = [item["prompt"] for item in data] <br>embeddings = model.encode(prompts) <br>np.save("precomputed_embeddings.npy", embeddings)<br>np.save("prompts_order.npy", np.array(prompts))<br>print("Embeddings generated successfully.")</code>
+    </div>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 14 - Build chat.py</h4>
+    <p>This is the main application. Implement:</p>
+    <ol>
+        <li>Flask configuration.</li>
+        <li>Redis cache.</li>
+        <li>Dataset loading.</li>
+        <li>Text preprocessing.</li>
+        <li>Exact matching.</li>
+        <li>Substring matching.</li>
+        <li>Order-insensitive matching.</li>
+        <li>Semantic search with FAISS.</li>
+        <li>Voice APIs.</li>
+        <li>Suggestions APIs.</li>
+        <li>Chat history storage.</li>
+        <li>New chat functionality.</li>
+    </ol>
+    <p>chat.py</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">from flask import Flask, request, jsonify<br>from flask_cors import CORS<br>from flask_caching import Cache<br>import json<br>import numpy as np<br>import faiss<br>from sentence_transformers import SentenceTransformer<br>from datetime import datetime<br>import os<br><br>app = Flask(__name__)<br>CORS(app)<br><br>cache = Cache(config={"CACHE_TYPE": "SimpleCache"})<br>cache.init_app(app)<br><br>model = SentenceTransformer('all-MiniLM-L6-v2')<br><br>with open("data.json", "r", encoding="utf-8") as file:<br>&nbsp;&nbsp;&nbsp;&nbsp;dataset = json.load(file)<br><br>responses = {<br>&nbsp;&nbsp;&nbsp;&nbsp;item["prompt"].lower(): item["response"]<br>&nbsp;&nbsp;&nbsp;&nbsp;for item in dataset<br>}<br><br>embeddings = np.load("precomputed_embeddings.npy")<br>prompts = np.load("prompts_order.npy", allow_pickle=True)<br><br>dimension = embeddings.shape[1]<br>index = faiss.IndexFlatL2(dimension)<br>index.add(np.array(embeddings).astype("float32"))<br><br>def save_chat(user, bot):<br>&nbsp;&nbsp;&nbsp;&nbsp;os.makedirs("ChatHistory", exist_ok=True)<br>&nbsp;&nbsp;&nbsp;&nbsp;filename = datetime.now().strftime("ChatHistory/%Y%m%d.json")<br>&nbsp;&nbsp;&nbsp;&nbsp;if os.path.exists(filename):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open(filename, "r", encoding="utf-8") as file:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chats = json.load(file)<br>&nbsp;&nbsp;&nbsp;&nbsp;else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chats = []<br>&nbsp;&nbsp;&nbsp;&nbsp;chats.append({<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"user": user,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"bot": bot,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"time": str(datetime.now())<br>&nbsp;&nbsp;&nbsp;&nbsp;})<br>&nbsp;&nbsp;&nbsp;&nbsp;with open(filename, "w", encoding="utf-8") as file:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;json.dump(chats, file, indent=4)<br><br>def semantic_search(question):<br>&nbsp;&nbsp;&nbsp;&nbsp;question_embedding = model.encode([question])<br>&nbsp;&nbsp;&nbsp;&nbsp;D, I = index.search(np.array(question_embedding).astype("float32"),1)<br>&nbsp;&nbsp;&nbsp;&nbsp;prompt = prompts[I[0][0]]<br>&nbsp;&nbsp;&nbsp;&nbsp;return responses.get(prompt.lower(),"Sorry, I don't know.")<br><br>@app.route("/chat", methods=["POST"])<br>def chat():<br>&nbsp;&nbsp;&nbsp;&nbsp;message = request.json.get("message", "").lower()<br>&nbsp;&nbsp;&nbsp;&nbsp;if message in responses:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;answer = responses[message]<br>&nbsp;&nbsp;&nbsp;&nbsp;else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;answer = semantic_search(message)<br>&nbsp;&nbsp;&nbsp;&nbsp;save_chat(message, answer)<br>&nbsp;&nbsp;&nbsp;&nbsp;return jsonify({"response": answer})<br><br>@app.route("/new_chat", methods=["POST"])<br>def new_chat():<br>&nbsp;&nbsp;&nbsp;&nbsp;return jsonify({"message": "New chat started."})<br><br>if __name__ == "__main__":<br>&nbsp;&nbsp;&nbsp;&nbsp;app.run(host="0.0.0.0",port=8080, debug=True )</code>
+    </div>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 15 - Implement Chat History Storage</h4>
+    <p>Create ChatHistory folder. Whenever the user sends a message:</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">{<br>&nbsp;&nbsp;"user":"hello",<br>&nbsp;&nbsp;"bot":"Hello",<br>&nbsp;&nbsp;"time":"2026-06-21 10:30:20"<br>}</code>
+    </div>
+    <p>Store all conversations inside timestamped JSON files.</p>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 16 - Build Suggestion System</h4>
+    <p>Implement: <code>get_next_word_suggestions()</code></p>
+    <p>Features:</p>
+    <ul>
+        <li>Auto-complete</li>
+        <li>Next word prediction</li>
+        <li>Better user experience</li>
+    </ul>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 17 - Build Voice Chat</h4>
+    <p>Install:</p>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">pip install SpeechRecognition</code>
+    </div>
+    <p>API: <code>/listen</code></p>
+    <p>Flow:<br>
+    User Speech &rarr; Speech Recognition &rarr; Text &rarr; Chatbot Response</p>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 18 - Run the Application</h4>
+    <div class="code-div">
+        <div class="copy-icon">
+            <button class="btn-copy" onclick="copyText(this)"><i class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+        </div>
+        <code class="text-white" id="myTextarea">python chat.py</code>
+    </div>
+    <p>Open: <a href="http://127.0.0.1:8080" target="_blank">http://127.0.0.1:8080</a></p>
+    <p>Test:</p>
+    <ul>
+        <li>POST /chat</li>
+        <li>POST /suggest</li>
+        <li>POST /new_chat</li>
+        <li>GET /listen</li>
+    </ul>
+</div>
+
+<div class="entry-content mt-4">
+    <h4 class="font-heading text-left">Chapter 19 - Project Workflow</h4>
+    <p>
+        User Input &rarr; Expand Contractions &rarr; Apply Word Model &rarr; Clean Text &rarr; Exact Match &rarr; Substring Match &rarr; Order Match &rarr; Semantic Search &rarr; Generate Response &rarr; Save Chat History
+    </p>
+</div>
+</article>
+                    </main>
+
+                    <!-- Sidebar -->
+                    <div id="blogSidebarContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------- IMAGE ZOOM OVERLAY ------------------->
+    <div class="image-overlay" id="imageOverlay">
+        <img id="overlayImg" src="" alt="Zoomed Image">
+    </div>
+
+
+    <!-- DYNAMIC FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components-loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/home-sections.js"></script>
+    <!-- Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Handle Sidebar Tab Switching
+            var links = document.querySelectorAll(".blog-sidebar .link");
+            var posts = document.querySelectorAll(".blog-post-content");
+            links.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    links.forEach(l => l.classList.remove("active"));
+                    posts.forEach(p => p.classList.remove("active"));
+                    this.classList.add("active");
+                    var targetId = this.getAttribute("data-target");
+                    var targetPost = document.getElementById(targetId);
+                    if (targetPost) {
+                        targetPost.classList.add("active");
+                    }
+                });
+            });
+            // Handle Image Zoom
+            var zoomImgs = document.querySelectorAll(".zoomable-img");
+            var overlay = document.getElementById("imageOverlay");
+            var overlayImg = document.getElementById("overlayImg");
+            zoomImgs.forEach(function (img) {
+                img.addEventListener("click", function () {
+                    overlayImg.src = img.src;
+                    overlay.classList.add("active");
+                });
+            });
+            if (overlay) {
+                overlay.addEventListener("click", function () {
+                    overlay.classList.remove("active");
+                    overlayImg.src = "";
+                });
+            }
+        });
+        // Copy to clipboard function
+        function copyText(btn) {
+            var codeBlock = btn.parentElement.nextElementSibling;
+            var tempInput = document.createElement("textarea");
+            document.body.appendChild(tempInput);
+            tempInput.value = codeBlock.innerText;
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(function () {
+                btn.innerHTML = '<i class="fa-regular fa-clipboard"></i> Copy';
+            }, 2000);
+        }
+    </script>
+
+
+    <!-- Load Sidebar Dynamically -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('blogSidebar.html')
+                .then(response => response.text())
+                .then(data => {
+                    const container = document.getElementById('blogSidebarContainer');
+                    if (container) {
+                        container.outerHTML = data;
+
+                        // Highlight active sidebar link
+                        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+                        const sidebarLinks = document.querySelectorAll('.left-sidebar .link');
+                        sidebarLinks.forEach(link => {
+                            if (link.getAttribute('href') === currentPath) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+        });
+    </script>
+
+    </body>
+
+</html>

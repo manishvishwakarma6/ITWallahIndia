@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>Python Tutorial - IT Wallah India</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/pythonTutorial.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- start Cursor Dot with mouse arrow -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <!-- end Cursor Dot with mouse arrow-->
+
+        <!-- STICKY WRAPPER: Fixed at the top with dynamic component placeholders -->
+    <div class="sticky-top-wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navbar-placeholder"></div>
+    </div>
+    <!-- STICKY WRAPPER END -->
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light border-bottom text-center mb-4">
+        <div class="container">
+            <h1 class="fw-bold mb-2">Python Tutorial</h1>
+            <p class="text-white fs-5">Learn Python from basics to advanced topics!</p>
+        </div>
+    </section>
+
+    <!-- Main Course Container -->
+    <div class="container-fluid mb-5 px-3 px-lg-5">
+        <div class="site-content">
+            <div class="row align-items-start">
+
+                <!-- Left Sidebar -->
+                <div class="col-12 col-md-4 col-lg-3 mb-4 mb-md-0 position-relative z-1" id="courseSidebarContainer">
+                    <aside class="course-sidebar p-3 border-end h-100 shadow-sm rounded-3">
+                        <h4 class="fw-bold mb-4 ps-2">Python Tutorial</h4>
+
+                        <div class="accordion accordion-flush" id="courseAccordion">
+
+                            <!-- Introduction -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingIntro">
+                                    <button class="accordion-button bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntro"
+                                        aria-expanded="true" aria-controls="collapseIntro">
+                                        Introduction
+                                    </button>
+                                </h2>
+                                <div id="collapseIntro" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingIntro" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary active"
+                                                    data-target="py-intro-overview">Overview</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-intro-install">Installation & Setup</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-intro-syntax">Basic Syntax</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-intro-comments">Comments</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Variables & Data Types -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingVar">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseVar"
+                                        aria-expanded="false" aria-controls="collapseVar">
+                                        Variables & Data Types
+                                    </button>
+                                </h2>
+                                <div id="collapseVar" class="accordion-collapse collapse" aria-labelledby="headingVar"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-var-types">Variables & Types</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-var-nums">Numbers & Math</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-var-strs">Strings</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-var-casting">Type Casting</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Control Flow -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingCond">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseCond"
+                                        aria-expanded="false" aria-controls="collapseCond">
+                                        Control Flow
+                                    </button>
+                                </h2>
+                                <div id="collapseCond" class="accordion-collapse collapse" aria-labelledby="headingCond"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-cond-if">If...Elif...Else</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-cond-match">Match-Case</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-iter-loops">Loops (For, While)</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-iter-break">Break, Continue, Pass</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Data Structures -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingDS">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseDS"
+                                        aria-expanded="false" aria-controls="collapseDS">
+                                        Data Structures
+                                    </button>
+                                </h2>
+                                <div id="collapseDS" class="accordion-collapse collapse" aria-labelledby="headingDS"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-ds-lists">Lists</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-ds-tuples">Tuples</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-ds-dicts">Dictionaries</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-ds-sets">Sets</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Functions & Modules -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingFunc">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFunc"
+                                        aria-expanded="false" aria-controls="collapseFunc">
+                                        Functions & Modules
+                                    </button>
+                                </h2>
+                                <div id="collapseFunc" class="accordion-collapse collapse" aria-labelledby="headingFunc"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-func-def">Functions</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-func-lambda">Lambda Functions</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-func-scope">Scope (Local/Global)</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-func-modules">Modules & Packages</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Object-Oriented Programming -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingOOP">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseOOP"
+                                        aria-expanded="false" aria-controls="collapseOOP">
+                                        Object-Oriented Python
+                                    </button>
+                                </h2>
+                                <div id="collapseOOP" class="accordion-collapse collapse" aria-labelledby="headingOOP"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-oop-classes">Classes & Objects</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-oop-inheritance">Inheritance</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-oop-polymorphism">Polymorphism</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-oop-encap">Encapsulation & Abstraction</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Advanced Python -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingAdv">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdv"
+                                        aria-expanded="false" aria-controls="collapseAdv">
+                                        Advanced Python
+                                    </button>
+                                </h2>
+                                <div id="collapseAdv" class="accordion-collapse collapse" aria-labelledby="headingAdv"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-adv-exceptions">Exception Handling</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-adv-file">File Handling</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-adv-iterators">Iterators & Generators</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="py-adv-decorators">Decorators</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Right Content Area -->
+                <main class="col-12 col-md-8 col-lg-9 position-relative z-0" id="mainCourseContent">
+
+                    <!-- Content Sections -->
+                    <!-- Content Sections -->
+                    <div class="content-section active" id="py-intro-overview">
+                        <div class="java-hero text-center mb-4 shadow-sm">
+                            <h1 class="fw-bold" style="font-size: 3rem; color: #333;">Python Tutorial</h1>
+                            <p class="text-secondary mt-3 mx-auto"
+                                style="max-width: 650px; font-size: 1.1rem; line-height: 1.6;">
+                                Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant indentation.
+                            </p>
+                        </div>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-4">
+                            <h4 class="fw-bold mb-3">Why Python?</h4>
+                            <ul class="mb-0 text-black" style="line-height: 1.8;">
+                                <li><strong>Readability:</strong> Python syntax is designed to be readable and straightforward, looking closely like English mathematics.</li>
+                                <li><strong>Multi-paradigm:</strong> Supports object-oriented, imperative, functional, and procedural programming.</li>
+                                <li><strong>Extensive Ecosystem:</strong> Python has the Python Package Index (PyPI), which hosts hundreds of thousands of third-party modules.</li>
+                                <li><strong>Interpreted & Dynamic:</strong> Python code is executed line-by-line, which makes debugging easier. Types are dynamically resolved at runtime.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-intro-install">
+                        <h2 class="fw-bold text-dark mb-4">Installation & Setup</h2>
+                        <p class="text-secondary">Before writing any Python code, you must install the Python interpreter, which translates your human-readable code into bytecode that the computer can execute.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold mb-3">1. Installing Python (Windows/Mac/Linux)</h5>
+                            <p>Download the latest version of Python from <a href="https://www.python.org/downloads/" target="_blank">python.org</a>. 
+                            <br><br>
+                            <span class="badge bg-danger">Critical Windows Step:</span> When running the Windows installer, you MUST check the box that says <strong>"Add Python to PATH"</strong>. This allows you to run Python from the command prompt globally.</p>
+                            
+                            <h5 class="fw-bold mt-4">2. The REPL (Read-Eval-Print Loop)</h5>
+                            <p>Python comes with an interactive shell called the REPL. Open your terminal or command prompt and type <code>python</code>.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>$ python
+Python 3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) 
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("Hello from the REPL!")
+Hello from the REPL!
+>>> 2 + 2
+4
+>>> exit() # To leave the REPL</code></pre>
+                            
+                            <h5 class="fw-bold mt-4">3. Virtual Environments</h5>
+                            <p>For project management, it is best practice to use <code>venv</code> to isolate project dependencies.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code># Create a virtual environment named "myenv"
+python -m venv myenv
+
+# Activate it (Windows)
+myenv\Scripts\activate
+
+# Activate it (Mac/Linux)
+source myenv/bin/activate</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-intro-syntax">
+                        <h2 class="fw-bold mb-3">Basic Syntax & Indentation</h2>
+                        <p class="text-secondary">Python is famous for its clean, uncluttered syntax. Let's explore the core rules.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">1. Significant Whitespace (Indentation)</h5>
+                            <p>Where Java or C++ uses curly braces <code>{}</code> to define the scope of loops or functions, Python uses <strong>indentation</strong>. A block of code must be indented consistently (standard is 4 spaces).</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code># Correct Indentation
+if True:
+    print("This is indented correctly")
+    if 5 > 2:
+        print("This is a nested block")
+
+# Incorrect Indentation (IndentationError)
+if True:
+print("This will crash the program!")</code></pre>
+
+                            <h5 class="fw-bold">2. No Semicolons</h5>
+                            <p>Python does not require semicolons to terminate statements. A simple newline character is sufficient.</p>
+                            
+                            <h5 class="fw-bold">3. Line Continuation</h5>
+                            <p>If a line of code is too long, you can use the backslash <code>\</code> character, or wrap the expression in parentheses.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code># Using backslash
+total = 1 + 2 + 3 + \
+        4 + 5 + 6
+
+# Using parentheses (Preferred PEP-8 style)
+total = (1 + 2 + 3 +
+         4 + 5 + 6)</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-intro-comments">
+                        <h2 class="fw-bold mb-3">Comments & Docstrings</h2>
+                        <p class="text-secondary">Documentation is critical for writing maintainable code. Python provides multiple ways to comment.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">1. Inline Comments</h5>
+                            <p>Created using the hash symbol <code>#</code>. They are ignored entirely by the interpreter.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code># Calculate the area of a circle
+radius = 5
+area = 3.14 * radius ** 2  # The ** operator is used for exponents</code></pre>
+
+                            <h5 class="fw-bold">2. Docstrings (Documentation Strings)</h5>
+                            <p>Docstrings are a special type of multi-line comment used right after the definition of a function, method, class, or module. They are surrounded by triple quotes <code>"""</code> and are stored in the <code>__doc__</code> attribute of the object.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>def multiply(a, b):
+    """
+    Multiply two numbers together and return the result.
+    
+    Args:
+        a (int, float): The first number.
+        b (int, float): The second number.
+        
+    Returns:
+        int, float: The product of a and b.
+    """
+    return a * b
+
+# You can access the docstring programmatically!
+print(multiply.__doc__)</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-var-types">
+                        <h2 class="fw-bold mb-3">Variables & Dynamic Typing</h2>
+                        <p class="text-secondary">Python is dynamically and strongly typed. Variables are simply labels pointing to objects in memory.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Dynamic Typing</h5>
+                            <p>You do not declare a variable's type. The type is determined at runtime based on the object assigned to it. Furthermore, a variable can be reassigned to a completely different type later.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>x = 100       # x points to an integer object
+print(type(x)) # &lt;class 'int'&gt;
+
+x = "Hello"   # x now points to a string object
+print(type(x)) # &lt;class 'str'&gt;</code></pre>
+
+                            <h5 class="fw-bold">Multiple Assignment</h5>
+                            <p>Python allows you to assign values to multiple variables in one line, which is extremely useful for unpacking data.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code># Assigning different values
+name, age, is_student = "Alice", 25, True
+
+# Assigning the same value
+x = y = z = 0</code></pre>
+                            
+                            <h5 class="fw-bold">Memory & The `id()` Function</h5>
+                            <p>Variables point to memory addresses. You can use <code>id()</code> to see the memory address.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>a = 500
+b = 500
+print(id(a) == id(b)) # False: They point to different objects in memory
+
+c = a
+print(id(a) == id(c)) # True: They point to the SAME object</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-var-nums">
+                        <h2 class="fw-bold mb-3">Numbers & Advanced Math</h2>
+                        <p class="text-secondary">Python handles numeric types efficiently and natively supports arbitrary-precision integers.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Numeric Types</h5>
+                            <ul class="mb-3">
+                                <li><code>int</code>: Integers of unlimited size.</li>
+                                <li><code>float</code>: Floating point numbers (double precision).</li>
+                                <li><code>complex</code>: Complex numbers written with a "j" as the imaginary part.</li>
+                            </ul>
+                            
+                            <h5 class="fw-bold">Mathematical Operators</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>a = 15
+b = 4
+
+print(a / b)  # True Division: 3.75
+print(a // b) # Floor Division (truncates decimal): 3
+print(a % b)  # Modulo (remainder): 3
+print(a ** b) # Exponentiation (15 to the power of 4): 50625</code></pre>
+
+                            <h5 class="fw-bold">The `math` Module</h5>
+                            <p>For advanced mathematics, Python provides a built-in module.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>import math
+
+print(math.sqrt(16))      # Square root: 4.0
+print(math.ceil(2.1))     # Round up: 3
+print(math.floor(2.9))    # Round down: 2
+print(math.pi)            # Pi constant: 3.141592653589793</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-var-strs">
+                        <h2 class="fw-bold mb-3">Strings & Formatting</h2>
+                        <p class="text-secondary">Strings are immutable sequences of Unicode characters. Python's string manipulation capabilities are incredibly powerful.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">String Slicing</h5>
+                            <p>You can extract a substring using the slicing syntax: <code>string[start:stop:step]</code>.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>text = "Python Programming"
+
+print(text[0:6])   # "Python"
+print(text[7:])    # "Programming"
+print(text[-1])    # "g" (Negative indexing gets the last character)
+print(text[::-1])  # "gnimmargorP nohtyP" (Trick to reverse a string!)</code></pre>
+
+                            <h5 class="fw-bold">String Formatting (f-strings)</h5>
+                            <p>Introduced in Python 3.6, formatted string literals (f-strings) are the fastest and most readable way to inject variables into strings.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>name = "Alice"
+score = 95.5678
+
+# Using f-string
+greeting = f"User {name} achieved a score of {score:.2f}."
+print(greeting) # "User Alice achieved a score of 95.57."
+
+# You can even evaluate expressions inside f-strings!
+print(f"2 + 2 is {2 + 2}")</code></pre>
+                            
+                            <h5 class="fw-bold">Useful String Methods</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>csv = "apple,banana,cherry"
+items = csv.split(",")   # Returns a list: ['apple', 'banana', 'cherry']
+joined = " | ".join(items) # Returns: "apple | banana | cherry"
+
+print("HELLO".isupper()) # True
+print("hello".capitalize()) # "Hello"</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-var-casting">
+                        <h2 class="fw-bold mb-3">Type Casting & Conversion</h2>
+                        <p class="text-secondary">Sometimes you need to convert a variable from one data type to another. In Python, this is done using constructor functions.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Implicit vs Explicit Conversion</h5>
+                            <p>Python automatically converts smaller data types to larger ones (e.g., int to float) when performing math, which is <strong>Implicit</strong>. Manual casting is <strong>Explicit</strong>.</p>
+                            
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code># Explicit Casting Examples
+num_str = "100"
+num_int = int(num_str)       # Convert string to integer
+
+pi_int = int(3.1415)         # Truncates to 3
+bool_val = bool(1)           # Converts to True
+str_val = str(150.5)         # Converts to "150.5"
+
+# The input() function always returns a string, so casting is required:
+# age = int(input("Enter your age: "))
+
+# Truthy and Falsy
+print(bool(""))  # False (Empty strings are falsy)
+print(bool(" ")) # True (Contains a space)
+print(bool(0))   # False
+print(bool([]))  # False (Empty lists are falsy)</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-cond-if">
+                        <h2 class="fw-bold mb-3">If...Elif...Else & Ternary Operator</h2>
+                        <p class="text-secondary">Conditional statements evaluate boolean logic to control program flow.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Standard Flow</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>score = 85
+
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+else:
+    print("Grade: C or below")</code></pre>
+
+                            <h5 class="fw-bold">Logical Operators: `and`, `or`, `not`</h5>
+                            <p>Python uses plain English keywords rather than symbols like <code>&&</code> or <code>||</code>.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>age = 25
+has_license = True
+
+if age >= 18 and has_license:
+    print("You can drive.")
+    
+if not False:
+    print("This will execute.")</code></pre>
+                            
+                            <h5 class="fw-bold">The Ternary Operator (Conditional Expressions)</h5>
+                            <p>You can write an if-else block on a single line for simple variable assignments.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>status_code = 200
+# Syntax: [value_if_true] if [condition] else [value_if_false]
+message = "Success" if status_code == 200 else "Error"
+print(message) # "Success"</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-cond-match">
+                        <h2 class="fw-bold mb-3">Match-Case (Structural Pattern Matching)</h2>
+                        <p class="text-secondary">Introduced in Python 3.10, Structural Pattern Matching is far more powerful than a simple switch statement; it can match structures, types, and unpack data.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Basic Usage</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>command = "start"
+
+match command:
+    case "start":
+        print("Starting engine...")
+    case "stop":
+        print("Stopping engine...")
+    case _:
+        print("Unknown command") # The underscore acts as the default case</code></pre>
+
+                            <h5 class="fw-bold">Advanced: Pattern Unpacking</h5>
+                            <p>You can match sequences (like lists) and extract variables dynamically!</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>user_data = ["admin", "john_doe", "john@example.com"]
+
+match user_data:
+    case ["admin", username, email]:
+        print(f"Admin detected! Welcome {username}, sending email to {email}.")
+    case ["guest", username]:
+        print(f"Welcome guest {username}.")
+    case _:
+        print("Invalid user structure.")</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-iter-loops">
+                        <h2 class="fw-bold mb-3">Loops (For, While) & The Enumerate Function</h2>
+                        <p class="text-secondary">Loops allow you to iterate over sequences. Python's <code>for</code> loop is essentially a "for-each" loop from other languages.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">The `while` Loop</h5>
+                            <p>Executes as long as a condition remains true.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>count = 3
+while count > 0:
+    print(f"Countdown: {count}")
+    count -= 1</code></pre>
+
+                            <h5 class="fw-bold">The `for` Loop</h5>
+                            <p>Iterates over items of any sequence (a list, string, dictionary, etc.).</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code># Iterating over a string
+for char in "Python":
+    print(char, end="-") # Output: P-y-t-h-o-n-
+
+# Using range(start, stop, step)
+for i in range(0, 10, 2):
+    print(i) # Output: 0, 2, 4, 6, 8</code></pre>
+
+                            <h5 class="fw-bold">The `enumerate()` Function</h5>
+                            <p>Often, you need both the item and its index. <code>enumerate()</code> is the Pythonic way to do this.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>fruits = ["apple", "banana", "cherry"]
+for index, fruit in enumerate(fruits):
+    print(f"Index {index} is {fruit}")</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-iter-break">
+                        <h2 class="fw-bold mb-3">Break, Continue, and `for-else`</h2>
+                        <p class="text-secondary">Control loop execution flow using these keywords.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">`break` and `continue`</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>for num in range(10):
+    if num % 2 == 0:
+        continue # Skip even numbers
+    if num == 7:
+        break    # Stop the loop completely at 7
+    print(num)   # Output: 1, 3, 5</code></pre>
+
+                            <h5 class="fw-bold">The Unique `for...else` Construct</h5>
+                            <p>Python has a unique feature where you can attach an <code>else</code> block to a loop. The <code>else</code> block executes <strong>ONLY IF</strong> the loop finishes naturally (i.e., it was NOT terminated by a <code>break</code> statement).</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>search_target = "Zebra"
+animals = ["Cat", "Dog", "Bird"]
+
+for animal in animals:
+    if animal == search_target:
+        print("Target found!")
+        break
+else:
+    # This executes because the loop finished without hitting 'break'
+    print("Target was never found in the list.")</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-ds-lists">
+                        <h2 class="fw-bold mb-3">Lists in Depth</h2>
+                        <p class="text-secondary">Lists are dynamic arrays. They are mutable, ordered, and can contain mixed data types.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Advanced List Operations</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+print(matrix[1][2]) # Output: 6
+
+numbers = [10, 20, 30]
+numbers.extend([40, 50]) # Adds elements from another iterable
+numbers.insert(1, 15)    # Inserts 15 at index 1
+
+popped_item = numbers.pop() # Removes and returns the last item</code></pre>
+
+                            <h5 class="fw-bold">List Comprehensions</h5>
+                            <p>A concise way to create lists. Syntax: <code>[expression for item in iterable if condition]</code></p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>squares = [x**2 for x in range(10)]
+# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+evens = [x for x in range(20) if x % 2 == 0]</code></pre>
+
+                            <h5 class="fw-bold">Custom Sorting</h5>
+                            <p>You can sort lists of complex objects using the <code>key</code> parameter.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>words = ["banana", "pie", "Washington", "book"]
+# Sort by length of the string
+words.sort(key=len)
+print(words) # ['pie', 'book', 'banana', 'Washington']</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-ds-tuples">
+                        <h2 class="fw-bold mb-3">Tuples (Immutable Sequences)</h2>
+                        <p class="text-secondary">Tuples are identical to lists, but they cannot be changed after creation (immutable). This makes them faster and memory efficient.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Creating and Packing</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code># Parentheses are optional, the comma makes the tuple!
+point = 10, 20
+singleton = (5,) # Note the trailing comma for a single-element tuple
+
+print(type(point)) # &lt;class 'tuple'&gt;</code></pre>
+
+                            <h5 class="fw-bold">Tuple Unpacking</h5>
+                            <p>You can extract variables directly from a tuple. You can also use the <code>*</code> operator to grab remaining elements.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>record = ("Alice", 25, "Engineer", "New York", "USA")
+
+name, age, *rest_of_data = record
+
+print(name)         # "Alice"
+print(rest_of_data) # ["Engineer", "New York", "USA"] (Notice it packs into a list)</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-ds-dicts">
+                        <h2 class="fw-bold mb-3">Dictionaries in Depth</h2>
+                        <p class="text-secondary">Dictionaries (Hash Maps) store data in key-value pairs. As of Python 3.7, they maintain insertion order.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Safe Access and Default Values</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>user = {"username": "admin", "id": 101}
+
+# print(user["email"]) # KeyError!
+print(user.get("email")) # Returns None, prevents crash
+print(user.get("email", "Unknown")) # Returns "Unknown"
+
+# setdefault adds the key if it doesn't exist
+user.setdefault("role", "guest")</code></pre>
+
+                            <h5 class="fw-bold">Dictionary Comprehensions</h5>
+                            <p>Like list comprehensions, but for dictionaries.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>squares_dict = {x: x**2 for x in range(5)}
+# {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}</code></pre>
+
+                            <h5 class="fw-bold">Merging Dictionaries (Python 3.9+)</h5>
+                            <p>Use the union operator <code>|</code> to merge dictionaries effortlessly.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>dict1 = {"a": 1, "b": 2}
+dict2 = {"b": 3, "c": 4}
+
+merged = dict1 | dict2
+print(merged) # {'a': 1, 'b': 3, 'c': 4}  (dict2 overwrites overlapping keys)</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-ds-sets">
+                        <h2 class="fw-bold mb-3">Sets & Mathematical Operations</h2>
+                        <p class="text-secondary">Sets are collections of unique elements. They are highly optimized for checking membership (O(1) time complexity).</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Removing Duplicates</h5>
+                            <p>The fastest way to remove duplicates from a list is to cast it to a set.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>raw_data = [1, 2, 2, 3, 3, 3, 4]
+clean_data = list(set(raw_data))
+# [1, 2, 3, 4]</code></pre>
+
+                            <h5 class="fw-bold">Set Operations</h5>
+                            <p>Sets support mathematical operations like Union, Intersection, and Difference.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>engineers = {"Alice", "Bob", "Charlie"}
+managers = {"Charlie", "David"}
+
+# Union (All unique people)
+print(engineers | managers) # {'Bob', 'Alice', 'David', 'Charlie'}
+
+# Intersection (Who is BOTH an engineer and a manager?)
+print(engineers & managers) # {'Charlie'}
+
+# Difference (Engineers who are NOT managers)
+print(engineers - managers) # {'Bob', 'Alice'}
+
+# Symmetric Difference (People who are one or the other, but NOT both)
+print(engineers ^ managers) # {'Bob', 'Alice', 'David'}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-func-def">
+                        <h2 class="fw-bold mb-3">Functions: *args and **kwargs</h2>
+                        <p class="text-secondary">Functions are first-class citizens in Python. You can pass them as arguments, return them from other functions, and assign them to variables.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Default Arguments & Type Hinting</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code># Python 3.5+ introduced Type Hinting for better readability
+def greet(name: str, times: int = 1) -> None:
+    for _ in range(times):
+        print(f"Hello, {name}!")
+
+greet("Alice", 2)</code></pre>
+
+                            <h5 class="fw-bold">Arbitrary Arguments: `*args`</h5>
+                            <p>Use <code>*args</code> when you do not know how many positional arguments will be passed. It packs them into a tuple.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>def sum_all(*args):
+    total = 0
+    for num in args:
+        total += num
+    return total
+
+print(sum_all(1, 2, 3, 4, 5)) # 15</code></pre>
+
+                            <h5 class="fw-bold">Arbitrary Keyword Arguments: `**kwargs`</h5>
+                            <p>Use <code>**kwargs</code> to handle an arbitrary number of named/keyword arguments. It packs them into a dictionary.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>def build_profile(first_name, last_name, **kwargs):
+    profile = {"first": first_name, "last": last_name}
+    profile.update(kwargs) # Merges the kwargs dictionary
+    return profile
+
+user = build_profile("Albert", "Einstein", field="Physics", nobel_prize=True)
+print(user) # {'first': 'Albert', 'last': 'Einstein', 'field': 'Physics', 'nobel_prize': True}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-func-lambda">
+                        <h2 class="fw-bold mb-3">Lambda Functions & Higher-Order Functions</h2>
+                        <p class="text-secondary">Lambda functions are anonymous, inline functions. They are most powerful when combined with functions that take other functions as arguments (Higher-Order Functions).</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Map, Filter, and Reduce</h5>
+                            <ul class="mb-3">
+                                <li><code>map()</code>: Applies a function to all items in an input list.</li>
+                                <li><code>filter()</code>: Creates a list of elements for which a function returns True.</li>
+                                <li><code>reduce()</code>: Applies a rolling computation to sequential pairs of values in a list.</li>
+                            </ul>
+                            
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>numbers = [1, 2, 3, 4, 5]
+
+# map: Square every number
+squared = list(map(lambda x: x**2, numbers))
+# [1, 4, 9, 16, 25]
+
+# filter: Keep only even numbers
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+# [2, 4]
+
+# reduce (requires import): Multiply all numbers together
+from functools import reduce
+product = reduce(lambda x, y: x * y, numbers)
+# 120 (1 * 2 * 3 * 4 * 5)</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-func-scope">
+                        <h2 class="fw-bold mb-3">Scope Rules (LEGB) & Closures</h2>
+                        <p class="text-secondary">Variable scope in Python follows the LEGB rule: <strong>L</strong>ocal, <strong>E</strong>nclosing, <strong>G</strong>lobal, <strong>B</strong>uilt-in.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Global and Nonlocal Keywords</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>counter = 0
+
+def increment():
+    global counter  # Declares we are modifying the global 'counter'
+    counter += 1
+
+increment()
+print(counter) # 1</code></pre>
+
+                            <h5 class="fw-bold">Closures</h5>
+                            <p>A closure occurs when a nested function captures and remembers the variables from its enclosing scope, even after the outer function has finished executing.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>def multiplier_factory(factor):
+    # This inner function remembers 'factor'
+    def inner_multiplier(number):
+        return number * factor
+    return inner_multiplier
+
+# Generate specific multiplier functions
+double = multiplier_factory(2)
+triple = multiplier_factory(3)
+
+print(double(5)) # 10
+print(triple(5)) # 15</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-func-modules">
+                        <h2 class="fw-bold mb-3">Modules & The `__name__` Variable</h2>
+                        <p class="text-secondary">Python files are called modules. You can organize code logically by grouping related functions/classes into files.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Importing Strategies</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>import sys                  # Imports the whole module
+from math import pi, sqrt   # Imports specific functions/variables
+import numpy as np          # Imports and aliases a module</code></pre>
+
+                            <h5 class="fw-bold">The `if __name__ == '__main__':` Guard</h5>
+                            <p>When the Python interpreter reads a source file, it sets the special <code>__name__</code> variable. If the file is being run directly, <code>__name__</code> is set to <code>"__main__"</code>. If the file is imported into another script, <code>__name__</code> is set to the module's name.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>def run_tests():
+    print("Testing functionality...")
+
+# This code block only executes if you run THIS script directly.
+# It will NOT execute if another script imports this file.
+if __name__ == '__main__':
+    print("Script started directly.")
+    run_tests()</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-oop-classes">
+                        <h2 class="fw-bold mb-3">Classes, Objects, and Magic (Dunder) Methods</h2>
+                        <p class="text-secondary">Everything in Python is an object. Classes are blueprints for creating objects.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">The Blueprint & Constructor</h5>
+                            <p>The <code>__init__</code> method is the constructor. The <code>self</code> parameter is a reference to the current instance of the class.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>class Book:
+    def __init__(self, title, pages):
+        self.title = title
+        self.pages = pages
+        
+    def read(self):
+        print(f"Reading {self.title}...")</code></pre>
+
+                            <h5 class="fw-bold">Magic (Dunder) Methods</h5>
+                            <p>Methods with double underscores (e.g., <code>__str__</code>, <code>__add__</code>) allow you to override standard Python operators and behaviors for your custom classes!</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        
+    # Defines what is printed when you print(object)
+    def __str__(self):
+        return f"Vector({self.x}, {self.y})"
+        
+    # Allows the use of the '+' operator between Vector objects!
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+v1 = Vector(2, 4)
+v2 = Vector(3, 1)
+
+print(v1)      # Output: Vector(2, 4)
+print(v1 + v2) # Output: Vector(5, 5)</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-oop-inheritance">
+                        <h2 class="fw-bold mb-3">Inheritance & MRO</h2>
+                        <p class="text-secondary">Inheritance promotes code reuse. Python supports both single and multiple inheritance.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Using `super()`</h5>
+                            <p>The <code>super()</code> function gives you access to methods in a superclass from the subclass. It is mostly used to extend the functionality of the parent's constructor.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+class Developer(Employee):
+    def __init__(self, name, salary, language):
+        # Call the parent constructor
+        super().__init__(name, salary)
+        # Add new property
+        self.language = language
+
+dev = Developer("Alice", 90000, "Python")</code></pre>
+
+                            <h5 class="fw-bold">Multiple Inheritance & MRO</h5>
+                            <p>If a class inherits from multiple parents, Python uses the <strong>Method Resolution Order (MRO)</strong> to determine which parent's method to call first.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>class A: pass
+class B: pass
+class C(A, B): pass
+
+# You can view the order Python searches for methods:
+print(C.mro()) 
+# [&lt;class '__main__.C'&gt;, &lt;class '__main__.A'&gt;, &lt;class '__main__.B'&gt;, &lt;class 'object'&gt;]</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-oop-polymorphism">
+                        <h2 class="fw-bold mb-3">Polymorphism & Class Methods</h2>
+                        <p class="text-secondary">Polymorphism allows methods to do different things based on the object it is acting upon.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Duck Typing</h5>
+                            <p>"If it walks like a duck and quacks like a duck, it must be a duck." Python doesn't care about the object's strict class, only that it has the required methods.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>class AudioPlayer:
+    def play(self): print("Playing mp3...")
+
+class VideoPlayer:
+    def play(self): print("Playing mp4...")
+
+def start_media(device):
+    # Python doesn't care if 'device' is an Audio or Video player,
+    # as long as it has a play() method!
+    device.play()
+
+start_media(AudioPlayer())
+start_media(VideoPlayer())</code></pre>
+
+                            <h5 class="fw-bold">`@classmethod` and `@staticmethod`</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>class MathUtils:
+    @staticmethod
+    def add(x, y):
+        # A utility function that doesn't need 'self'
+        return x + y
+        
+class Date:
+    def __init__(self, year, month, day):
+        self.year, self.month, self.day = year, month, day
+        
+    @classmethod
+    def from_string(cls, date_str):
+        # A class method takes 'cls' instead of 'self'
+        # Often used as alternate constructors
+        year, month, day = map(int, date_str.split('-'))
+        return cls(year, month, day)
+
+today = Date.from_string("2025-10-25")</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-oop-encap">
+                        <h2 class="fw-bold mb-3">Encapsulation & Properties</h2>
+                        <p class="text-secondary">Python uses underscores to indicate access restrictions, and the `@property` decorator to build getters and setters.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Name Mangling (Private Variables)</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>class Vault:
+    def __init__(self):
+        self._protected = "Please don't touch"
+        self.__private = "Super Secret" # Name mangled
+
+v = Vault()
+print(v._protected) # Accessible, but bad practice
+# print(v.__private) # AttributeError!
+print(v._Vault__private) # How it's internally renamed (mangled)</code></pre>
+
+                            <h5 class="fw-bold">The `@property` Decorator</h5>
+                            <p>Allows you to define methods that can be accessed like attributes, giving you control over getting and setting data.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>class Temperature:
+    def __init__(self, celsius):
+        self._celsius = celsius
+        
+    @property
+    def fahrenheit(self):
+        # Acts like a getter
+        return (self._celsius * 9/5) + 32
+        
+    @fahrenheit.setter
+    def fahrenheit(self, value):
+        # Validates and sets data
+        if value < -459.67:
+            raise ValueError("Temperature below absolute zero!")
+        self._celsius = (value - 32) * 5/9
+
+t = Temperature(0)
+print(t.fahrenheit) # 32.0 (Accessed like a property, not a method!)
+t.fahrenheit = 212  # Calls the setter
+print(t._celsius)   # 100.0</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-adv-exceptions">
+                        <h2 class="fw-bold mb-3">Exception Handling & Custom Exceptions</h2>
+                        <p class="text-secondary">Robust programs anticipate failures. Python uses <code>try/except</code> blocks to gracefully handle runtime errors instead of crashing.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">The `try-except-else-finally` Block</h5>
+                            <ul class="mb-3">
+                                <li><code>try</code>: Code that might fail.</li>
+                                <li><code>except</code>: Code that runs if an exception occurs.</li>
+                                <li><code>else</code>: Code that runs <strong>only if NO</strong> exception occurs.</li>
+                                <li><code>finally</code>: Code that runs <strong>always</strong> (used for cleanup).</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>try:
+    result = 10 / 2
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+except Exception as e:
+    print(f"Generic error caught: {e}")
+else:
+    print(f"Success! Result is {result}")
+finally:
+    print("Execution complete.")</code></pre>
+
+                            <h5 class="fw-bold">Raising Custom Exceptions</h5>
+                            <p>You can create your own exception hierarchy by inheriting from the base <code>Exception</code> class.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>class InvalidAgeError(Exception):
+    """Raised when an age is illogical."""
+    pass
+
+def register_user(age):
+    if age < 0 or age > 150:
+        raise InvalidAgeError(f"Age {age} is invalid.")
+    print("Registered.")
+
+try:
+    register_user(200)
+except InvalidAgeError as e:
+    print(e) # Output: Age 200 is invalid.</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-adv-file">
+                        <h2 class="fw-bold mb-3">File Handling & Context Managers</h2>
+                        <p class="text-secondary">Python handles file I/O safely via Context Managers (the <code>with</code> statement), ensuring resources are released.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Reading and Writing Files</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code># Writing to a file (overwrites existing content)
+with open('data.txt', 'w') as file:
+    file.write("Line 1\n")
+    file.write("Line 2\n")
+
+# Reading from a file line-by-line
+with open('data.txt', 'r') as file:
+    for line in file:
+        print(line.strip()) # strip() removes the \n</code></pre>
+
+                            <h5 class="fw-bold">Working with JSON</h5>
+                            <p>JSON is the standard for web data. Python's built-in <code>json</code> module makes serialization easy.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>import json
+
+user = {"name": "Alice", "skills": ["Python", "AWS"]}
+
+# Write dictionary to a JSON file
+with open('user.json', 'w') as f:
+    json.dump(user, f, indent=4)
+
+# Read JSON file back into a dictionary
+with open('user.json', 'r') as f:
+    data = json.load(f)
+    print(data["skills"]) # ['Python', 'AWS']</code></pre>
+
+                            <h5 class="fw-bold">Custom Context Managers</h5>
+                            <p>You can make your own objects compatible with the <code>with</code> statement using <code>__enter__</code> and <code>__exit__</code>.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>class Timer:
+    import time
+    def __enter__(self):
+        self.start = self.time.time()
+        return self
+        
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.end = self.time.time()
+        print(f"Elapsed: {self.end - self.start:.4f} seconds")
+
+# Usage:
+with Timer():
+    sum([x**2 for x in range(1000000)])</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-adv-iterators">
+                        <h2 class="fw-bold mb-3">Iterators, Generators & `yield`</h2>
+                        <p class="text-secondary">Generators allow you to lazily produce a sequence of values over time, rather than computing them all at once and storing them in memory.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">The `yield` Keyword</h5>
+                            <p>When a function contains <code>yield</code>, it becomes a generator. Instead of returning a value and destroying local variables, it yields a value and <strong>pauses</strong> execution, saving its state for the next call.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>def countdown(num):
+    print("Starting countdown...")
+    while num > 0:
+        yield num  # Pauses here, returns num
+        num -= 1
+    print("Blastoff!")
+
+# The function does not run until iterated!
+for n in countdown(3):
+    print(n)
+# Output:
+# Starting countdown...
+# 3
+# 2
+# 1
+# Blastoff!</code></pre>
+
+                            <h5 class="fw-bold">Generator Expressions</h5>
+                            <p>Similar to list comprehensions, but they use parentheses <code>()</code> and are incredibly memory efficient because they compute values on-the-fly.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>import sys
+
+# List Comprehension: Computes all 1 million numbers and stores in RAM
+list_comp = [x**2 for x in range(1000000)]
+print(sys.getsizeof(list_comp)) # ~8,000,000 bytes
+
+# Generator Expression: Stores only the formula, not the data
+gen_expr = (x**2 for x in range(1000000))
+print(sys.getsizeof(gen_expr))  # ~104 bytes!!!
+
+# To use it:
+# print(next(gen_expr)) # 0
+# print(next(gen_expr)) # 1</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="py-adv-decorators">
+                        <h2 class="fw-bold mb-3">Advanced Decorators</h2>
+                        <p class="text-secondary">Decorators dynamically alter the functionality of a function, method, or class without having to directly use subclasses or change the source code of the function being decorated.</p>
+                        
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Creating a Basic Decorator</h5>
+                            <p>A decorator is a function that takes another function and extends its behavior.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>def logger(func):
+    def wrapper(*args, **kwargs):
+        print(f"Calling function: {func.__name__}")
+        result = func(*args, **kwargs)
+        print(f"Function {func.__name__} finished executing.")
+        return result
+    return wrapper
+
+@logger
+def add(x, y):
+    return x + y
+
+add(5, 7)</code></pre>
+
+                            <h5 class="fw-bold">Decorators with Arguments</h5>
+                            <p>If you want to pass arguments to a decorator, you need three levels of nested functions!</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>def repeat(num_times):
+    def decorator_repeat(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(num_times):
+                result = func(*args, **kwargs)
+            return result
+        return wrapper
+    return decorator_repeat
+
+@repeat(num_times=3)
+def greet(name):
+    print(f"Hello {name}")
+
+greet("World")
+# Output:
+# Hello World
+# Hello World
+# Hello World</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="d-flex justify-content-between align-items-center mt-5">
+                        <!-- Left Placeholder (used to push "Next" to the right if "Back" is hidden) -->
+                        <div id="spacerBtn" style="width: 130px; display: none;"></div>
+
+                        <button class="btn btn-outline-secondary px-4 py-2" id="prevBtn" style="display: none;">
+                            <i class="fa-solid fa-arrow-left me-2"></i> Back
+                        </button>
+                        <button class="btn btn-primary px-4 py-2 text-white shadow-sm" id="nextBtn">
+                            Next <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- DYNAMIC FOOTER -->
+    <div id="footer-placeholder"></div>
+    <!-- ========== -->
+
+    <!-- Bootstrap & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components-loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            initializeCourseNavigation();
+
+            function initializeCourseNavigation() {
+                const links = Array.from(document.querySelectorAll("#courseSidebarContainer .nav-link"));
+                const sections = document.querySelectorAll(".content-section");
+                const prevBtn = document.getElementById("prevBtn");
+                const nextBtn = document.getElementById("nextBtn");
+                const spacerBtn = document.getElementById("spacerBtn");
+
+                let currentIndex = 0;
+
+                function updateView(newIndex) {
+                    if (newIndex < 0 || newIndex >= links.length) return;
+
+                    // Update active link
+                    links.forEach(l => l.classList.remove("active"));
+                    links[newIndex].classList.add("active");
+
+                    // Ensure the accordion for this link is open
+                    const accordionCollapse = links[newIndex].closest('.accordion-collapse');
+                    if (accordionCollapse && !accordionCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(accordionCollapse, { toggle: false });
+                        bsCollapse.show();
+                    }
+
+                    // Update contents
+                    sections.forEach(s => s.classList.remove("active"));
+                    const targetId = links[newIndex].getAttribute("data-target");
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        targetEl.classList.add("active");
+                    }
+
+                    currentIndex = newIndex;
+
+                    // Update Buttons
+                    if (currentIndex === 0) {
+                        prevBtn.style.display = "none";
+                        spacerBtn.style.display = "block";
+                    } else {
+                        prevBtn.style.display = "inline-block";
+                        spacerBtn.style.display = "none";
+                    }
+
+                    if (currentIndex === links.length - 1) {
+                        nextBtn.style.display = "none";
+                    } else {
+                        nextBtn.style.display = "inline-block";
+                    }
+
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                // Attach click to sidebar links
+                links.forEach((link, index) => {
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        updateView(index);
+                    });
+                });
+
+                // Attach click to Next/Back
+                prevBtn.addEventListener("click", () => updateView(currentIndex - 1));
+                nextBtn.addEventListener("click", () => updateView(currentIndex + 1));
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>SQL Tutorial - IT Wallah India</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/sqlTutorial.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- start Cursor Dot with mouse arrow -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <!-- end Cursor Dot with mouse arrow-->
+
+        <!-- STICKY WRAPPER: Fixed at the top with dynamic component placeholders -->
+    <div class="sticky-top-wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navbar-placeholder"></div>
+    </div>
+    <!-- STICKY WRAPPER END -->
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light border-bottom text-center mb-4">
+        <div class="container">
+            <h1 class="fw-bold mb-2">SQL Tutorial</h1>
+            <p class="text-white fs-5">Master Relational Databases, Queries, and Advanced SQL Concepts!</p>
+        </div>
+    </section>
+
+    <!-- Main Course Container -->
+    <div class="container-fluid mb-5 px-3 px-lg-5">
+        <div class="site-content">
+            <div class="row align-items-start">
+
+                <!-- Left Sidebar -->
+                <div class="col-12 col-md-4 col-lg-3 mb-4 mb-md-0 position-relative z-1" id="courseSidebarContainer">
+                    <aside class="course-sidebar p-3 border-end h-100 shadow-sm rounded-3">
+                        <h4 class="fw-bold mb-4 ps-2">SQL Tutorial</h4>
+
+                        <div class="accordion accordion-flush" id="courseAccordion">
+
+                            <!-- Introduction -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingIntro">
+                                    <button class="accordion-button bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntro"
+                                        aria-expanded="true" aria-controls="collapseIntro">
+                                        Introduction to SQL
+                                    </button>
+                                </h2>
+                                <div id="collapseIntro" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingIntro" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary active" data-target="sql-intro-overview">What is SQL?</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-intro-rdbms">RDBMS Basics</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-intro-datatypes">Data Types</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- DDL -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingDDL">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseDDL"
+                                        aria-expanded="false" aria-controls="collapseDDL">
+                                        DDL Commands
+                                    </button>
+                                </h2>
+                                <div id="collapseDDL" class="accordion-collapse collapse" aria-labelledby="headingDDL" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-ddl-create">CREATE Database & Table</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-ddl-alter">ALTER Table</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-ddl-drop">DROP & TRUNCATE</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- DML -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingDML">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseDML"
+                                        aria-expanded="false" aria-controls="collapseDML">
+                                        DML Commands
+                                    </button>
+                                </h2>
+                                <div id="collapseDML" class="accordion-collapse collapse" aria-labelledby="headingDML" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-dml-insert">INSERT Data</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-dml-update">UPDATE Data</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-dml-delete">DELETE Data</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- DQL & Filtering -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingDQL">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseDQL"
+                                        aria-expanded="false" aria-controls="collapseDQL">
+                                        DQL & Filtering
+                                    </button>
+                                </h2>
+                                <div id="collapseDQL" class="accordion-collapse collapse" aria-labelledby="headingDQL" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-dql-select">SELECT & DISTINCT</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-dql-where">WHERE Clause</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-dql-operators">AND, OR, NOT, IN, LIKE</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-dql-orderby">ORDER BY</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Functions & Grouping -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingFunctions">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFunctions"
+                                        aria-expanded="false" aria-controls="collapseFunctions">
+                                        Functions & Grouping
+                                    </button>
+                                </h2>
+                                <div id="collapseFunctions" class="accordion-collapse collapse" aria-labelledby="headingFunctions" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-func-aggregate">Aggregate Functions</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-func-groupby">GROUP BY</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-func-having">HAVING Clause</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Joins -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingJoins">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseJoins"
+                                        aria-expanded="false" aria-controls="collapseJoins">
+                                        SQL Joins
+                                    </button>
+                                </h2>
+                                <div id="collapseJoins" class="accordion-collapse collapse" aria-labelledby="headingJoins" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-joins-inner">INNER JOIN</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-joins-outer">LEFT, RIGHT, FULL JOIN</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-joins-self">SELF JOIN & UNION</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Advanced SQL -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingAdv">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdv"
+                                        aria-expanded="false" aria-controls="collapseAdv">
+                                        Advanced SQL
+                                    </button>
+                                </h2>
+                                <div id="collapseAdv" class="accordion-collapse collapse" aria-labelledby="headingAdv" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-adv-subqueries">Subqueries</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-adv-constraints">Constraints (PK, FK)</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="sql-adv-views">Views & Indexes</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Right Content Area -->
+                <main class="col-12 col-md-8 col-lg-9 position-relative z-0" id="mainCourseContent">
+
+                    <!-- Content Sections -->
+                    <div class="content-section active" id="sql-intro-overview">
+                        <div class="java-hero text-center mb-4 shadow-sm">
+                            <h1 class="fw-bold" style="font-size: 3rem; color: #333;">SQL Tutorial</h1>
+                            <p class="text-secondary mt-3 mx-auto" style="max-width: 650px; font-size: 1.1rem; line-height: 1.6;">
+                                SQL (Structured Query Language) is the standard language for dealing with Relational Databases.
+                                It can be used to insert, search, update, and delete database records.
+                            </p>
+                        </div>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-4">
+                            <h4 class="fw-bold mb-3">Get Started</h4>
+                            <p class="mb-0 text-black">Welcome to the SQL Tutorial! Navigate through the chapters on the left to master SQL from the ground up.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-intro-rdbms">
+                        <h2 class="fw-bold text-dark mb-4">RDBMS Basics</h2>
+                        <p class="text-secondary">RDBMS stands for Relational Database Management System. It is the basis for SQL, and for all modern database systems such as MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.</p>
+                        <div class="card shadow-sm border-0 p-4 mb-3">
+                            <ul class="mb-0">
+                                <li class="mb-2"><strong>Table:</strong> The data in RDBMS is stored in database objects called tables. A table is a collection of related data entries and it consists of columns and rows.</li>
+                                <li class="mb-2"><strong>Row:</strong> A row (or record) represents a single, implicitly structured data item in a table.</li>
+                                <li><strong>Column:</strong> A column is a set of data values of a particular simple type, one value for each row of the database.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-intro-datatypes">
+                        <h2 class="fw-bold text-dark mb-4">SQL Data Types</h2>
+                        <p class="text-secondary">Each column in a database table is required to have a name and a data type.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <table class="table table-bordered mb-4">
+                                <thead><tr><th>Data Type</th><th>Description</th></tr></thead>
+                                <tbody>
+                                    <tr><td><code>INT</code></td><td>A normal-sized integer that can be signed or unsigned.</td></tr>
+                                    <tr><td><code>VARCHAR(size)</code></td><td>A variable-length string. The maximum size is specified in parentheses.</td></tr>
+                                    <tr><td><code>TEXT</code></td><td>Holds a string with a maximum length of 65,535 bytes.</td></tr>
+                                    <tr><td><code>DATE</code></td><td>A date format YYYY-MM-DD.</td></tr>
+                                    <tr><td><code>DECIMAL(size, d)</code></td><td>An exact fixed-point number. Size is total digits, d is number of decimals.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-ddl-create">
+                        <h2 class="fw-bold mb-3">CREATE Database & Table</h2>
+                        <p class="text-secondary">The <code>CREATE</code> statement is used to create a new database or table.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">CREATE DATABASE</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>CREATE DATABASE myDB;</code></pre>
+                            
+                            <h5 class="fw-bold">CREATE TABLE</h5>
+                            <p>To create a table, you specify the table name along with the columns and their data types.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    BirthDate DATE,
+    Salary DECIMAL(10, 2)
+);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-ddl-alter">
+                        <h2 class="fw-bold mb-3">ALTER Table</h2>
+                        <p class="text-secondary">The <code>ALTER TABLE</code> statement is used to add, delete, or modify columns in an existing table.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Add a Column</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>ALTER TABLE Employees
+ADD Email VARCHAR(100);</code></pre>
+                            
+                            <h5 class="fw-bold">Drop a Column</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>ALTER TABLE Employees
+DROP COLUMN BirthDate;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-ddl-drop">
+                        <h2 class="fw-bold mb-3">DROP & TRUNCATE</h2>
+                        <p class="text-secondary">Used to delete entire tables or just the data inside them.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">DROP TABLE</h5>
+                            <p>Deletes the table definition and all data, indexes, triggers, constraints, and permission specifications for that table.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>DROP TABLE Employees;</code></pre>
+                            
+                            <h5 class="fw-bold">TRUNCATE TABLE</h5>
+                            <p>Deletes the data inside a table, but not the table itself.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>TRUNCATE TABLE Employees;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-dml-insert">
+                        <h2 class="fw-bold mb-3">INSERT INTO Statement</h2>
+                        <p class="text-secondary">The <code>INSERT INTO</code> statement is used to insert new records in a table.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Syntax specifying columns:</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>INSERT INTO Employees (EmployeeID, FirstName, LastName)
+VALUES (1, 'John', 'Doe');</code></pre>
+                            
+                            <h5 class="fw-bold">Syntax without specifying columns (values must match table order):</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>INSERT INTO Employees
+VALUES (2, 'Jane', 'Smith', 'jane@example.com');</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-dml-update">
+                        <h2 class="fw-bold mb-3">UPDATE Statement</h2>
+                        <p class="text-secondary">The <code>UPDATE</code> statement is used to modify the existing records in a table.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <div class="alert alert-warning">
+                                <strong>Warning!</strong> Be careful when updating records. If you omit the <code>WHERE</code> clause, ALL records will be updated!
+                            </div>
+                            <h5 class="fw-bold">Update a Single Record</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>UPDATE Employees
+SET LastName = 'Johnson', Email = 'johnson@example.com'
+WHERE EmployeeID = 1;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-dml-delete">
+                        <h2 class="fw-bold mb-3">DELETE Statement</h2>
+                        <p class="text-secondary">The <code>DELETE</code> statement is used to delete existing records in a table.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <div class="alert alert-danger">
+                                <strong>Danger!</strong> If you omit the <code>WHERE</code> clause, all records in the table will be deleted.
+                            </div>
+                            <h5 class="fw-bold">Delete a specific record</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>DELETE FROM Employees
+WHERE EmployeeID = 1;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-dql-select">
+                        <h2 class="fw-bold mb-3">SELECT & DISTINCT</h2>
+                        <p class="text-secondary">The <code>SELECT</code> statement is used to select data from a database.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Select All Columns</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT * FROM Employees;</code></pre>
+                            
+                            <h5 class="fw-bold">Select Specific Columns</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT FirstName, LastName FROM Employees;</code></pre>
+
+                            <h5 class="fw-bold">SELECT DISTINCT</h5>
+                            <p>Returns only distinct (different) values.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT DISTINCT Department FROM Employees;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-dql-where">
+                        <h2 class="fw-bold mb-3">WHERE Clause</h2>
+                        <p class="text-secondary">The <code>WHERE</code> clause is used to filter records.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Filtering Numeric Data</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT * FROM Employees
+WHERE Salary > 50000;</code></pre>
+                            
+                            <h5 class="fw-bold">Filtering Text Data</h5>
+                            <p>SQL requires single quotes around text values.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT * FROM Employees
+WHERE LastName = 'Smith';</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-dql-operators">
+                        <h2 class="fw-bold mb-3">AND, OR, NOT, IN, LIKE</h2>
+                        <p class="text-secondary">Combine or enhance conditions using logical operators.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">AND / OR / NOT</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT * FROM Employees
+WHERE Department = 'Sales' AND Salary > 40000;</code></pre>
+
+                            <h5 class="fw-bold">IN Operator</h5>
+                            <p>Allows you to specify multiple values in a WHERE clause.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT * FROM Employees
+WHERE Department IN ('HR', 'IT', 'Sales');</code></pre>
+
+                            <h5 class="fw-bold">LIKE Operator</h5>
+                            <p>Used to search for a specified pattern in a column.</p>
+                            <ul class="mb-2">
+                                <li><code>%</code> - Represents zero, one, or multiple characters</li>
+                                <li><code>_</code> - Represents a single character</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT * FROM Employees
+WHERE FirstName LIKE 'A%'; -- Starts with A</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-dql-orderby">
+                        <h2 class="fw-bold mb-3">ORDER BY Clause</h2>
+                        <p class="text-secondary">The <code>ORDER BY</code> keyword is used to sort the result-set in ascending or descending order.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Ascending Sort (Default)</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT * FROM Employees
+ORDER BY LastName ASC;</code></pre>
+                            
+                            <h5 class="fw-bold">Descending Sort</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT * FROM Employees
+ORDER BY Salary DESC;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-func-aggregate">
+                        <h2 class="fw-bold mb-3">Aggregate Functions</h2>
+                        <p class="text-secondary">Aggregate functions perform a calculation on a set of values, and return a single value.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-3">
+                                <li><code>MIN()</code> - returns the smallest value within the selected column</li>
+                                <li><code>MAX()</code> - returns the largest value within the selected column</li>
+                                <li><code>COUNT()</code> - returns the number of rows in a set</li>
+                                <li><code>AVG()</code> - returns the average value of a numeric column</li>
+                                <li><code>SUM()</code> - returns the total sum of a numeric column</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT COUNT(EmployeeID) AS TotalEmployees,
+       AVG(Salary) AS AverageSalary
+FROM Employees;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-func-groupby">
+                        <h2 class="fw-bold mb-3">GROUP BY Statement</h2>
+                        <p class="text-secondary">The <code>GROUP BY</code> statement groups rows that have the same values into summary rows.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <p>It is often used with aggregate functions to group the result-set by one or more columns.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT Department, COUNT(EmployeeID) AS NumEmployees
+FROM Employees
+GROUP BY Department;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-func-having">
+                        <h2 class="fw-bold mb-3">HAVING Clause</h2>
+                        <p class="text-secondary">The <code>HAVING</code> clause was added to SQL because the <code>WHERE</code> keyword cannot be used with aggregate functions.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT Department, COUNT(EmployeeID) AS NumEmployees
+FROM Employees
+GROUP BY Department
+HAVING COUNT(EmployeeID) > 5;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-joins-inner">
+                        <h2 class="fw-bold mb-3">INNER JOIN</h2>
+                        <p class="text-secondary">A <code>JOIN</code> clause is used to combine rows from two or more tables, based on a related column between them.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">INNER JOIN</h5>
+                            <p>Returns records that have matching values in both tables.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-joins-outer">
+                        <h2 class="fw-bold mb-3">LEFT, RIGHT & FULL JOIN</h2>
+                        <p class="text-secondary">Outer joins include rows even if they do not have related records in the joined table.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">LEFT JOIN</h5>
+                            <p>Returns all records from the left table, and the matched records from the right table.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;</code></pre>
+
+                            <h5 class="fw-bold">RIGHT JOIN</h5>
+                            <p>Returns all records from the right table, and the matched records from the left table.</p>
+
+                            <h5 class="fw-bold">FULL OUTER JOIN</h5>
+                            <p>Returns all records when there is a match in either left or right table.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-joins-self">
+                        <h2 class="fw-bold mb-3">SELF JOIN & UNION</h2>
+                        <p class="text-secondary">Advanced ways to combine data.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">SELF JOIN</h5>
+                            <p>A regular join, but the table is joined with itself.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID
+AND A.City = B.City;</code></pre>
+
+                            <h5 class="fw-bold">UNION Operator</h5>
+                            <p>Used to combine the result-set of two or more SELECT statements.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-adv-subqueries">
+                        <h2 class="fw-bold mb-3">Subqueries</h2>
+                        <p class="text-secondary">A subquery is a query nested inside another query.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Example: Subquery in WHERE</h5>
+                            <p>Find employees earning more than the average salary.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT FirstName, Salary
+FROM Employees
+WHERE Salary > (SELECT AVG(Salary) FROM Employees);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-adv-constraints">
+                        <h2 class="fw-bold mb-3">SQL Constraints</h2>
+                        <p class="text-secondary">Constraints are used to specify rules for the data in a table.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-0">
+                                <li><code>NOT NULL</code> - Ensures that a column cannot have a NULL value.</li>
+                                <li><code>UNIQUE</code> - Ensures that all values in a column are different.</li>
+                                <li><code>PRIMARY KEY</code> - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table.</li>
+                                <li><code>FOREIGN KEY</code> - Prevents actions that would destroy links between tables.</li>
+                                <li><code>CHECK</code> - Ensures that the values in a column satisfies a specific condition.</li>
+                                <li><code>DEFAULT</code> - Sets a default value for a column if no value is specified.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="sql-adv-views">
+                        <h2 class="fw-bold mb-3">Views & Indexes</h2>
+                        <p class="text-secondary">Concepts for optimizing and organizing database access.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">CREATE VIEW</h5>
+                            <p>A view is a virtual table based on the result-set of an SQL statement.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>CREATE VIEW BrazilCustomers AS
+SELECT CustomerName, ContactName
+FROM Customers
+WHERE Country = 'Brazil';</code></pre>
+                            
+                            <h5 class="fw-bold">CREATE INDEX</h5>
+                            <p>Indexes are used to retrieve data from the database more quickly than otherwise.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>CREATE INDEX idx_lastname
+ON Employees (LastName);</code></pre>
+                        </div>
+                    </div>
+
+<!-- Navigation Pagination (Next/Back) -->
+                    <div class="d-flex justify-content-between mt-5 pt-4 border-top">
+                        <button class="btn btn-outline-secondary px-4 fw-semibold" id="prevBtn" style="display: none;">
+                            <i class="fa-solid fa-arrow-left me-2"></i> Back
+                        </button>
+                        <!-- Spacer if prev is hidden to align next button right -->
+                        <div id="spacerBtn" style="flex: 1;"></div>
+                        <button class="btn btn-primary px-4 fw-semibold shadow-sm" id="nextBtn">
+                            Next <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- DYNAMIC FOOTER -->
+    <div id="footer-placeholder"></div>
+    <!-- ========== -->
+
+    <!-- Bootstrap & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components-loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            initializeCourseNavigation();
+
+            function initializeCourseNavigation() {
+                const links = Array.from(document.querySelectorAll("#courseSidebarContainer .nav-link"));
+                const sections = document.querySelectorAll(".content-section");
+                const prevBtn = document.getElementById("prevBtn");
+                const nextBtn = document.getElementById("nextBtn");
+                const spacerBtn = document.getElementById("spacerBtn");
+
+                let currentIndex = 0;
+
+                function updateView(newIndex) {
+                    if (newIndex < 0 || newIndex >= links.length) return;
+
+                    // Update active link
+                    links.forEach(l => l.classList.remove("active"));
+                    links[newIndex].classList.add("active");
+
+                    // Ensure the accordion for this link is open
+                    const accordionCollapse = links[newIndex].closest('.accordion-collapse');
+                    if (accordionCollapse && !accordionCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(accordionCollapse, { toggle: false });
+                        bsCollapse.show();
+                    }
+
+                    // Update contents
+                    sections.forEach(s => s.classList.remove("active"));
+                    const targetId = links[newIndex].getAttribute("data-target");
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        targetEl.classList.add("active");
+                    }
+
+                    currentIndex = newIndex;
+
+                    // Update Buttons
+                    if (currentIndex === 0) {
+                        prevBtn.style.display = "none";
+                        spacerBtn.style.display = "block";
+                    } else {
+                        prevBtn.style.display = "inline-block";
+                        spacerBtn.style.display = "none";
+                    }
+
+                    if (currentIndex === links.length - 1) {
+                        nextBtn.style.display = "none";
+                    } else {
+                        nextBtn.style.display = "inline-block";
+                    }
+
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                // Attach click to sidebar links
+                links.forEach((link, index) => {
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        updateView(index);
+                    });
+                });
+
+                // Attach click to Next/Back
+                prevBtn.addEventListener("click", () => updateView(currentIndex - 1));
+                nextBtn.addEventListener("click", () => updateView(currentIndex + 1));
+            }
+        });
+    </script>
+</body>
+
+</html>

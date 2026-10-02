@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>MySQL Tutorial - IT Wallah India</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/mysqlTutorial.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- start Cursor Dot with mouse arrow -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <!-- end Cursor Dot with mouse arrow-->
+
+        <!-- STICKY WRAPPER: Fixed at the top with dynamic component placeholders -->
+    <div class="sticky-top-wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navbar-placeholder"></div>
+    </div>
+    <!-- STICKY WRAPPER END -->
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light border-bottom text-center mb-4">
+        <div class="container">
+            <h1 class="fw-bold mb-2">MySQL Tutorial</h1>
+            <p class="text-white fs-5">Learn the world's most popular open-source database system from scratch!</p>
+        </div>
+    </section>
+
+    <!-- Main Course Container -->
+    <div class="container-fluid mb-5 px-3 px-lg-5">
+        <div class="site-content">
+            <div class="row align-items-start">
+
+                <!-- Left Sidebar -->
+                <div class="col-12 col-md-4 col-lg-3 mb-4 mb-md-0 position-relative z-1" id="courseSidebarContainer">
+                    <aside class="course-sidebar p-3 border-end h-100 shadow-sm rounded-3">
+                        <h4 class="fw-bold mb-4 ps-2">MySQL Tutorial</h4>
+
+                        <div class="accordion accordion-flush" id="courseAccordion">
+
+                            <!-- Introduction -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingIntro">
+                                    <button class="accordion-button bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntro"
+                                        aria-expanded="true" aria-controls="collapseIntro">
+                                        Introduction
+                                    </button>
+                                </h2>
+                                <div id="collapseIntro" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingIntro" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary active" data-target="mysql-intro-whatis">What is MySQL?</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-intro-install">Installation Basics</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-intro-syntax">Basic Syntax</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MySQL Databases -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingDB">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseDB"
+                                        aria-expanded="false" aria-controls="collapseDB">
+                                        MySQL Databases
+                                    </button>
+                                </h2>
+                                <div id="collapseDB" class="accordion-collapse collapse" aria-labelledby="headingDB" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-db-create">CREATE Database</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-db-drop">DROP Database</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-db-select">SELECT Database</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- MySQL Tables -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingTables">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTables"
+                                        aria-expanded="false" aria-controls="collapseTables">
+                                        MySQL Tables
+                                    </button>
+                                </h2>
+                                <div id="collapseTables" class="accordion-collapse collapse" aria-labelledby="headingTables" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-table-create">CREATE Table</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-table-datatypes">Data Types</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-table-alter">ALTER Table</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-table-drop">DROP / TRUNCATE</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Data Manipulation -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingDML">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseDML"
+                                        aria-expanded="false" aria-controls="collapseDML">
+                                        Data Manipulation
+                                    </button>
+                                </h2>
+                                <div id="collapseDML" class="accordion-collapse collapse" aria-labelledby="headingDML" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-dml-insert">INSERT INTO</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-dml-update">UPDATE</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-dml-delete">DELETE</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-dml-replace">REPLACE</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Data Querying -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingDQL">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseDQL"
+                                        aria-expanded="false" aria-controls="collapseDQL">
+                                        Data Querying
+                                    </button>
+                                </h2>
+                                <div id="collapseDQL" class="accordion-collapse collapse" aria-labelledby="headingDQL" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-dql-select">SELECT & DISTINCT</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-dql-where">WHERE Clause</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-dql-orderby">ORDER BY</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-dql-limit">LIMIT / OFFSET</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Filtering & Joins -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingFiltering">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiltering"
+                                        aria-expanded="false" aria-controls="collapseFiltering">
+                                        Filtering & Joins
+                                    </button>
+                                </h2>
+                                <div id="collapseFiltering" class="accordion-collapse collapse" aria-labelledby="headingFiltering" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-filt-operators">AND, OR, NOT, IN</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-filt-like">LIKE & Wildcards</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-joins-inner">INNER JOIN</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-joins-outer">LEFT & RIGHT JOIN</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Functions -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingFunctions">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFunctions"
+                                        aria-expanded="false" aria-controls="collapseFunctions">
+                                        MySQL Functions
+                                    </button>
+                                </h2>
+                                <div id="collapseFunctions" class="accordion-collapse collapse" aria-labelledby="headingFunctions" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-func-string">String Functions</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-func-numeric">Numeric & Math Functions</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-func-date">Date & Time Functions</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Advanced MySQL -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingAdv">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdv"
+                                        aria-expanded="false" aria-controls="collapseAdv">
+                                        Advanced MySQL
+                                    </button>
+                                </h2>
+                                <div id="collapseAdv" class="accordion-collapse collapse" aria-labelledby="headingAdv" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-adv-users">User Management</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-adv-indexes">Indexes</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="mysql-adv-import">Import & Export</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Right Content Area -->
+                <main class="col-12 col-md-8 col-lg-9 position-relative z-0" id="mainCourseContent">
+
+                    <!-- Content Sections -->
+                    <div class="content-section active" id="mysql-intro-whatis">
+                        <div class="java-hero text-center mb-4 shadow-sm">
+                            <h1 class="fw-bold" style="font-size: 3rem; color: #333;">MySQL Tutorial</h1>
+                            <p class="text-secondary mt-3 mx-auto" style="max-width: 650px; font-size: 1.1rem; line-height: 1.6;">
+                                MySQL is an open-source relational database management system (RDBMS). It is the most popular database system used with PHP and the web.
+                            </p>
+                        </div>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-4">
+                            <h4 class="fw-bold mb-3">What is MySQL?</h4>
+                            <ul class="mb-0 text-black">
+                                <li>MySQL is a database system used on the web.</li>
+                                <li>MySQL is an RDBMS that runs on a server.</li>
+                                <li>MySQL is ideal for both small and large applications.</li>
+                                <li>MySQL is very fast, reliable, and easy to use.</li>
+                                <li>MySQL compiles on a number of platforms.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-intro-install">
+                        <h2 class="fw-bold text-dark mb-4">Installation Basics</h2>
+                        <p class="text-secondary">MySQL can be installed on Windows, macOS, and Linux.</p>
+                        <div class="card shadow-sm border-0 p-4 mb-3">
+                            <h5 class="fw-bold">Using XAMPP or WAMP (Easiest for Beginners)</h5>
+                            <p>For local development, tools like XAMPP, WAMP, or MAMP install MySQL alongside Apache and PHP instantly.</p>
+                            
+                            <h5 class="fw-bold mt-4">Command Line Tool</h5>
+                            <p>Once installed, you can access MySQL via the command line:</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>mysql -u root -p</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-intro-syntax">
+                        <h2 class="fw-bold text-dark mb-4">Basic Syntax Rules</h2>
+                        <p class="text-secondary">MySQL syntax is similar to standard SQL with a few unique quirks.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-0">
+                                <li>SQL keywords are NOT case sensitive (<code>select</code> is the same as <code>SELECT</code>), but it's standard practice to capitalize them.</li>
+                                <li>Table and database names MAY be case sensitive depending on the operating system (e.g., Linux vs Windows).</li>
+                                <li>A semicolon (<code>;</code>) is required at the end of each SQL statement.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="content-section" id="mysql-db-create">
+                        <h2 class="fw-bold mb-3">CREATE Database</h2>
+                        <p class="text-secondary">The <code>CREATE DATABASE</code> statement is used to create a new MySQL database.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>CREATE DATABASE testdb;</code></pre>
+                            
+                            <h5 class="fw-bold">Show all Databases</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SHOW DATABASES;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-db-drop">
+                        <h2 class="fw-bold mb-3">DROP Database</h2>
+                        <p class="text-secondary">The <code>DROP DATABASE</code> statement is used to drop an existing SQL database.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <div class="alert alert-danger">
+                                <strong>Warning!</strong> Dropping a database deletes all the tables and data inside it permanently.
+                            </div>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>DROP DATABASE testdb;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-db-select">
+                        <h2 class="fw-bold mb-3">SELECT Database</h2>
+                        <p class="text-secondary">Before you can create tables or manipulate data, you must "select" the database you want to use.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">USE Statement</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>USE testdb;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Tables -->
+                    <div class="content-section" id="mysql-table-create">
+                        <h2 class="fw-bold mb-3">CREATE Table</h2>
+                        <p class="text-secondary">The <code>CREATE TABLE</code> statement creates a new table in a database.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">MySQL Auto-Increment</h5>
+                            <p>MySQL uses the <code>AUTO_INCREMENT</code> keyword to perform an auto-increment feature.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>CREATE TABLE Users (
+    UserID int NOT NULL AUTO_INCREMENT,
+    Username varchar(255) NOT NULL,
+    Email varchar(255),
+    PRIMARY KEY (UserID)
+);</code></pre>
+                            
+                            <h5 class="fw-bold">Show Tables</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SHOW TABLES;
+DESCRIBE Users; -- Views the structure of the table</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-table-datatypes">
+                        <h2 class="fw-bold mb-3">MySQL Data Types</h2>
+                        <p class="text-secondary">Data types dictate what kind of data can be stored in a column.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <table class="table table-bordered mb-0">
+                                <thead><tr><th>Type Category</th><th>Examples</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>String Types</strong></td><td><code>VARCHAR</code>, <code>CHAR</code>, <code>TEXT</code>, <code>ENUM</code></td></tr>
+                                    <tr><td><strong>Numeric Types</strong></td><td><code>INT</code>, <code>TINYINT</code>, <code>FLOAT</code>, <code>DECIMAL</code></td></tr>
+                                    <tr><td><strong>Date & Time Types</strong></td><td><code>DATE</code>, <code>DATETIME</code>, <code>TIMESTAMP</code>, <code>TIME</code></td></tr>
+                                    <tr><td><strong>JSON</strong></td><td><code>JSON</code> (MySQL 5.7+ supports native JSON data type)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-table-alter">
+                        <h2 class="fw-bold mb-3">ALTER Table</h2>
+                        <p class="text-secondary">Modify an existing table's structure.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Add Column</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>ALTER TABLE Users ADD Age int;</code></pre>
+                            
+                            <h5 class="fw-bold">Modify Column Type</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>ALTER TABLE Users MODIFY COLUMN Age varchar(3);</code></pre>
+
+                            <h5 class="fw-bold">Rename Column</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>ALTER TABLE Users CHANGE Age UserAge int;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-table-drop">
+                        <h2 class="fw-bold mb-3">DROP & TRUNCATE Table</h2>
+                        <p class="text-secondary">Deleting tables or emptying their contents.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">DROP TABLE</h5>
+                            <p>Deletes the table entirely.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>DROP TABLE Users;</code></pre>
+
+                            <h5 class="fw-bold">TRUNCATE TABLE</h5>
+                            <p>Deletes all data in the table, but keeps the table structure. Resets <code>AUTO_INCREMENT</code> counters.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>TRUNCATE TABLE Users;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Data Manipulation -->
+                    <div class="content-section" id="mysql-dml-insert">
+                        <h2 class="fw-bold mb-3">INSERT INTO Statement</h2>
+                        <p class="text-secondary">Adds new rows of data into a table.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Inserting Single Row</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>INSERT INTO Users (Username, Email) 
+VALUES ('JohnDoe', 'john@example.com');</code></pre>
+
+                            <h5 class="fw-bold">Inserting Multiple Rows (MySQL specific efficiency)</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>INSERT INTO Users (Username, Email) VALUES 
+('JaneDoe', 'jane@example.com'),
+('Mike', 'mike@example.com'),
+('Sarah', 'sarah@example.com');</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-dml-update">
+                        <h2 class="fw-bold mb-3">UPDATE Statement</h2>
+                        <p class="text-secondary">Modifies existing records.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <div class="alert alert-warning">Always use the <code>WHERE</code> clause, otherwise all rows will be updated!</div>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>UPDATE Users 
+SET Email = 'newjohn@example.com' 
+WHERE Username = 'JohnDoe';</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-dml-delete">
+                        <h2 class="fw-bold mb-3">DELETE Statement</h2>
+                        <p class="text-secondary">Deletes existing records.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>DELETE FROM Users WHERE Username = 'Mike';</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-dml-replace">
+                        <h2 class="fw-bold mb-3">REPLACE Statement</h2>
+                        <p class="text-secondary">A MySQL extension to standard SQL. It works like INSERT, but if an old row has the same primary key or unique index as the new row, the old row is deleted before the new row is inserted.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>REPLACE INTO Users (UserID, Username, Email) 
+VALUES (1, 'JohnUpdated', 'updated@example.com');</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Data Querying -->
+                    <div class="content-section" id="mysql-dql-select">
+                        <h2 class="fw-bold mb-3">SELECT & DISTINCT</h2>
+                        <p class="text-secondary">Fetches data from a database.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Select All</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT * FROM Users;</code></pre>
+
+                            <h5 class="fw-bold">Select Specific Columns</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT Username, Email FROM Users;</code></pre>
+                            
+                            <h5 class="fw-bold">Select Distinct</h5>
+                            <p>Returns only unique values.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT DISTINCT Email FROM Users;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-dql-where">
+                        <h2 class="fw-bold mb-3">WHERE Clause</h2>
+                        <p class="text-secondary">Filters records based on specific conditions.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT * FROM Users WHERE UserID > 5;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-dql-orderby">
+                        <h2 class="fw-bold mb-3">ORDER BY</h2>
+                        <p class="text-secondary">Sorts the result-set.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Ascending (Default)</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT * FROM Users ORDER BY Username ASC;</code></pre>
+                            
+                            <h5 class="fw-bold">Descending</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT * FROM Users ORDER BY Username DESC;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-dql-limit">
+                        <h2 class="fw-bold mb-3">LIMIT & OFFSET</h2>
+                        <p class="text-secondary">MySQL uses the <code>LIMIT</code> clause to constrain the number of rows returned. This is essential for pagination.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Return only 5 records</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT * FROM Users LIMIT 5;</code></pre>
+                            
+                            <h5 class="fw-bold">Pagination using OFFSET</h5>
+                            <p>Skip the first 10 records, and return the next 5.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT * FROM Users LIMIT 5 OFFSET 10;
+-- Alternatively: LIMIT 10, 5;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Filtering & Joins -->
+                    <div class="content-section" id="mysql-filt-operators">
+                        <h2 class="fw-bold mb-3">AND, OR, NOT, IN</h2>
+                        <p class="text-secondary">Logical operators used inside the WHERE clause.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT * FROM Users WHERE Age > 18 AND Age < 30;</code></pre>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT * FROM Users WHERE Username IN ('John', 'Jane', 'Mike');</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-filt-like">
+                        <h2 class="fw-bold mb-3">LIKE & Wildcards</h2>
+                        <p class="text-secondary">Used in a WHERE clause to search for a specified pattern in a column.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-3">
+                                <li><code>%</code>: represents zero, one, or multiple characters.</li>
+                                <li><code>_</code>: represents a single character.</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT * FROM Users WHERE Email LIKE '%@gmail.com';</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-joins-inner">
+                        <h2 class="fw-bold mb-3">INNER JOIN</h2>
+                        <p class="text-secondary">Combines rows from two or more tables, based on a related column between them.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <p>INNER JOIN returns records that have matching values in both tables.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT Orders.OrderID, Users.Username
+FROM Orders
+INNER JOIN Users ON Orders.UserID = Users.UserID;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-joins-outer">
+                        <h2 class="fw-bold mb-3">LEFT & RIGHT JOIN</h2>
+                        <p class="text-secondary">Outer joins include unmatched records from one side of the join.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">LEFT JOIN</h5>
+                            <p>Returns all records from the left table, and the matched records from the right table.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>SELECT Users.Username, Orders.OrderID
+FROM Users
+LEFT JOIN Orders ON Users.UserID = Orders.UserID;</code></pre>
+                            
+                            <h5 class="fw-bold">RIGHT JOIN</h5>
+                            <p>Returns all records from the right table, and the matched records from the left table.</p>
+                        </div>
+                    </div>
+
+                    <!-- Functions -->
+                    <div class="content-section" id="mysql-func-string">
+                        <h2 class="fw-bold mb-3">String Functions</h2>
+                        <p class="text-secondary">MySQL provides numerous functions to manipulate strings.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-3">
+                                <li><code>CONCAT(a, b)</code>: Adds two or more strings together.</li>
+                                <li><code>LOWER()</code> / <code>UPPER()</code>: Converts case.</li>
+                                <li><code>SUBSTRING(string, start, length)</code>: Extracts a substring.</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT CONCAT(FirstName, ' ', LastName) AS FullName FROM Users;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-func-numeric">
+                        <h2 class="fw-bold mb-3">Numeric Functions</h2>
+                        <p class="text-secondary">Mathematical functions built into MySQL.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-3">
+                                <li><code>ROUND(value, decimals)</code>: Rounds a number.</li>
+                                <li><code>CEIL()</code> / <code>FLOOR()</code>: Rounds up or down to the nearest integer.</li>
+                                <li><code>RAND()</code>: Generates a random number between 0 and 1.</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT ROUND(Price, 2) FROM Products;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-func-date">
+                        <h2 class="fw-bold mb-3">Date Functions</h2>
+                        <p class="text-secondary">MySQL comes with powerful Date and Time parsing functions.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-3">
+                                <li><code>NOW()</code>: Returns the current date and time.</li>
+                                <li><code>CURDATE()</code>: Returns the current date.</li>
+                                <li><code>DATEDIFF(date1, date2)</code>: Returns the difference between two dates.</li>
+                                <li><code>DATE_FORMAT(date, format)</code>: Formats dates.</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>SELECT DATE_FORMAT(NOW(), '%Y-%m-%d %H:%i:%s') AS FormattedDate;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Advanced -->
+                    <div class="content-section" id="mysql-adv-users">
+                        <h2 class="fw-bold mb-3">User Management</h2>
+                        <p class="text-secondary">Creating users and granting privileges in MySQL.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Create User</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';</code></pre>
+                            
+                            <h5 class="fw-bold">Grant Privileges</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>GRANT ALL PRIVILEGES ON testdb.* TO 'newuser'@'localhost';
+FLUSH PRIVILEGES;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-adv-indexes">
+                        <h2 class="fw-bold mb-3">Indexes</h2>
+                        <p class="text-secondary">Indexes are used to find rows with specific column values quickly.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <p>Without an index, MySQL must begin with the first row and then read through the entire table.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>CREATE INDEX idx_username ON Users (Username);</code></pre>
+                            
+                            <h5 class="fw-bold">Drop Index</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>ALTER TABLE Users DROP INDEX idx_username;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="mysql-adv-import">
+                        <h2 class="fw-bold mb-3">Import & Export Data</h2>
+                        <p class="text-secondary">MySQL provides command-line tools to dump (export) and import databases.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Exporting (Dumping) a Database using mysqldump</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>mysqldump -u root -p testdb > backup.sql</code></pre>
+                            
+                            <h5 class="fw-bold">Importing a Database</h5>
+                            <p>First create the empty database, then import the file:</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>mysql -u root -p testdb < backup.sql</code></pre>
+                        </div>
+                    </div>
+
+<!-- Navigation Pagination (Next/Back) -->
+                    <div class="d-flex justify-content-between mt-5 pt-4 border-top">
+                        <button class="btn btn-outline-secondary px-4 fw-semibold" id="prevBtn" style="display: none;">
+                            <i class="fa-solid fa-arrow-left me-2"></i> Back
+                        </button>
+                        <!-- Spacer if prev is hidden to align next button right -->
+                        <div id="spacerBtn" style="flex: 1;"></div>
+                        <button class="btn btn-primary px-4 fw-semibold shadow-sm" id="nextBtn">
+                            Next <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- DYNAMIC FOOTER -->
+    <div id="footer-placeholder"></div>
+    <!-- ========== -->
+
+    <!-- Bootstrap & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components-loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            initializeCourseNavigation();
+
+            function initializeCourseNavigation() {
+                const links = Array.from(document.querySelectorAll("#courseSidebarContainer .nav-link"));
+                const sections = document.querySelectorAll(".content-section");
+                const prevBtn = document.getElementById("prevBtn");
+                const nextBtn = document.getElementById("nextBtn");
+                const spacerBtn = document.getElementById("spacerBtn");
+
+                let currentIndex = 0;
+
+                function updateView(newIndex) {
+                    if (newIndex < 0 || newIndex >= links.length) return;
+
+                    // Update active link
+                    links.forEach(l => l.classList.remove("active"));
+                    links[newIndex].classList.add("active");
+
+                    // Ensure the accordion for this link is open
+                    const accordionCollapse = links[newIndex].closest('.accordion-collapse');
+                    if (accordionCollapse && !accordionCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(accordionCollapse, { toggle: false });
+                        bsCollapse.show();
+                    }
+
+                    // Update contents
+                    sections.forEach(s => s.classList.remove("active"));
+                    const targetId = links[newIndex].getAttribute("data-target");
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        targetEl.classList.add("active");
+                    }
+
+                    currentIndex = newIndex;
+
+                    // Update Buttons
+                    if (currentIndex === 0) {
+                        prevBtn.style.display = "none";
+                        spacerBtn.style.display = "block";
+                    } else {
+                        prevBtn.style.display = "inline-block";
+                        spacerBtn.style.display = "none";
+                    }
+
+                    if (currentIndex === links.length - 1) {
+                        nextBtn.style.display = "none";
+                    } else {
+                        nextBtn.style.display = "inline-block";
+                    }
+
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                // Attach click to sidebar links
+                links.forEach((link, index) => {
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        updateView(index);
+                    });
+                });
+
+                // Attach click to Next/Back
+                prevBtn.addEventListener("click", () => updateView(currentIndex - 1));
+                nextBtn.addEventListener("click", () => updateView(currentIndex + 1));
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>Java Tutorial - IT Wallah India</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/javaTutorial.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- start Cursor Dot with mouse arrow -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <!-- end Cursor Dot with mouse arrow-->
+
+        <!-- STICKY WRAPPER: Fixed at the top with dynamic component placeholders -->
+    <div class="sticky-top-wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navbar-placeholder"></div>
+    </div>
+    <!-- STICKY WRAPPER END -->
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light border-bottom text-center mb-4">
+        <div class="container">
+            <h1 class="fw-bold mb-2">Java Tutorial</h1>
+            <p class="text-white fs-5">Learn Java from basics to advanced topics!</p>
+        </div>
+    </section>
+
+    <!-- Main Course Container -->
+    <div class="container-fluid mb-5 px-3 px-lg-5">
+        <div class="site-content">
+            <div class="row align-items-start">
+
+                <!-- Left Sidebar -->
+                <div class="col-12 col-md-4 col-lg-3 mb-4 mb-md-0 position-relative z-1" id="courseSidebarContainer">
+                    <aside class="course-sidebar p-3 border-end h-100 shadow-sm rounded-3">
+                        <h4 class="fw-bold mb-4 ps-2">Java Tutorial</h4>
+
+                        <div class="accordion accordion-flush" id="courseAccordion">
+
+                            <!-- Introduction -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingIntro">
+                                    <button class="accordion-button bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntro"
+                                        aria-expanded="true" aria-controls="collapseIntro">
+                                        Introduction
+                                    </button>
+                                </h2>
+                                <div id="collapseIntro" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingIntro" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary active"
+                                                    data-target="java-intro-overview">Overview</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-intro-install">Installation & Setup</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-intro-jvm">JVM, JRE, JDK</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-intro-syntax">Basic Java Syntax</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-intro-comments">Comments</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-intro-datatypes">Data Types</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Variables & Operators -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingVar">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseVar"
+                                        aria-expanded="false" aria-controls="collapseVar">
+                                        Variables & Operators
+                                    </button>
+                                </h2>
+                                <div id="collapseVar" class="accordion-collapse collapse" aria-labelledby="headingVar"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-var-vars">Variables</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-var-ops">Operators</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-var-io">Input/Output</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Conditional Statements -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingCond">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseCond"
+                                        aria-expanded="false" aria-controls="collapseCond">
+                                        Conditional Statements
+                                    </button>
+                                </h2>
+                                <div id="collapseCond" class="accordion-collapse collapse" aria-labelledby="headingCond"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-cond-if">If Else Statements</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-cond-switch">Switch Statement</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Iteration Statements -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingIter">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseIter"
+                                        aria-expanded="false" aria-controls="collapseIter">
+                                        Iteration Statements
+                                    </button>
+                                </h2>
+                                <div id="collapseIter" class="accordion-collapse collapse" aria-labelledby="headingIter"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-iter-loops">Loops (For, While)</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-iter-break">Break & Continue</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Arrays & Strings -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingArrStr">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseArrStr"
+                                        aria-expanded="false" aria-controls="collapseArrStr">
+                                        Arrays & Strings
+                                    </button>
+                                </h2>
+                                <div id="collapseArrStr" class="accordion-collapse collapse" aria-labelledby="headingArrStr"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-arr-arrays">Arrays</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-str-strings">Strings</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Object-Oriented Programming -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingOOP">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseOOP"
+                                        aria-expanded="false" aria-controls="collapseOOP">
+                                        Object-Oriented Java
+                                    </button>
+                                </h2>
+                                <div id="collapseOOP" class="accordion-collapse collapse" aria-labelledby="headingOOP"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-oop-classes">Classes & Objects</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-oop-methods">Methods</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-oop-inheritance">Inheritance</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-oop-polymorphism">Polymorphism</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-oop-abstraction">Abstraction</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-oop-encapsulation">Encapsulation</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Advanced Core Java -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingAdv">
+                                    <button
+                                        class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdv"
+                                        aria-expanded="false" aria-controls="collapseAdv">
+                                        Advanced Core Java
+                                    </button>
+                                </h2>
+                                <div id="collapseAdv" class="accordion-collapse collapse" aria-labelledby="headingAdv"
+                                    data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-adv-exceptions">Exception Handling</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-adv-collections">Collections Framework</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-adv-threads">Multithreading</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-adv-io">File I/O Streams</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-adv-generics">Generics</a></li>
+                                            <li><a href="#" class="nav-link text-secondary"
+                                                    data-target="java-adv-java8">Java 8+ Features</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Right Content Area -->
+                <main class="col-12 col-md-8 col-lg-9 position-relative z-0" id="mainCourseContent">
+
+                    <!-- Content Sections -->
+                    <div class="content-section active" id="java-intro-overview">
+                        <div class="java-hero text-center mb-4 shadow-sm">
+                            <h1 class="fw-bold" style="font-size: 3rem; color: #333;">Java Tutorial</h1>
+                            <p class="text-secondary mt-3 mx-auto"
+                                style="max-width: 650px; font-size: 1.1rem; line-height: 1.6;">
+                                Java is a programming language, created in 1995. More than 3 billion devices run
+                                Java. It is used to develop desktop and mobile applications, embedded systems, etc.
+                            </p>
+                        </div>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-4">
+                            <h4 class="fw-bold mb-3">Get Started</h4>
+                            <p class="mb-0 text-black">Welcome to the Java Tutorial tutorial series! To begin
+                                learning, navigate through the chapters on the left sidebar.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="java-intro-install">
+                        <h2 class="fw-bold text-dark mb-4">Installation & Setup</h2>
+                        <p class="text-secondary">To run Java, you need to install the JDK (Java Development Kit)
+                            and set up the environmental variables on your computer.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ol class="mb-0">
+                                <li>Download JDK from Oracle's official site.</li>
+                                <li>Run the installer and follow instructions.</li>
+                                <li>Set JAVA_HOME system variable.</li>
+                                <li>Add bin directory to system PATH.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="java-intro-jvm">
+                        <h2 class="fw-bold text-dark mb-4">JVM, JRE & JDK</h2>
+                        <p class="text-secondary">It's important to understand the differences between JVM, JRE, and
+                            JDK.</p>
+                        <div class="card shadow-sm border-0 p-4 mb-3">
+                            <ul class="mb-0">
+                                <li class="mb-2"><strong>JVM (Java Virtual Machine):</strong> An abstract machine
+                                    that enables your computer to run a Java program.</li>
+                                <li class="mb-2"><strong>JRE (Java Runtime Environment):</strong> Contains the JVM
+                                    and library classes necessary to run a program.</li>
+                                <li><strong>JDK (Java Development Kit):</strong> Contains JRE plus development tools
+                                    like the compiler (javac).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Additional sections omitted for brevity but they could go here... -->
+                    <!-- Filler target sections -->
+                    <div class="content-section" id="java-intro-syntax">
+                        <h2 class="fw-bold mb-3">Basic Java Syntax</h2>
+                        <p class="text-secondary">Every Java program requires a class, and the name of the class must match the filename. Execution always begins in the <code>main()</code> method.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>public class Main {
+  // The entry point of every Java application
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}</code></pre>
+                            <h5 class="fw-bold mt-4">Understanding the Syntax</h5>
+                            <ul class="mb-0">
+                                <li><code>public</code>: An access modifier meaning the class/method is accessible everywhere.</li>
+                                <li><code>class</code>: Keyword to declare a class.</li>
+                                <li><code>static</code>: Means the method belongs to the class itself, not to a specific object.</li>
+                                <li><code>void</code>: The method does not return a value.</li>
+                                <li><code>String[] args</code>: An array of Strings passed as command-line arguments.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-intro-comments">
+                        <h2 class="fw-bold mb-3">Comments</h2>
+                        <p class="text-secondary">Comments are ignored by the compiler. They are used for explaining code, preventing execution of specific lines during testing, or generating documentation.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">1. Single-line Comments</h5>
+                            <p>Starts with <code>//</code> and comments out everything on that line.</p>
+                            <pre class="bg-dark text-light p-3 rounded"><code>// Prints greeting
+System.out.println("Hello World");</code></pre>
+                            <h5 class="fw-bold mt-4">2. Multi-line Comments</h5>
+                            <p>Starts with <code>/*</code> and ends with <code>*/</code>.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>/* This is a multi-line comment
+that spans multiple lines */
+int x = 10;</code></pre>
+                            <h5 class="fw-bold mt-4">3. Documentation Comments (Javadoc)</h5>
+                            <p>Starts with <code>/**</code> and ends with <code>*/</code>. Used to auto-generate HTML documentation for APIs.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>/**
+ * Calculates the sum of two integers.
+ * @param a The first number
+ * @param b The second number
+ * @return The sum
+ */
+public int sum(int a, int b) { return a + b; }</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-intro-datatypes">
+                        <h2 class="fw-bold mb-3">Data Types & Casting</h2>
+                        <p class="text-secondary">Java is strongly typed, meaning all variables must have a defined data type.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Primitive Data Types</h5>
+                            <table class="table table-bordered mb-4">
+                                <thead><tr><th>Type</th><th>Size</th><th>Description</th></tr></thead>
+                                <tbody>
+                                    <tr><td><code>byte</code></td><td>1 byte</td><td>Stores whole numbers from -128 to 127</td></tr>
+                                    <tr><td><code>short</code></td><td>2 bytes</td><td>Stores whole numbers from -32,768 to 32,767</td></tr>
+                                    <tr><td><code>int</code></td><td>4 bytes</td><td>Stores whole numbers from -2,147,483,648 to 2,147,483,647</td></tr>
+                                    <tr><td><code>long</code></td><td>8 bytes</td><td>Stores huge whole numbers. Suffix with <code>L</code></td></tr>
+                                    <tr><td><code>float</code></td><td>4 bytes</td><td>Fractional numbers (6-7 decimal digits). Suffix with <code>f</code></td></tr>
+                                    <tr><td><code>double</code></td><td>8 bytes</td><td>Fractional numbers (15 decimal digits). Suffix with <code>d</code></td></tr>
+                                    <tr><td><code>boolean</code></td><td>1 bit</td><td>Stores true or false values</td></tr>
+                                    <tr><td><code>char</code></td><td>2 bytes</td><td>Stores a single character/letter or ASCII values</td></tr>
+                                </tbody>
+                            </table>
+                            <h5 class="fw-bold">Type Casting</h5>
+                            <p>Casting is assigning a value of one primitive type to another.</p>
+                            <ul>
+                                <li><b>Widening (Automatic):</b> Smaller type to larger type (e.g., <code>int</code> to <code>double</code>).</li>
+                                <li><b>Narrowing (Manual):</b> Larger type to smaller type (e.g., <code>double</code> to <code>int</code>). Done by placing the target type in parentheses.</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>int myInt = 9;
+double myDouble = myInt; // Widening: 9.0
+
+double myD = 9.78d;
+int myI = (int) myD; // Narrowing: 9 (decimals truncated)</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-var-vars">
+                        <h2 class="fw-bold mb-3">Variables & Scope</h2>
+                        <p class="text-secondary">Variables act as containers. Java defines three main types of variables based on their scope.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Variable Types</h5>
+                            <ul>
+                                <li><b>Local Variables:</b> Declared inside a method, constructor, or block. Destroyed when the block ends.</li>
+                                <li><b>Instance Variables:</b> Declared inside a class but outside methods. Specific to each object (instance).</li>
+                                <li><b>Static Variables:</b> Declared with <code>static</code>. Shared across all objects of the class.</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>public class Car {
+  static int totalCars = 0; // Static Variable
+  String color;             // Instance Variable
+
+  public void drive() {
+    int speed = 100;        // Local Variable
+    System.out.println("Driving at " + speed + "km/h");
+  }
+}</code></pre>
+                            <h5 class="fw-bold">The <code>final</code> Keyword</h5>
+                            <p>If you don't want others (or yourself) to overwrite existing values, use the <code>final</code> keyword (creates constants).</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>final int myNum = 15;
+myNum = 20;  // This will generate an error: cannot assign a value to final variable</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-var-ops">
+                        <h2 class="fw-bold mb-3">Operators Deep Dive</h2>
+                        <p class="text-secondary">Operators perform operations on variables and values.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Types of Operators</h5>
+                            <ul class="mb-3">
+                                <li><strong>Arithmetic:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (Modulus), <code>++</code> (Increment), <code>--</code> (Decrement)</li>
+                                <li><strong>Assignment:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code></li>
+                                <li><strong>Comparison:</strong> <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+                                <li><strong>Logical:</strong> <code>&&</code> (Logical AND), <code>||</code> (Logical OR), <code>!</code> (Logical NOT)</li>
+                                <li><strong>Bitwise:</strong> <code>&</code> (AND), <code>|</code> (OR), <code>^</code> (XOR), <code>~</code> (Complement), <code>&lt;&lt;</code> (Left shift), <code>&gt;&gt;</code> (Right shift)</li>
+                            </ul>
+                            <h5 class="fw-bold">Ternary Operator</h5>
+                            <p>A shorthand for an <code>if...else</code> statement.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>// Syntax: variable = (condition) ? expressionTrue :  expressionFalse;
+int time = 20;
+String result = (time < 18) ? "Good day." : "Good evening.";
+System.out.println(result); // Outputs: Good evening.</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-var-io">
+                        <h2 class="fw-bold mb-3">Input/Output</h2>
+                        <p class="text-secondary">Handling input via <code>Scanner</code> and output via <code>System.out</code> and formatting.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Scanner Input Types</h5>
+                            <p>The <code>Scanner</code> class can read different data types:</p>
+                            <ul>
+                                <li><code>nextLine()</code> - Reads a String</li>
+                                <li><code>nextInt()</code> - Reads an int</li>
+                                <li><code>nextDouble()</code> - Reads a double</li>
+                                <li><code>nextBoolean()</code> - Reads a boolean</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Enter age: ");
+    int age = scan.nextInt();
+    System.out.println("You are " + age + " years old.");
+    scan.close(); // Important to prevent memory leaks!
+  }
+}</code></pre>
+                            <h5 class="fw-bold">Formatted Output</h5>
+                            <p>Use <code>System.out.printf()</code> for formatting strings.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>double price = 10.5;
+// %f for floats, %.2f for 2 decimal places, %s for strings, %d for ints
+System.out.printf("The price is $%.2f", price); // Outputs: The price is $10.50</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-cond-if">
+                        <h2 class="fw-bold mb-3">If...Else Statements</h2>
+                        <p class="text-secondary">Conditional statements let you execute different code blocks based on boolean expressions.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Syntax Varieties</h5>
+                            <ul>
+                                <li><code>if</code> - Executes code if the condition is <code>true</code>.</li>
+                                <li><code>else if</code> - Tests a new condition if the previous <code>if</code> was <code>false</code>.</li>
+                                <li><code>else</code> - Executes if all preceding conditions are <code>false</code>.</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>int score = 85;
+if (score >= 90) {
+  System.out.println("Grade: A");
+} else if (score >= 80) {
+  System.out.println("Grade: B"); // This will execute
+} else {
+  System.out.println("Grade: C");
+}</code></pre>
+                            <h5 class="fw-bold">Block Scope Note</h5>
+                            <p>Variables declared inside the <code>{}</code> block of an <code>if</code> statement are local to that block and cannot be accessed outside.</p>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-cond-switch">
+                        <h2 class="fw-bold mb-3">Switch Statement & Expressions</h2>
+                        <p class="text-secondary">The <code>switch</code> statement is an elegant alternative to a long <code>if...else if</code> chain.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Classic Switch</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>int day = 3;
+switch (day) {
+  case 1:
+    System.out.println("Monday");
+    break; // Important! Stops execution of further cases.
+  case 3:
+    System.out.println("Wednesday"); // Executes this
+    break;
+  default:
+    System.out.println("Weekend");
+}</code></pre>
+                            <h5 class="fw-bold mt-4">Enhanced Switch (Java 14+)</h5>
+                            <p>Java introduced arrow syntax <code>-&gt;</code> to eliminate the need for <code>break</code> and allow the switch to return a value (Switch Expression).</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>String dayType = switch (day) {
+  case 1, 2, 3, 4, 5 -> "Weekday";
+  case 6, 7 -> "Weekend";
+  default -> "Unknown";
+};
+System.out.println(dayType); // Outputs: Weekday</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-iter-loops">
+                        <h2 class="fw-bold mb-3">Loops (For, While, Do-While)</h2>
+                        <p class="text-secondary">Loops are used to execute a set of instructions repeatedly.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">1. While Loop</h5>
+                            <p>Evaluates condition <i>before</i> executing the block.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>int i = 0;
+while (i < 3) {
+  System.out.println(i);
+  i++;
+}</code></pre>
+                            <h5 class="fw-bold">2. Do-While Loop</h5>
+                            <p>Executes the block <i>at least once</i> before checking the condition.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>int j = 0;
+do {
+  System.out.println("Runs at least once: " + j);
+  j++;
+} while (j < 0);</code></pre>
+                            <h5 class="fw-bold">3. For Loop</h5>
+                            <p>Ideal when you know exactly how many times you want to loop.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>for (int k = 0; k < 3; k++) {
+  System.out.println(k);
+}</code></pre>
+                            <h5 class="fw-bold">4. Enhanced For-Loop (For-Each)</h5>
+                            <p>Used exclusively to loop through elements in arrays or collections.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>String[] cars = {"Volvo", "BMW", "Ford"};
+for (String car : cars) {
+  System.out.println(car);
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-iter-break">
+                        <h2 class="fw-bold mb-3">Break, Continue & Labeled Loops</h2>
+                        <p class="text-secondary">Control the flow within loops precisely.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Break vs Continue</h5>
+                            <ul>
+                                <li><code>break</code> completely terminates the loop.</li>
+                                <li><code>continue</code> skips the rest of the current iteration and jumps to the next one.</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>for (int i = 0; i < 5; i++) {
+  if (i == 2) continue; // Skips 2
+  if (i == 4) break;    // Stops before 4
+  System.out.print(i + " "); // Output: 0 1 3
+}</code></pre>
+                            <h5 class="fw-bold">Labeled Break/Continue</h5>
+                            <p>Useful for breaking out of nested loops.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>outerLoop:
+for (int i = 1; i <= 3; i++) {
+  for (int j = 1; j <= 3; j++) {
+    if (i == 2 && j == 2) {
+      break outerLoop; // Breaks BOTH loops
+    }
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="content-section" id="java-arr-arrays">
+                        <h2 class="fw-bold mb-3">Arrays Deep Dive</h2>
+                        <p class="text-secondary">Arrays hold multiple values of the same type in a fixed-size, contiguous memory location.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">1D Arrays</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>int[] myNum = {10, 20, 30, 40};
+System.out.println(myNum.length); // Output: 4
+myNum[0] = 50; // Modify first element</code></pre>
+                            <h5 class="fw-bold">Multi-Dimensional Arrays</h5>
+                            <p>An array of arrays. Useful for matrices or grids.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+System.out.println(myNumbers[1][2]); // Output 7 (Second array, 3rd element)</code></pre>
+                            <h5 class="fw-bold">The <code>java.util.Arrays</code> Class</h5>
+                            <p>A utility class with static methods for array manipulation.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>import java.util.Arrays;
+// ...
+int[] arr = {5, 2, 8, 1};
+Arrays.sort(arr); // Sorts array in ascending order
+System.out.println(Arrays.toString(arr)); // Output: [1, 2, 5, 8]</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-str-strings">
+                        <h2 class="fw-bold mb-3">Strings in Depth</h2>
+                        <p class="text-secondary">In Java, <code>String</code> is an object, not a primitive type. Strings are <b>immutable</b> (cannot be changed once created).</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">String Literal vs <code>new String()</code></h5>
+                            <p>Strings created without <code>new</code> go into the <b>String Constant Pool</b> to save memory.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>String s1 = "Hello"; // Goes to String Pool
+String s2 = "Hello"; // Reuses the pool object (s1 == s2 is true)
+String s3 = new String("Hello"); // Creates a new object in Heap memory (s1 == s3 is false)</code></pre>
+                            <h5 class="fw-bold">Essential String Methods</h5>
+                            <ul class="mb-3">
+                                <li><code>length()</code> - Length of the string.</li>
+                                <li><code>charAt(index)</code> - Character at a specific index.</li>
+                                <li><code>substring(start, end)</code> - Extracts a portion of the string.</li>
+                                <li><code>split(regex)</code> - Breaks string into an array.</li>
+                                <li><code>equals(str)</code> - Compares content (always use this over <code>==</code>!).</li>
+                            </ul>
+                            <h5 class="fw-bold">StringBuilder and StringBuffer</h5>
+                            <p>Because Strings are immutable, modifying them inside a loop is slow. Use <code>StringBuilder</code> (fast) or <code>StringBuffer</code> (thread-safe) instead.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World"); // Modifies the object without creating a new one
+System.out.println(sb.toString());</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="java-oop-classes">
+                        <h2 class="fw-bold mb-3">Classes & Objects</h2>
+                        <p class="text-secondary">Java is strictly object-oriented. A Class is a blueprint, and an Object is an instance of that blueprint.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Constructors & The <code>this</code> Keyword</h5>
+                            <p>Constructors initialize objects. The <code>this</code> keyword refers to the current object instance.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>public class Employee {
+  String name;
+  int id;
+
+  // Parameterized Constructor
+  public Employee(String name, int id) {
+    this.name = name; // 'this.name' refers to instance variable
+    this.id = id;
+  }
+
+  public static void main(String[] args) {
+    Employee emp1 = new Employee("Alice", 101);
+    System.out.println(emp1.name); // Outputs: Alice
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-oop-methods">
+                        <h2 class="fw-bold mb-3">Methods & Overloading</h2>
+                        <p class="text-secondary">Methods define the behavior of an object.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Method Overloading</h5>
+                            <p>Multiple methods can have the same name if they have different parameters (different type or number of parameters).</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>public class MathUtil {
+  static int add(int a, int b) { return a + b; }
+  static double add(double a, double b) { return a + b; }
+  static int add(int a, int b, int c) { return a + b + c; }
+}</code></pre>
+                            <h5 class="fw-bold">Varargs (Variable Arguments)</h5>
+                            <p>Allows a method to accept zero or multiple arguments of the same type.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>static void printNames(String... names) {
+  for (String name : names) {
+    System.out.print(name + " ");
+  }
+}
+// Calling: printNames("John", "Doe", "Smith");</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-oop-inheritance">
+                        <h2 class="fw-bold mb-3">Inheritance Deep Dive</h2>
+                        <p class="text-secondary">Inheritance promotes code reusability by acquiring properties of a parent class.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">The <code>super</code> Keyword</h5>
+                            <p>Used to call the parent class's constructor or methods.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>class Animal {
+  Animal() { System.out.println("Animal created"); }
+}
+
+class Dog extends Animal {
+  Dog() {
+    super(); // Calls parent constructor
+    System.out.println("Dog created");
+  }
+}</code></pre>
+                            <p class="mb-0"><i>Note:</i> Java does NOT support multiple inheritance with classes (a class cannot extend multiple classes) to avoid the Diamond Problem. It is achieved through interfaces.</p>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-oop-polymorphism">
+                        <h2 class="fw-bold mb-3">Polymorphism</h2>
+                        <p class="text-secondary">Polymorphism means "many forms". It allows performing a single action in different ways.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Compile-time vs Run-time</h5>
+                            <ul>
+                                <li><b>Compile-time (Static):</b> Method Overloading.</li>
+                                <li><b>Run-time (Dynamic):</b> Method Overriding.</li>
+                            </ul>
+                            <h5 class="fw-bold">Method Overriding</h5>
+                            <p>When a subclass provides a specific implementation of a method already provided by its parent.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>class Animal {
+  void sound() { System.out.println("Generic sound"); }
+}
+
+class Cat extends Animal {
+  @Override
+  void sound() { System.out.println("Meow"); }
+}
+
+// Upcasting: Reference is parent, object is child
+Animal myAnimal = new Cat();
+myAnimal.sound(); // Outputs "Meow" (Runtime Polymorphism)</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-oop-abstraction">
+                        <h2 class="fw-bold mb-3">Abstraction: Abstract Classes vs Interfaces</h2>
+                        <p class="text-secondary">Abstraction hides complex implementation details and shows only the essential features.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Abstract Classes (<code>abstract</code>)</h5>
+                            <p>Can have both abstract (without body) and regular methods. Cannot be instantiated.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>abstract class Shape {
+  abstract void draw(); // Abstract method
+  void print() { System.out.println("Printing shape..."); } // Concrete method
+}</code></pre>
+                            <h5 class="fw-bold">Interfaces (<code>interface</code>)</h5>
+                            <p>A completely "abstract class" that is used to group related methods with empty bodies. A class implements it using <code>implements</code>.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>interface Animal {
+  void animalSound(); // interface method (implicitly public and abstract)
+  
+  // Java 8+ allows default and static methods in interfaces
+  default void sleep() {
+    System.out.println("Zzz");
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-oop-encapsulation">
+                        <h2 class="fw-bold mb-3">Encapsulation & Access Modifiers</h2>
+                        <p class="text-secondary">Encapsulation binds data and code together, keeping it safe from outside interference.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Access Modifiers</h5>
+                            <table class="table table-bordered mb-4">
+                                <thead><tr><th>Modifier</th><th>Class</th><th>Package</th><th>Subclass</th><th>World</th></tr></thead>
+                                <tbody>
+                                    <tr><td><code>public</code></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+                                    <tr><td><code>protected</code></td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+                                    <tr><td><i>default</i> (no keyword)</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+                                    <tr><td><code>private</code></td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+                                </tbody>
+                            </table>
+                            <h5 class="fw-bold">Getters and Setters</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>public class Person {
+  private String name; // Hidden data
+
+  public String getName() { return name; }
+  public void setName(String name) { this.name = name; }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="java-adv-exceptions">
+                        <h2 class="fw-bold mb-3">Exception Handling Deep Dive</h2>
+                        <p class="text-secondary">Exceptions disrupt the normal flow of the program. Handling them prevents application crashes.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Checked vs Unchecked</h5>
+                            <ul>
+                                <li><b>Checked Exceptions:</b> Checked at compile-time (e.g., <code>IOException</code>, <code>SQLException</code>). Must be handled.</li>
+                                <li><b>Unchecked Exceptions:</b> Checked at runtime (e.g., <code>NullPointerException</code>, <code>ArithmeticException</code>).</li>
+                            </ul>
+                            <h5 class="fw-bold">try-catch-finally and throws</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>public void readFile() throws IOException { // declares exception
+  try {
+    int data = 10 / 0; // ArithmeticException
+  } catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero!");
+  } finally {
+    System.out.println("This block ALWAYS executes (cleanup).");
+  }
+}</code></pre>
+                            <h5 class="fw-bold">Custom Exceptions</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>class InvalidAgeException extends Exception {
+  public InvalidAgeException(String msg) { super(msg); }
+}
+// throw new InvalidAgeException("Age must be 18+");</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-adv-collections">
+                        <h2 class="fw-bold mb-3">Collections Framework</h2>
+                        <p class="text-secondary">A unified architecture for representing and manipulating collections of objects.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">The Hierarchy Overview</h5>
+                            <ul>
+                                <li><b>List:</b> Ordered, allows duplicates. (<code>ArrayList</code>: fast random access. <code>LinkedList</code>: fast insertions/deletions).</li>
+                                <li><b>Set:</b> Unordered, NO duplicates. (<code>HashSet</code>: fast. <code>TreeSet</code>: sorted).</li>
+                                <li><b>Map:</b> Key-Value pairs. Keys are unique. (<code>HashMap</code>: fast. <code>TreeMap</code>: sorted keys).</li>
+                            </ul>
+                            <h5 class="fw-bold">Using Lists and Maps</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>import java.util.*;
+
+// List Example
+List&lt;String&gt; list = new ArrayList&lt;&gt;();
+list.add("Apple");
+list.add("Banana");
+
+// Map Example
+Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put("Alice", 25);
+map.put("Bob", 30);
+
+for (Map.Entry&lt;String, Integer&gt; entry : map.entrySet()) {
+  System.out.println(entry.getKey() + " is " + entry.getValue());
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-adv-threads">
+                        <h2 class="fw-bold mb-3">Multithreading & Concurrency</h2>
+                        <p class="text-secondary">Allows concurrent execution of two or more parts of a program.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Thread Class vs Runnable Interface</h5>
+                            <p>It is generally better to implement <code>Runnable</code> because Java doesn't support multiple inheritance of classes.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>class MyTask implements Runnable {
+  public void run() {
+    System.out.println("Thread is running...");
+  }
+}
+// Execution
+Thread t1 = new Thread(new MyTask());
+t1.start(); // Always call start(), not run()</code></pre>
+                            <h5 class="fw-bold">Synchronization</h5>
+                            <p>When multiple threads access shared resources, data inconsistency can occur. The <code>synchronized</code> keyword ensures only one thread accesses the method/block at a time.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>public synchronized void incrementCount() {
+  count++; // Thread-safe
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-adv-io">
+                        <h2 class="fw-bold mb-3">File I/O Streams</h2>
+                        <p class="text-secondary">Java uses Streams to handle I/O operations rapidly.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Byte vs Character Streams</h5>
+                            <ul>
+                                <li><b>Byte Streams:</b> Handle raw binary data (e.g., <code>FileInputStream</code>).</li>
+                                <li><b>Character Streams:</b> Handle text data natively (e.g., <code>FileReader</code>, <code>FileWriter</code>).</li>
+                            </ul>
+                            <h5 class="fw-bold">Modern File Reading (Java NIO)</h5>
+                            <p>Java NIO (New I/O) provides a more efficient way to deal with files using the <code>Files</code> and <code>Paths</code> classes.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>import java.nio.file.*;
+
+// Writing to a file
+Path path = Paths.get("data.txt");
+Files.writeString(path, "Hello Java NIO!");
+
+// Reading from a file
+String content = Files.readString(path);
+System.out.println(content);</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-adv-generics">
+                        <h2 class="fw-bold mb-3">Generics</h2>
+                        <p class="text-secondary">Generics enable types (classes and interfaces) to be parameters when defining classes, interfaces and methods. They provide strong compile-time type checking.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Generic Classes</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>class Box&lt;T&gt; {
+  private T item;
+  public void set(T item) { this.item = item; }
+  public T get() { return item; }
+}
+
+Box&lt;String&gt; stringBox = new Box&lt;&gt;();
+stringBox.set("Hello"); // Type-safe</code></pre>
+                            <h5 class="fw-bold">Generic Methods</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>public &lt;E&gt; void printArray(E[] array) {
+  for(E element : array) {
+    System.out.print(element + " ");
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                    <div class="content-section" id="java-adv-java8">
+                        <h2 class="fw-bold mb-3">Java 8+ Advanced Features</h2>
+                        <p class="text-secondary">Java 8 brought functional programming concepts to Java, dramatically changing how code is written.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Lambda Expressions</h5>
+                            <p>Provides a clear and concise way to represent one method interface using an expression.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>List&lt;String&gt; names = Arrays.asList("Alice", "Bob", "Charlie");
+// Using lambda
+names.forEach(name -&gt; System.out.println(name));</code></pre>
+                            <h5 class="fw-bold">Streams API</h5>
+                            <p>Used to process collections of objects in a declarative manner (filter, map, reduce).</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>List&lt;Integer&gt; nums = Arrays.asList(1, 2, 3, 4, 5, 6);
+int sumOfEvens = nums.stream()
+                     .filter(n -&gt; n % 2 == 0) // Keep evens
+                     .mapToInt(n -&gt; n)        // Convert to int stream
+                     .sum();                  // Add them up
+System.out.println(sumOfEvens); // Outputs: 12</code></pre>
+                            <h5 class="fw-bold">Optional Class</h5>
+                            <p>A container object which may or may not contain a non-null value. Prevents <code>NullPointerException</code>.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>Optional&lt;String&gt; opt = Optional.ofNullable(null);
+System.out.println(opt.orElse("Default Value")); // Outputs: Default Value</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Pagination (Next/Back) -->
+                    <div class="d-flex justify-content-between mt-5 pt-4 border-top">
+                        <button class="btn btn-outline-secondary px-4 fw-semibold" id="prevBtn" style="display: none;">
+                            <i class="fa-solid fa-arrow-left me-2"></i> Back
+                        </button>
+                        <!-- Spacer if prev is hidden to align next button right -->
+                        <div id="spacerBtn" style="flex: 1;"></div>
+                        <button class="btn btn-primary px-4 fw-semibold shadow-sm" id="nextBtn">
+                            Next <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- DYNAMIC FOOTER -->
+    <div id="footer-placeholder"></div>
+    <!-- ========== -->
+
+    <!-- Bootstrap & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components-loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            initializeCourseNavigation();
+
+            function initializeCourseNavigation() {
+                const links = Array.from(document.querySelectorAll("#courseSidebarContainer .nav-link"));
+                const sections = document.querySelectorAll(".content-section");
+                const prevBtn = document.getElementById("prevBtn");
+                const nextBtn = document.getElementById("nextBtn");
+                const spacerBtn = document.getElementById("spacerBtn");
+
+                let currentIndex = 0;
+
+                function updateView(newIndex) {
+                    if (newIndex < 0 || newIndex >= links.length) return;
+
+                    // Update active link
+                    links.forEach(l => l.classList.remove("active"));
+                    links[newIndex].classList.add("active");
+
+                    // Ensure the accordion for this link is open
+                    const accordionCollapse = links[newIndex].closest('.accordion-collapse');
+                    if (accordionCollapse && !accordionCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(accordionCollapse, { toggle: false });
+                        bsCollapse.show();
+                    }
+
+                    // Update contents
+                    sections.forEach(s => s.classList.remove("active"));
+                    const targetId = links[newIndex].getAttribute("data-target");
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        targetEl.classList.add("active");
+                    }
+
+                    currentIndex = newIndex;
+
+                    // Update Buttons
+                    if (currentIndex === 0) {
+                        prevBtn.style.display = "none";
+                        spacerBtn.style.display = "block";
+                    } else {
+                        prevBtn.style.display = "inline-block";
+                        spacerBtn.style.display = "none";
+                    }
+
+                    if (currentIndex === links.length - 1) {
+                        nextBtn.style.display = "none";
+                    } else {
+                        nextBtn.style.display = "inline-block";
+                    }
+
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                // Attach click to sidebar links
+                links.forEach((link, index) => {
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        updateView(index);
+                    });
+                });
+
+                // Attach click to Next/Back
+                prevBtn.addEventListener("click", () => updateView(currentIndex - 1));
+                nextBtn.addEventListener("click", () => updateView(currentIndex + 1));
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>Face Detection - IT Wallah India</title>
+    <!-- Font Awesome for Top Header -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/blogSidebar.css" rel="stylesheet">
+    <link href="css/faceDetection.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- start Cursor Dot with mouse arrow -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <!-- end Cursor Dot with mouse arrow-->
+    <!-- Gradient overlay moved outside to prevent z-index issues -->
+    <div class="bg-overlay"></div>
+    <!-- STICKY WRAPPER: Fixed at the top with dynamic component placeholders -->
+    <div class="sticky-top-wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navbar-placeholder"></div>
+    </div>
+    <!-- STICKY WRAPPER END -->
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Face Detection </h1>
+            <p>Face Detection using Python, Retina Face & Open-CV. </p>
+        </div>
+    </section>
+
+    <!-- Blogs Section  -->
+    <div class="container-fluid mb-5 px-3 px-lg-5">
+        <div class="site-content">
+            <div class="section-container">
+                <div class="row blog-main justify-content-between align-items-start">
+                    <!-- TODO ================= MAIN POST ================= -->
+                    <main class="col-12 col-lg-8 site-main order-2 mt-5 mt-lg-0">
+                        <article class="post">
+                            <div class="post-img mb-4">
+                                <img src="images/face.png" alt="Image face Detection">
+                            </div>
+                            <h3 class="card-heading text-bold text-underline">Creating a Face Detection Flask API using
+                                RetinaFace</h3>
+                            <div class="entry-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i> 16 July 2026</span>
+                                <span><i class="fa-solid fa-user"></i> Mr. Manish Kumar</span>
+                            </div>
+
+                            <div class="entry-content mt-4">
+                                <p>In this blog, we'll guide you step by step on how to create a Face Detection API
+                                    using Flask and the RetinaFace deep learning model. The API will process
+                                    Base64-encoded images, detect faces asynchronously, and return the results to the
+                                    user.</p>
+                                <p>Also, basic familiarity with Python, Flask and Base64 encoding is recommended.</p>
+                                <h4 class="font-heading">Prerequisites</h4>
+                                <p>Before we begin, ensure that you have the following installed:</p>
+                                <ul class="create-points">
+                                    <li><i class="fa-solid fa-check-double"></i> <strong>Python 3.8+</strong> &mdash;
+                                        You can download it from <a href="https://www.python.org/downloads/"
+                                            target="_blank">https://www.python.org/downloads/</a></li>
+                                    <li><i class="fa-solid fa-check-double"></i> Then set your Python path in
+                                        Environment variables</li>
+                                    <li><i class="fa-solid fa-check-double"></i> <strong>Python Extension for VS
+                                            Code</strong> &mdash; Install this extension from the VS Code Marketplace.
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr>
+                            <div class="entry-content">
+                                <h4 class="font-heading text-left">Step 1: Set Up Your Development Environment</h4>
+
+                                <p class="p-bold mt-3">1.1 Open VS Code</p>
+                                <p>Open VS Code and create a new folder for your project. You can do this by selecting
+                                    File > Open Folder and either choosing or creating a new folder.</p>
+
+                                <p class="p-bold">1.2 Create and Activate a Virtual Environment</p>
+                                <p>To keep your project dependencies isolated, you&rsquo;ll need to create a virtual
+                                    environment. Follow these steps:</p>
+                                <ul>
+                                    <li>Open the terminal in VS Code by selecting Terminal > New Terminal.</li>
+                                    <li>Navigate to your project folder in the terminal.</li>
+                                </ul>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white" id="myTextarea">D:\folder_name></code>
+                                </div>
+                                <p class="mt-3">First Check Python proper installed or not <code>python --version</code>
+                                </p>
+                                <p>Create a new virtual environment:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white" id="myTextarea">python -m venv venv</code>
+                                </div>
+
+                                <p class="mt-3">Activate the virtual environment:</p>
+                                <p>On Windows:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white" id="myTextarea">venv\Scripts\activate</code>
+                                </div>
+                                <p class="mt-3">On macOS/Linux:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white" id="myTextarea">source venv/bin/activate</code>
+                                </div>
+                                <p class="mt-3">Once activated, you should see (venv) in your terminal prompt,
+                                    indicating that the virtual environment is active.<br>Like :
+                                    <code>(venv) D:\folder_name></code></p>
+                            </div>
+
+                            <div class="entry-content mt-4">
+                                <h4 class="font-heading text-left">Step 2: Install Required Dependencies inside venv
+                                </h4>
+
+                                <p class="p-bold mt-3">2.1 Create a requirements.txt File</p>
+                                <p>Create a requirements.txt file in your project folder and list the required packages:
+                                </p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">flask<br>opencv-python<br>numpy<br>retina-face<br>tensorflow==2.11.0<br>tf-keras<br>pylance<br>requests</code>
+                                </div>
+
+                                <p class="p-bold mt-3">2.2 Install Dependencies</p>
+                                <p>Run the following command in the terminal to install all the dependencies listed in
+                                    requirements.txt:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white" id="myTextarea">pip install -r requirements.txt</code>
+                                </div>
+                                <p class="mt-3">These packages will allow us to:</p>
+                                <ul>
+                                    <li><strong>Flask:</strong> Create a web API.</li>
+                                    <li><strong>OpenCV:</strong> Handle image processing.</li>
+                                    <li><strong>NumPy:</strong> Work with numerical data.</li>
+                                    <li><strong>RetinaFace:</strong> Perform high-performance face detection.</li>
+                                    <li><strong>TensorFlow (2.11.0):</strong> Train machine learning models.</li>
+                                    <li><strong>tf-keras:</strong> Use TensorFlow's high-level Keras API for neural
+                                        networks.</li>
+                                    <li><strong>Pylance:</strong> Enhance Python development in VS Code with fast,
+                                        type-safe features. (optional)</li>
+                                </ul>
+                            </div>
+
+                            <div class="entry-content mt-4">
+                                <h4 class="font-heading text-left">Step 3: Create the Flask Application</h4>
+
+                                <p class="p-bold mt-3">3.1 Initialize Flask in app.py</p>
+                                <p>Create a new file called app.py in your project folder. At the top of the file,
+                                    initialize all dependencies:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">from flask import Flask, request, jsonify<br>app = Flask(__name__)</code>
+                                </div>
+
+                                <p class="p-bold mt-3">3.2 Set Up RetinaFace for Face Detection</p>
+                                <p>Import the RetinaFace library, which will be used to detect faces in images:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white" id="myTextarea">from retinaface import RetinaFace</code>
+                                </div>
+
+                                <p class="p-bold mt-3">3.3 Create the Face Detection Function</p>
+                                <p>Define a function to perform face detection using the RetinaFace model:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">def detect_faces(image):<br>&nbsp;&nbsp;&nbsp;&nbsp;faces = RetinaFace.extract_faces(image)<br>&nbsp;&nbsp;&nbsp;&nbsp;return faces</code>
+                                </div>
+                                <p class="mt-3">This function will use the RetinaFace model to detect faces and return
+                                    detailed data, including bounding boxes and facial landmarks.</p>
+                            </div>
+
+                            <div class="entry-content mt-4">
+                                <h4 class="font-heading text-left">Step 4: Handle Asynchronous Processing</h4>
+                                <p>Face detection can be computationally expensive, so we will process it asynchronously
+                                    to avoid blocking other requests.</p>
+
+                                <p class="p-bold mt-3">4.1 Set Up Asynchronous Processing with ThreadPoolExecutor</p>
+                                <p>Python&rsquo;s ThreadPoolExecutor allows us to handle tasks concurrently without
+                                    blocking the main thread.</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">from concurrent.futures import ThreadPoolExecutor<br><br>executor = ThreadPoolExecutor(max_workers=4)  # Initialize a thread pool</code>
+                                </div>
+
+                                <p class="p-bold mt-3">4.2 Define the Face Detection API Endpoint</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">@app.route('/detect', methods=['POST'])<br>def detect_face():<br>&nbsp;&nbsp;&nbsp;&nbsp;data = request.get_json()<br>&nbsp;&nbsp;&nbsp;&nbsp;base64_image = data.get('image') # Extract the Base64 image from the request<br><br>&nbsp;&nbsp;&nbsp;&nbsp;if not base64_image:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return jsonify({'error': 'No image provided'}), 400<br><br>&nbsp;&nbsp;&nbsp;&nbsp;# Process the image asynchronously<br>&nbsp;&nbsp;&nbsp;&nbsp;future = executor.submit(process_image, base64_image)<br>&nbsp;&nbsp;&nbsp;&nbsp;result = future.result() # Wait for the result to be ready<br>&nbsp;&nbsp;&nbsp;&nbsp;return jsonify(result)</code>
+                                </div>
+
+                                <p class="p-bold mt-3">4.3 Decode and Process the Image</p>
+                                <p>We need to decode the Base64 image string into an image format, process it, and then
+                                    re-encode it back into Base64 for the response.</p>
+
+                                <p class="p-bold">4.3.1 Decode the Base64 Image</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">import base64<br>import numpy as np<br>import cv2<br><br>def decode_base64_image(base64_image):<br>&nbsp;&nbsp;&nbsp;&nbsp;image_data = base64.b64decode(base64_image)<br>&nbsp;&nbsp;&nbsp;&nbsp;np_array = np.frombuffer(image_data, np.uint8)<br>&nbsp;&nbsp;&nbsp;&nbsp;return cv2.imdecode(np_array, cv2.IMREAD_COLOR)</code>
+                                </div>
+
+                                <p class="p-bold mt-3">4.3.2 Re-encode Image to Base64</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">def encode_image_to_base64(image):<br>&nbsp;&nbsp;&nbsp;&nbsp;_, buffer = cv2.imencode('.jpg', image)<br>&nbsp;&nbsp;&nbsp;&nbsp;base64_image = base64.b64encode(buffer).decode('utf-8')<br>&nbsp;&nbsp;&nbsp;&nbsp;return base64_image</code>
+                                </div>
+
+                                <p class="p-bold mt-3">4.4 Process the Image</p>
+                                <p>Finally, define the function that will handle the entire pipeline—decoding the image,
+                                    detecting faces, and re-encoding the image:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">def process_image(base64_image):<br>&nbsp;&nbsp;&nbsp;&nbsp;# Decode the Base64 image<br>&nbsp;&nbsp;&nbsp;&nbsp;image = decode_base64_image(base64_image)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;# Detect faces using RetinaFace<br>&nbsp;&nbsp;&nbsp;&nbsp;faces = detect_faces(image)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;# Encode the processed image back into Base64<br>&nbsp;&nbsp;&nbsp;&nbsp;processed_image = encode_image_to_base64(image)<br><br>&nbsp;&nbsp;&nbsp;&nbsp;return {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'faces': faces, # Detected face data<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'image': processed_image # Base64 encoded processed image<br>&nbsp;&nbsp;&nbsp;&nbsp;}</code>
+                                </div>
+                            </div>
+
+                            <div class="entry-content mt-4">
+                                <h4 class="font-heading text-left">Step 5: Run the Flask Application</h4>
+
+                                <p class="p-bold mt-3">5.1 Run the Application in Development Mode</p>
+                                <p>At the bottom of your app.py, add the following code to run the Flask app:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">if __name__ == '__main__':<br>&nbsp;&nbsp;&nbsp;&nbsp;app.run(debug=True)</code>
+                                </div>
+
+                                <p class="p-bold mt-3">5.2 Start the Flask Server</p>
+                                <p>In the VS Code terminal , run the following command:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white" id="myTextarea">python app.py</code>
+                                </div>
+                                <p class="mt-3">This will start the Flask server at http://127.0.0.1:5000. The Face
+                                    Detection API is now ready to receive POST requests.</p>
+                            </div>
+
+                            <div class="entry-content mt-4">
+                                <h4 class="font-heading text-left">Step 6: Testing the API</h4>
+                                <p>You can use tools like Postman or cURL to send POST requests with Base64-encoded
+                                    images to the /detect endpoint.</p>
+                                <p class="p-bold">Example JavaScript Frontend</p>
+                                <p>Here&rsquo;s how you can send the Base64-encoded image from a frontend application:
+                                </p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">let base64Image = "your_base64_encoded_image_here"; // Base64 encoded image<br><br>fetch('http://127.0.0.1:5000/detect', {<br>&nbsp;&nbsp;&nbsp;&nbsp;method: 'POST',<br>&nbsp;&nbsp;&nbsp;&nbsp;headers: {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Content-Type': 'application/json',<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;body: JSON.stringify({<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;image: base64Image<br>&nbsp;&nbsp;&nbsp;&nbsp;})<br>})<br>.then(response => response.json())<br>.then(data => {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Detected Faces:', data.faces);<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log('Processed Image (Base64):', data.image);<br>&nbsp;&nbsp;&nbsp;&nbsp;// Display the processed image<br>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("processedImage").src = "data:image/jpeg;base64," + data.image;<br>})<br>.catch(error => {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.error('Error:', error);<br>});</code>
+                                </div>
+                                <p class="mt-3">In this example, the processed image (Base64) is set as the source for
+                                    an img tag with id="processedImage".</p>
+                            </div>
+
+                            <div class="entry-content mt-4">
+                                <h4 class="font-heading text-left">Step 7: Handling the API Response</h4>
+
+                                <p class="p-bold mt-3">7.1 Structure of the Response</p>
+                                <p>When the face detection task completes, the server will return a JSON response with
+                                    two main components:</p>
+                                <ul>
+                                    <li><strong>faces:</strong> A list containing information about each detected face.
+                                    </li>
+                                    <li><strong>image:</strong> The Base64-encoded processed image with face detection
+                                        annotations.</li>
+                                </ul>
+                                <p>Example response:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">{<br>&nbsp;&nbsp;"faces": [<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"box": [50, 60, 200, 250],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"landmarks": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"left_eye": [100, 120],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"right_eye": [180, 120],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"nose": [140, 180],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mouth_left": [115, 220],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mouth_right": [170, 220]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;"image": "base64_encoded_image_here"<br>}</code>
+                                </div>
+
+                                <p class="p-bold mt-3">7.2 Handling Errors</p>
+                                <p>In case of any errors, the API will return an error message. For instance:</p>
+                                <div class="code-div">
+                                    <div class="copy-icon">
+                                        <button class="btn-copy" onclick="copyText(this)"><i
+                                                class="fa-regular fa-clipboard"></i>&nbsp;Copy</button>
+                                    </div>
+                                    <code class="text-white"
+                                        id="myTextarea">{<br>&nbsp;&nbsp;"error": "No image provided"<br>}</code>
+                                </div>
+                                <p class="mt-3">If something goes wrong, ensure that the Base64 image is included in the
+                                    request.</p>
+                            </div>
+                        </article>
+                    </main>
+
+                    <!-- Sidebar -->
+                    <div id="blogSidebarContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------- IMAGE ZOOM OVERLAY ------------------->
+    <div class="image-overlay" id="imageOverlay">
+        <img id="overlayImg" src="" alt="Zoomed Image">
+    </div>
+    <!-- DYNAMIC FOOTER -->
+    <div id="footer-placeholder"></div>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components-loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/home-sections.js"></script>
+    <!-- Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Handle Sidebar Tab Switching
+            var links = document.querySelectorAll(".blog-sidebar .link");
+            var posts = document.querySelectorAll(".blog-post-content");
+            links.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    links.forEach(l => l.classList.remove("active"));
+                    posts.forEach(p => p.classList.remove("active"));
+                    this.classList.add("active");
+                    var targetId = this.getAttribute("data-target");
+                    var targetPost = document.getElementById(targetId);
+                    if (targetPost) {
+                        targetPost.classList.add("active");
+                    }
+                });
+            });
+            // Handle Image Zoom
+            var zoomImgs = document.querySelectorAll(".zoomable-img");
+            var overlay = document.getElementById("imageOverlay");
+            var overlayImg = document.getElementById("overlayImg");
+            zoomImgs.forEach(function (img) {
+                img.addEventListener("click", function () {
+                    overlayImg.src = img.src;
+                    overlay.classList.add("active");
+                });
+            });
+            if (overlay) {
+                overlay.addEventListener("click", function () {
+                    overlay.classList.remove("active");
+                    overlayImg.src = "";
+                });
+            }
+        });
+        // Copy to clipboard function
+        function copyText(btn) {
+            var codeBlock = btn.parentElement.nextElementSibling;
+            var tempInput = document.createElement("textarea");
+            document.body.appendChild(tempInput);
+            tempInput.value = codeBlock.innerText;
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(function () {
+                btn.innerHTML = '<i class="fa-regular fa-clipboard"></i> Copy';
+            }, 2000);
+        }
+    </script>
+
+
+    <!-- Load Sidebar Dynamically -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('blogSidebar.html')
+                .then(response => response.text())
+                .then(data => {
+                    const container = document.getElementById('blogSidebarContainer');
+                    if (container) {
+                        container.outerHTML = data;
+
+                        // Highlight active sidebar link
+                        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+                        const sidebarLinks = document.querySelectorAll('.left-sidebar .link');
+                        sidebarLinks.forEach(link => {
+                            if (link.getAttribute('href') === currentPath) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+        });
+    </script>
+
+    </body>
+
+</html>

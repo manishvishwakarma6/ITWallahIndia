@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>PL/SQL Tutorial - IT Wallah India</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/plsqlTutorial.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- start Cursor Dot with mouse arrow -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <!-- end Cursor Dot with mouse arrow-->
+
+        <!-- STICKY WRAPPER: Fixed at the top with dynamic component placeholders -->
+    <div class="sticky-top-wrapper">
+        <div id="header-placeholder"></div>
+        <div id="navbar-placeholder"></div>
+    </div>
+    <!-- STICKY WRAPPER END -->
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light border-bottom text-center mb-4">
+        <div class="container">
+            <h1 class="fw-bold mb-2">PL/SQL Tutorial</h1>
+            <p class="text-white fs-5">Master Procedural Language extension for SQL, Triggers, and Stored Procedures!</p>
+        </div>
+    </section>
+
+    <!-- Main Course Container -->
+    <div class="container-fluid mb-5 px-3 px-lg-5">
+        <div class="site-content">
+            <div class="row align-items-start">
+
+                <!-- Left Sidebar -->
+                <div class="col-12 col-md-4 col-lg-3 mb-4 mb-md-0 position-relative z-1" id="courseSidebarContainer">
+                    <aside class="course-sidebar p-3 border-end h-100 shadow-sm rounded-3">
+                        <h4 class="fw-bold mb-4 ps-2">PL/SQL Tutorial</h4>
+
+                        <div class="accordion accordion-flush" id="courseAccordion">
+
+                            <!-- Introduction -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingIntro">
+                                    <button class="accordion-button bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntro"
+                                        aria-expanded="true" aria-controls="collapseIntro">
+                                        Introduction
+                                    </button>
+                                </h2>
+                                <div id="collapseIntro" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingIntro" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary active" data-target="plsql-intro-overview">What is PL/SQL?</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-intro-arch">Architecture</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-intro-adv">Advantages</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Basic Syntax -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingSyntax">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseSyntax"
+                                        aria-expanded="false" aria-controls="collapseSyntax">
+                                        Basic Syntax
+                                    </button>
+                                </h2>
+                                <div id="collapseSyntax" class="accordion-collapse collapse" aria-labelledby="headingSyntax" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-syn-block">Block Structure</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-syn-comments">Comments</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-syn-identifiers">Identifiers</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Variables & Data Types -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingVars">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseVars"
+                                        aria-expanded="false" aria-controls="collapseVars">
+                                        Variables & Types
+                                    </button>
+                                </h2>
+                                <div id="collapseVars" class="accordion-collapse collapse" aria-labelledby="headingVars" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-var-decl">Declaring Variables</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-var-types">Data Types</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-var-attributes">%TYPE & %ROWTYPE</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Control Structures -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingControl">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseControl"
+                                        aria-expanded="false" aria-controls="collapseControl">
+                                        Control Structures
+                                    </button>
+                                </h2>
+                                <div id="collapseControl" class="accordion-collapse collapse" aria-labelledby="headingControl" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-ctrl-if">IF-THEN-ELSE</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-ctrl-case">CASE Statement</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-ctrl-loops">Loops (FOR, WHILE)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cursors -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingCursors">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseCursors"
+                                        aria-expanded="false" aria-controls="collapseCursors">
+                                        Cursors
+                                    </button>
+                                </h2>
+                                <div id="collapseCursors" class="accordion-collapse collapse" aria-labelledby="headingCursors" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-cur-implicit">Implicit Cursors</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-cur-explicit">Explicit Cursors</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-cur-attrs">Cursor Attributes</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Procedures & Functions -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingProcs">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseProcs"
+                                        aria-expanded="false" aria-controls="collapseProcs">
+                                        Procedures & Functions
+                                    </button>
+                                </h2>
+                                <div id="collapseProcs" class="accordion-collapse collapse" aria-labelledby="headingProcs" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-proc-create">Creating Procedures</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-func-create">Creating Functions</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-proc-params">IN, OUT Parameters</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Exceptions -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingExceptions">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseExceptions"
+                                        aria-expanded="false" aria-controls="collapseExceptions">
+                                        Exceptions
+                                    </button>
+                                </h2>
+                                <div id="collapseExceptions" class="accordion-collapse collapse" aria-labelledby="headingExceptions" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-exc-predefined">Predefined Exceptions</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-exc-user">User-Defined Exceptions</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Triggers -->
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="headingTriggers">
+                                    <button class="accordion-button collapsed bg-transparent shadow-none fw-semibold text-dark"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTriggers"
+                                        aria-expanded="false" aria-controls="collapseTriggers">
+                                        Triggers
+                                    </button>
+                                </h2>
+                                <div id="collapseTriggers" class="accordion-collapse collapse" aria-labelledby="headingTriggers" data-bs-parent="#courseAccordion">
+                                    <div class="accordion-body p-0 ps-3">
+                                        <ul class="list-unstyled mb-0 sidebar-links">
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-trig-intro">What is a Trigger?</a></li>
+                                            <li><a href="#" class="nav-link text-secondary" data-target="plsql-trig-row">Row-Level Triggers</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Right Content Area -->
+                <main class="col-12 col-md-8 col-lg-9 position-relative z-0" id="mainCourseContent">
+
+                    <!-- Introduction -->
+                    <div class="content-section active" id="plsql-intro-overview">
+                        <div class="java-hero text-center mb-4 shadow-sm">
+                            <h1 class="fw-bold" style="font-size: 3rem; color: #333;">PL/SQL Tutorial</h1>
+                            <p class="text-secondary mt-3 mx-auto" style="max-width: 650px; font-size: 1.1rem; line-height: 1.6;">
+                                PL/SQL stands for Procedural Language extension to SQL. It is Oracle Corporation's standard data access language for relational databases.
+                            </p>
+                        </div>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-4">
+                            <h4 class="fw-bold mb-3">Get Started</h4>
+                            <p class="mb-0 text-black">PL/SQL combines the data manipulation power of SQL with the processing power of procedural languages. Navigate through the chapters on the left to master PL/SQL!</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-intro-arch">
+                        <h2 class="fw-bold text-dark mb-4">PL/SQL Architecture</h2>
+                        <p class="text-secondary">The PL/SQL engine handles the execution of PL/SQL blocks.</p>
+                        <div class="card shadow-sm border-0 p-4 mb-3">
+                            <p>When a PL/SQL block is submitted, the engine separates SQL statements and procedural statements. It sends SQL statements to the SQL Engine, while it processes procedural statements itself.</p>
+                            <ul class="mb-0 mt-3">
+                                <li><strong>PL/SQL Engine:</strong> Component that executes the procedural code.</li>
+                                <li><strong>SQL Engine:</strong> Component that executes the SQL queries inside the PL/SQL block.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-intro-adv">
+                        <h2 class="fw-bold text-dark mb-4">Advantages of PL/SQL</h2>
+                        <p class="text-secondary">Why use PL/SQL over standard SQL?</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-0">
+                                <li class="mb-2"><strong>Block Structures:</strong> You can send a block of statements to the database at once, reducing network traffic.</li>
+                                <li class="mb-2"><strong>Procedural Language Capabilities:</strong> Use IF-THEN, loops, variables, and exceptions.</li>
+                                <li class="mb-2"><strong>High Performance:</strong> Because PL/SQL is integrated tightly with SQL, operations perform faster.</li>
+                                <li><strong>Error Handling:</strong> Robust exception handling blocks allow graceful error catching.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Basic Syntax -->
+                    <div class="content-section" id="plsql-syn-block">
+                        <h2 class="fw-bold mb-3">Block Structure</h2>
+                        <p class="text-secondary">PL/SQL programs are structured into logical blocks.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">The Anatomy of a Block</h5>
+                            <p>A basic PL/SQL block consists of three sections: Declarative, Executable, and Exception-handling.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>DECLARE
+   -- Declaration section (optional)
+   message VARCHAR2(20) := 'Hello World!';
+BEGIN
+   -- Execution section (mandatory)
+   DBMS_OUTPUT.PUT_LINE(message);
+EXCEPTION
+   -- Exception handling section (optional)
+   WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('An error occurred');
+END;
+/</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-syn-comments">
+                        <h2 class="fw-bold mb-3">Comments</h2>
+                        <p class="text-secondary">Comments clarify code and are ignored by the compiler.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Single-line Comments</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>-- This is a single line comment
+v_name VARCHAR2(50);</code></pre>
+                            
+                            <h5 class="fw-bold">Multi-line Comments</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>/* This is a multi-line comment
+that spans multiple lines */
+v_age NUMBER := 25;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-syn-identifiers">
+                        <h2 class="fw-bold mb-3">Identifiers</h2>
+                        <p class="text-secondary">Identifiers name PL/SQL objects like variables, constants, subprograms.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-0">
+                                <li>Maximum 30 characters long.</li>
+                                <li>Must begin with a letter.</li>
+                                <li>Can include letters, numbers, dollar signs ($), underscores (_), and number signs (#).</li>
+                                <li>Not case-sensitive (e.g., `v_name` is the same as `V_NAME`).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Variables -->
+                    <div class="content-section" id="plsql-var-decl">
+                        <h2 class="fw-bold mb-3">Declaring Variables</h2>
+                        <p class="text-secondary">Variables must be declared in the DECLARE section before use.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Syntax</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>variable_name [CONSTANT] datatype [NOT NULL] [:= | DEFAULT initial_value];</code></pre>
+                            
+                            <h5 class="fw-bold">Example</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>DECLARE
+   v_emp_name VARCHAR2(50) := 'John Doe';
+   c_pi CONSTANT NUMBER := 3.14159;
+BEGIN
+   DBMS_OUTPUT.PUT_LINE('Name: ' || v_emp_name);
+END;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-var-types">
+                        <h2 class="fw-bold mb-3">Data Types</h2>
+                        <p class="text-secondary">PL/SQL supports SQL data types and its own specific data types.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <table class="table table-bordered mb-0">
+                                <thead><tr><th>Type Category</th><th>Examples</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>Scalar</strong></td><td>NUMBER, CHAR, VARCHAR2, DATE, BOOLEAN</td></tr>
+                                    <tr><td><strong>Large Object (LOB)</strong></td><td>BFILE, BLOB, CLOB, NCLOB</td></tr>
+                                    <tr><td><strong>Composite</strong></td><td>RECORD, TABLE, VARRAY</td></tr>
+                                    <tr><td><strong>Reference</strong></td><td>REF CURSOR, REF object_type</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-var-attributes">
+                        <h2 class="fw-bold mb-3">%TYPE and %ROWTYPE</h2>
+                        <p class="text-secondary">Anchor variables to database columns or tables to make code dynamic and resilient.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">%TYPE</h5>
+                            <p>Declares a variable to have the exact same data type as a database column.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>DECLARE
+   v_salary employees.salary%TYPE;
+BEGIN
+   SELECT salary INTO v_salary FROM employees WHERE employee_id = 100;
+END;</code></pre>
+                            
+                            <h5 class="fw-bold">%ROWTYPE</h5>
+                            <p>Declares a record that represents an entire row of a table.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>DECLARE
+   v_emp_rec employees%ROWTYPE;
+BEGIN
+   SELECT * INTO v_emp_rec FROM employees WHERE employee_id = 100;
+   DBMS_OUTPUT.PUT_LINE(v_emp_rec.first_name);
+END;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Control Structures -->
+                    <div class="content-section" id="plsql-ctrl-if">
+                        <h2 class="fw-bold mb-3">IF-THEN-ELSIF Statements</h2>
+                        <p class="text-secondary">Used for conditional execution of code blocks.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>DECLARE
+   v_score NUMBER := 85;
+BEGIN
+   IF v_score >= 90 THEN
+      DBMS_OUTPUT.PUT_LINE('Grade: A');
+   ELSIF v_score >= 80 THEN
+      DBMS_OUTPUT.PUT_LINE('Grade: B');
+   ELSE
+      DBMS_OUTPUT.PUT_LINE('Grade: C or below');
+   END IF;
+END;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-ctrl-case">
+                        <h2 class="fw-bold mb-3">CASE Statement</h2>
+                        <p class="text-secondary">A cleaner alternative to multiple ELSIF blocks.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>DECLARE
+   v_grade CHAR(1) := 'B';
+BEGIN
+   CASE v_grade
+      WHEN 'A' THEN DBMS_OUTPUT.PUT_LINE('Excellent');
+      WHEN 'B' THEN DBMS_OUTPUT.PUT_LINE('Very Good');
+      WHEN 'C' THEN DBMS_OUTPUT.PUT_LINE('Good');
+      ELSE DBMS_OUTPUT.PUT_LINE('Needs Improvement');
+   END CASE;
+END;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-ctrl-loops">
+                        <h2 class="fw-bold mb-3">Loops</h2>
+                        <p class="text-secondary">Iteratively execute a block of code.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Basic Loop</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>DECLARE
+   x NUMBER := 1;
+BEGIN
+   LOOP
+      DBMS_OUTPUT.PUT_LINE(x);
+      x := x + 1;
+      EXIT WHEN x > 5;
+   END LOOP;
+END;</code></pre>
+
+                            <h5 class="fw-bold">WHILE Loop</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-3"><code>WHILE x <= 5 LOOP
+   DBMS_OUTPUT.PUT_LINE(x);
+   x := x + 1;
+END LOOP;</code></pre>
+
+                            <h5 class="fw-bold">FOR Loop</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>FOR i IN 1..5 LOOP
+   DBMS_OUTPUT.PUT_LINE(i);
+END LOOP;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Cursors -->
+                    <div class="content-section" id="plsql-cur-implicit">
+                        <h2 class="fw-bold mb-3">Implicit Cursors</h2>
+                        <p class="text-secondary">Oracle automatically creates an implicit cursor whenever an SQL statement is executed, if no explicit cursor exists for it.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <p>Used mainly for single-row <code>SELECT ... INTO</code> statements and DML operations.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>BEGIN
+   UPDATE employees SET salary = salary * 1.10 WHERE department_id = 10;
+   IF SQL%FOUND THEN
+      DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT || ' rows updated.');
+   END IF;
+END;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-cur-explicit">
+                        <h2 class="fw-bold mb-3">Explicit Cursors</h2>
+                        <p class="text-secondary">Used to process queries that return multiple rows.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Steps to use: Declare -> Open -> Fetch -> Close</h5>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>DECLARE
+   CURSOR emp_cursor IS SELECT first_name FROM employees;
+   v_name employees.first_name%TYPE;
+BEGIN
+   OPEN emp_cursor;
+   LOOP
+      FETCH emp_cursor INTO v_name;
+      EXIT WHEN emp_cursor%NOTFOUND;
+      DBMS_OUTPUT.PUT_LINE(v_name);
+   END LOOP;
+   CLOSE emp_cursor;
+END;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-cur-attrs">
+                        <h2 class="fw-bold mb-3">Cursor Attributes</h2>
+                        <p class="text-secondary">Attributes provide information about the execution of a cursor.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-0">
+                                <li><code>%FOUND</code>: Returns TRUE if a record was fetched successfully.</li>
+                                <li><code>%NOTFOUND</code>: Returns TRUE if a record was not fetched.</li>
+                                <li><code>%ROWCOUNT</code>: Returns the number of rows fetched so far (or affected by DML).</li>
+                                <li><code>%ISOPEN</code>: Returns TRUE if the cursor is open.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Procedures & Functions -->
+                    <div class="content-section" id="plsql-proc-create">
+                        <h2 class="fw-bold mb-3">Creating Procedures</h2>
+                        <p class="text-secondary">A procedure is a subprogram that performs a specific action.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>CREATE OR REPLACE PROCEDURE give_raise (p_emp_id IN NUMBER, p_amount IN NUMBER) AS
+BEGIN
+   UPDATE employees
+   SET salary = salary + p_amount
+   WHERE employee_id = p_emp_id;
+   COMMIT;
+END give_raise;
+/</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-func-create">
+                        <h2 class="fw-bold mb-3">Creating Functions</h2>
+                        <p class="text-secondary">A function is a subprogram that computes and returns a single value.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>CREATE OR REPLACE FUNCTION get_annual_salary (p_emp_id IN NUMBER) RETURN NUMBER IS
+   v_annual_sal NUMBER;
+BEGIN
+   SELECT salary * 12 INTO v_annual_sal
+   FROM employees
+   WHERE employee_id = p_emp_id;
+   
+   RETURN v_annual_sal;
+END get_annual_salary;
+/</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-proc-params">
+                        <h2 class="fw-bold mb-3">IN, OUT, IN OUT Parameters</h2>
+                        <p class="text-secondary">Parameters determine how data is passed to and from subprograms.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-0">
+                                <li><strong>IN (Default):</strong> Passes a value into the subprogram. Read-only inside.</li>
+                                <li><strong>OUT:</strong> Returns a value to the caller. Must be assigned a value inside.</li>
+                                <li><strong>IN OUT:</strong> Passes an initial value in and returns an updated value out.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Exceptions -->
+                    <div class="content-section" id="plsql-exc-predefined">
+                        <h2 class="fw-bold mb-3">Predefined Exceptions</h2>
+                        <p class="text-secondary">Oracle provides several predefined exceptions for common error conditions.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <ul class="mb-3">
+                                <li><code>NO_DATA_FOUND</code>: A SELECT INTO returned no rows.</li>
+                                <li><code>TOO_MANY_ROWS</code>: A SELECT INTO returned more than one row.</li>
+                                <li><code>ZERO_DIVIDE</code>: Attempted to divide by zero.</li>
+                            </ul>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>EXCEPTION
+   WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE('Employee does not exist.');
+   WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('An unexpected error occurred: ' || SQLERRM);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-exc-user">
+                        <h2 class="fw-bold mb-3">User-Defined Exceptions</h2>
+                        <p class="text-secondary">You can declare your own exceptions for application-specific errors.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>DECLARE
+   e_invalid_age EXCEPTION;
+   v_age NUMBER := 15;
+BEGIN
+   IF v_age < 18 THEN
+      RAISE e_invalid_age;
+   END IF;
+EXCEPTION
+   WHEN e_invalid_age THEN
+      DBMS_OUTPUT.PUT_LINE('Error: User must be at least 18.');
+END;</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Triggers -->
+                    <div class="content-section" id="plsql-trig-intro">
+                        <h2 class="fw-bold mb-3">What is a Trigger?</h2>
+                        <p class="text-secondary">A trigger is a stored PL/SQL block that automatically executes (fires) when a specific event occurs on a table.</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <p>Events can be <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>. Triggers can fire <code>BEFORE</code> or <code>AFTER</code> the event.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section" id="plsql-trig-row">
+                        <h2 class="fw-bold mb-3">Row-Level Triggers</h2>
+                        <p class="text-secondary">Fires once for each row affected by the triggering statement (using `FOR EACH ROW`).</p>
+                        <div class="card border-0 bg-light p-4 rounded-4 shadow-sm text-dark mt-3">
+                            <h5 class="fw-bold">Using :NEW and :OLD</h5>
+                            <p>You can access the column values before and after the change.</p>
+                            <pre class="bg-dark text-light p-3 rounded mb-0"><code>CREATE OR REPLACE TRIGGER trg_audit_salary
+BEFORE UPDATE OF salary ON employees
+FOR EACH ROW
+BEGIN
+   IF :NEW.salary < :OLD.salary THEN
+      RAISE_APPLICATION_ERROR(-20001, 'Salary cannot be decreased!');
+   END IF;
+END;
+/</code></pre>
+                        </div>
+                    </div>
+
+<!-- Navigation Pagination (Next/Back) -->
+                    <div class="d-flex justify-content-between mt-5 pt-4 border-top">
+                        <button class="btn btn-outline-secondary px-4 fw-semibold" id="prevBtn" style="display: none;">
+                            <i class="fa-solid fa-arrow-left me-2"></i> Back
+                        </button>
+                        <!-- Spacer if prev is hidden to align next button right -->
+                        <div id="spacerBtn" style="flex: 1;"></div>
+                        <button class="btn btn-primary px-4 fw-semibold shadow-sm" id="nextBtn">
+                            Next <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- DYNAMIC FOOTER -->
+    <div id="footer-placeholder"></div>
+    <!-- ========== -->
+
+    <!-- Bootstrap & Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components-loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            initializeCourseNavigation();
+
+            function initializeCourseNavigation() {
+                const links = Array.from(document.querySelectorAll("#courseSidebarContainer .nav-link"));
+                const sections = document.querySelectorAll(".content-section");
+                const prevBtn = document.getElementById("prevBtn");
+                const nextBtn = document.getElementById("nextBtn");
+                const spacerBtn = document.getElementById("spacerBtn");
+
+                let currentIndex = 0;
+
+                function updateView(newIndex) {
+                    if (newIndex < 0 || newIndex >= links.length) return;
+
+                    // Update active link
+                    links.forEach(l => l.classList.remove("active"));
+                    links[newIndex].classList.add("active");
+
+                    // Ensure the accordion for this link is open
+                    const accordionCollapse = links[newIndex].closest('.accordion-collapse');
+                    if (accordionCollapse && !accordionCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(accordionCollapse, { toggle: false });
+                        bsCollapse.show();
+                    }
+
+                    // Update contents
+                    sections.forEach(s => s.classList.remove("active"));
+                    const targetId = links[newIndex].getAttribute("data-target");
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        targetEl.classList.add("active");
+                    }
+
+                    currentIndex = newIndex;
+
+                    // Update Buttons
+                    if (currentIndex === 0) {
+                        prevBtn.style.display = "none";
+                        spacerBtn.style.display = "block";
+                    } else {
+                        prevBtn.style.display = "inline-block";
+                        spacerBtn.style.display = "none";
+                    }
+
+                    if (currentIndex === links.length - 1) {
+                        nextBtn.style.display = "none";
+                    } else {
+                        nextBtn.style.display = "inline-block";
+                    }
+
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                // Attach click to sidebar links
+                links.forEach((link, index) => {
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        updateView(index);
+                    });
+                });
+
+                // Attach click to Next/Back
+                prevBtn.addEventListener("click", () => updateView(currentIndex - 1));
+                nextBtn.addEventListener("click", () => updateView(currentIndex + 1));
+            }
+        });
+    </script>
+</body>
+
+</html>
