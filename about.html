@@ -4,155 +4,522 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" type="image/png" href="./images/logo.png">
-    <title>About Us - IT Wallah India</title>
-    <!-- Font Awesome for Top Header -->
+
+    <!-- SEO -->
+    <title>About IT Wallah India | Founder Manish Kumar Vishwakarma</title>
+
+    <meta name="description"
+        content="Learn about IT Wallah India, founded by Manish Kumar Vishwakarma. IT Wallah India provides practical coding, programming, software development, and technology education for students and aspiring developers.">
+
+    <meta name="keywords"
+        content="IT Wallah India, Manish Kumar Vishwakarma, IT Wallah India Founder, IT Wallah Founder, coding tutorials, Java tutorials, Spring Boot, programming tutorials, technology education">
+
+    <meta name="author" content="Manish Kumar Vishwakarma">
+
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://itwallah.in/about.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About IT Wallah India | Founder Manish Kumar Vishwakarma">
+    <meta property="og:description"
+        content="IT Wallah India was founded by Manish Kumar Vishwakarma to provide practical and beginner-friendly technology education.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://itwallah.in/about.html">
+    <meta property="og:image" content="https://itwallah.in/images/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./images/logo.png">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Bootstrap 5 CSS -->
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link href="css/navbar.css" rel="stylesheet">
     <link href="css/cursor.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
     <link href="css/about.css" rel="stylesheet">
+
     <style>
         .about-section {
             padding: 80px 0;
         }
+
         .about-img {
             border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             width: 100%;
             border: 5px solid white;
         }
+
         .about-text h2 {
             font-size: 2.5rem;
             font-weight: 800;
             color: #2d3748;
             margin-bottom: 20px;
         }
+
         .about-text p {
             font-size: 1.1rem;
             color: #4a5568;
             line-height: 1.8;
             margin-bottom: 20px;
         }
+
+        /* Founder Section */
+        .founder-section {
+            padding: 70px 0;
+        }
+
+        .founder-card {
+            background: white;
+            border-radius: 20px;
+            padding: 45px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .founder-image {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .founder-card h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #2d3748;
+        }
+
+        .founder-role {
+            color: #4f46e5;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .founder-card p {
+            color: #4a5568;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
         .vision-mission-box {
             background: white;
             border-radius: 15px;
             padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             height: 100%;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
+
         .vision-mission-box:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(79, 70, 229, 0.12);
             border-color: #4f46e5;
         }
+
         .vision-mission-box i {
             font-size: 3rem;
             color: #4f46e5;
             margin-bottom: 20px;
         }
+
         .vision-mission-box h3 {
             font-weight: 700;
             color: #2d3748;
             margin-bottom: 15px;
         }
-        
-        [data-theme="dark"] .about-text h2, 
-        [data-theme="dark"] .vision-mission-box h3 {
+
+        [data-theme="dark"] .about-text h2,
+        [data-theme="dark"] .vision-mission-box h3,
+        [data-theme="dark"] .founder-card h2 {
             color: #e2e8f0;
         }
+
         [data-theme="dark"] .about-text p,
-        [data-theme="dark"] .vision-mission-box p {
+        [data-theme="dark"] .vision-mission-box p,
+        [data-theme="dark"] .founder-card p {
             color: #a0aec0;
         }
-        [data-theme="dark"] .vision-mission-box {
+
+        [data-theme="dark"] .vision-mission-box,
+        [data-theme="dark"] .founder-card {
             background: #2d3748;
             border-color: #4a5568;
         }
+
         [data-theme="dark"] .about-img {
             border-color: #2d3748;
         }
+
+
+        .founder-name {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #2d3748;
+}
+
+.founder-designation {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #4f46e5;
+}
+
+.founder-company {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #718096;
+}
+
+[data-theme="dark"] .founder-name {
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .founder-company {
+    color: #a0aec0;
+}
+
+/* Responsive Media Queries for Mobile/Tablet */
+@media (max-width: 991.98px) {
+    .about-text h2 {
+        font-size: 2.2rem;
+    }
+    .founder-card {
+        padding: 35px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .about-section {
+        padding: 50px 0;
+    }
+    .founder-section {
+        padding: 50px 0;
+    }
+    .about-text h2 {
+        font-size: 2rem;
+    }
+    .founder-card {
+        padding: 25px 20px;
+        text-align: center;
+    }
+    .founder-image {
+        width: 150px;
+        height: 150px;
+    }
+    .founder-card h2 {
+        font-size: 1.8rem;
+        margin-top: 15px;
+    }
+    .col-md-8 .founder-role {
+        margin-bottom: 15px;
+    }
+    .vision-mission-box {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+    .founder-card h2 {
+        font-size: 1.5rem;
+    }
+    .founder-name {
+        font-size: 1.2rem;
+    }
+    .founder-designation, .founder-company {
+        font-size: 0.9rem;
+    }
+    .vision-mission-box i {
+        font-size: 2.5rem;
+    }
+    .vision-mission-box h3 {
+        font-size: 1.5rem;
+    }
+}
     </style>
+
+    <!--
+        STRUCTURED DATA
+        Helps search engines understand:
+        IT Wallah India = Organization
+        Manish Kumar Vishwakarma = Founder
+    -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+
+        {
+          "@type": "Organization",
+          "@id": "https://itwallah.in/#organization",
+          "name": "IT Wallah India",
+          "url": "https://itwallah.in/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://itwallah.in/images/logo.png"
+          },
+          "founder": {
+            "@id": "https://itwallah.in/about.html#founder"
+          },
+          "sameAs": [
+            "https://www.youtube.com/itwallahindia/",
+            "https://www.linkedin.com/itwallahindia/",
+            "https://www.facebook.com/itwallahindia/",
+            "https://www.instagram.com/itwallahindia/",
+            "https://github.com/itwallahindia/",
+            "https://x.com/itwallahindia/",
+            "https://t.me/itwallahindia/"
+
+          ]
+        },
+
+        {
+          "@type": "Person",
+          "@id": "https://itwallah.in/about.html#founder",
+          "name": "Manish Kumar Vishwakarma",
+          "jobTitle": "Founder",
+          "url": "https://itwallah.in/about.html",
+          "image": "https://itwallah.in/images/founder.png",
+          "worksFor": {
+            "@id": "https://itwallah.in/#organization"
+          }
+        },
+
+        {
+          "@type": "WebPage",
+          "@id": "https://itwallah.in/about.html#webpage",
+          "url": "https://itwallah.in/about.html",
+          "name": "About IT Wallah India",
+          "description": "About IT Wallah India and its founder Manish Kumar Vishwakarma.",
+          "isPartOf": {
+            "@id": "https://itwallah.in/#organization"
+          }
+        }
+
+      ]
+    }
+    </script>
+
 </head>
 
 <body>
-    <!-- start Cursor Dot with mouse arrow -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <!-- end Cursor Dot with mouse arrow-->
 
-    <!-- STICKY WRAPPER: Fixed at the top with dynamic component placeholders -->
+    <!-- Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Header + Navbar -->
     <div class="sticky-top-wrapper">
         <div id="header-placeholder"></div>
         <div id="navbar-placeholder"></div>
     </div>
-    <!-- STICKY WRAPPER END -->
 
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>About IT Wallah India</h1>
-            <p>Empowering the next generation of software engineers through quality education.</p>
+            <p>
+                Empowering the next generation of software engineers
+                through practical technology education.
+            </p>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about-section container">
+
         <div class="row align-items-center mb-5 pb-5">
+
             <div class="col-lg-6 mb-5 mb-lg-0 pr-lg-5">
+
                 <div class="about-text">
+
                     <h2>Who We Are</h2>
-                    <p>At <strong>IT Wallah India</strong>, we believe that education in technology should be 
-                        accessible, practical, and heavily oriented toward real-world scenarios. We bridge the gap
-                        between academic learning and industry requirements.</p>
-                    <p>Our platform was forged out of a passion for development and a deep understanding
-                        of the challenges beginners face when trying to enter the tech industry. Whether it's learning Java, 
-                        understanding how to construct robust APIs, or exploring the fascinating realms of AI and Machine Learning,
-                        we provide the curated resources and hands-on projects you need to succeed.</p>
-                    <a href="courses.html" class="btn btn-primary btn-lg mt-3 px-4 py-2">Explore Our Courses</a>
+
+                    <p>
+                        <strong>IT Wallah India</strong> is a technology
+                        education platform founded by
+                        <strong>Manish Kumar Vishwakarma</strong>.
+                    </p>
+
+                    <p>
+                        At <strong>IT Wallah India</strong>, we believe that
+                        technology education should be accessible, practical,
+                        and focused on real-world scenarios. We aim to bridge
+                        the gap between academic learning and modern industry
+                        requirements.
+                    </p>
+
+                    <p>
+                        Our platform was created to help students, beginners,
+                        and aspiring software developers learn programming,
+                        software development, APIs, databases, cloud
+                        technologies, and other modern technology concepts
+                        through practical tutorials and projects.
+                    </p>
+
+                    <a href="courses.html" class="btn btn-primary btn-lg mt-3 px-4 py-2">
+                        Explore Our Courses
+                    </a>
+
                 </div>
+
             </div>
+
             <div class="col-lg-6">
-                <img src="images/about.jpg" alt="About Us Team" class="about-img img-fluid">
+
+                <img src="images/about.jpg" alt="IT Wallah India technology education" class="about-img img-fluid">
+
+
             </div>
+
         </div>
 
-        <div class="row g-4 pt-4">
-            <!-- Vision -->
-            <div class="col-lg-6">
-                <div class="vision-mission-box text-center">
-                    <i class="fa-solid fa-eye"></i>
-                    <h3>Our Vision</h3>
-                    <p>To be the premier online destination for technological empowerment, creating a global community where aspiring developers can 
-                        seamlessly transition into successful, industry-ready professionals.</p>
-                </div>
-            </div>
-            
-            <!-- Mission -->
-            <div class="col-lg-6">
-                <div class="vision-mission-box text-center">
-                    <i class="fa-solid fa-bullseye"></i>
-                    <h3>Our Mission</h3>
-                    <p>To provide high-quality, practical, and highly affordable technical education.
-                        We strive to create project-based courses, tutorials, and materials that accurately reflect modern software engineering practices.</p>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- DYNAMIC FOOTER -->
+
+    <!-- FOUNDER SECTION -->
+    <section class="founder-section container">
+
+        <div class="founder-card">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+
+                    <!-- Replace founder.jpg with your actual photo -->
+                    <img src="images/founder.png" alt="Manish Kumar Vishwakarma - Founder of IT Wallah India"
+                        class="founder-image">
+ <!-- Founder Name -->
+                <h3 class="founder-name mt-3 mb-1">
+                    Manish Kumar Vishwakarma
+                </h3>
+
+                <!-- Founder Designation -->
+                <p class="founder-designation mb-0">
+                    Founder & Creator
+                </p>
+
+                <p class="founder-company mb-0">
+                    IT Wallah India
+                </p>
+                </div>
+
+                <div class="col-md-8">
+
+                    <h2>Meet the Founder</h2>
+
+                    <div class="founder-role">
+                        Founder & Creator — IT Wallah India
+                    </div>
+
+                    <p>
+                        <strong>Manish Kumar Vishwakarma</strong> is the
+                        founder and creator of <strong>IT Wallah India</strong>,
+                        a technology education platform focused on practical
+                        programming, software development, and modern
+                        technology learning.
+                    </p>
+
+                    <p>
+                        Through IT Wallah India, Manish aims to make technical
+                        education easier to understand for students,
+                        beginners, and aspiring software developers by
+                        providing practical tutorials, programming resources,
+                        projects, and technology-focused content.
+                    </p>
+
+                    <p class="mb-0">
+                        <strong>IT Wallah India was founded by
+                            Manish Kumar Vishwakarma.</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Vision & Mission -->
+    <section class="about-section container">
+
+        <div class="row g-4 pt-4">
+
+            <!-- Vision -->
+            <div class="col-lg-6">
+
+                <div class="vision-mission-box text-center">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    <h3>Our Vision</h3>
+
+                    <p>
+                        To be a trusted online destination for technological
+                        empowerment, creating a learning community where
+                        aspiring developers can build practical skills and
+                        progress toward becoming industry-ready professionals.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Mission -->
+            <div class="col-lg-6">
+
+                <div class="vision-mission-box text-center">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                    <h3>Our Mission</h3>
+
+                    <p>
+                        To provide high-quality, practical, and affordable
+                        technical education through project-based courses,
+                        tutorials, and learning resources that reflect modern
+                        software engineering practices.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
     <div id="footer-placeholder"></div>
+
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="js/components-loader.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/script.js"></script>
     <script src="js/home-sections.js"></script>
+
 </body>
+
 </html>
