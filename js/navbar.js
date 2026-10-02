@@ -79,6 +79,7 @@ window.initDynamicNavbar = function () {
         let page = path.split("/").pop() || "index.html";
         page = page.split("?")[0].split("#")[0];
         if (!page || page === "") page = "index.html";
+        page = page.replace(/\.html$/, ""); // Normalize by removing .html for Netlify clean URLs
 
         // 1. Remove active state from EVERY nav item, nav-link, dropdown item, and course link first
         document.querySelectorAll(".custom-navbar .active").forEach(el => {
@@ -129,8 +130,10 @@ window.initDynamicNavbar = function () {
         allLinks.forEach((link) => {
             const href = link.getAttribute("href");
             if (href && href !== "#" && !href.startsWith("javascript:")) {
-                const hrefFile = href.split("/").pop().split("?")[0].split("#")[0];
-                if (hrefFile === page || (page === "index.html" && href === "/")) {
+                let hrefFile = href.split("/").pop().split("?")[0].split("#")[0];
+                hrefFile = hrefFile.replace(/\.html$/, ""); // Normalize by removing .html
+                
+                if (hrefFile === page || (page === "index" && href === "/")) {
                     markParentsActive(link);
                     activeFound = true;
                 }
@@ -138,7 +141,7 @@ window.initDynamicNavbar = function () {
         });
 
         // 3. Default fallback for index.html
-        if (!activeFound && (page === "index.html" || page === "")) {
+        if (!activeFound && (page === "index" || page === "")) {
             const homeLink = document.querySelector('.navbar-nav .nav-link[href="index.html"], .navbar-nav .nav-link[href="./index.html"]');
             if (homeLink) {
                 markParentsActive(homeLink);
