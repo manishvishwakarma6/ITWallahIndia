@@ -1,0 +1,65 @@
+/* ==========================================================================
+   IT WALLAH INDIA - BANNER CAROUSEL STYLES
+   ========================================================================== */
+
+.banner-container {
+    max-width: 1584px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+#bannerSlider {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.12);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Modern Carousel Indicators */
+#bannerSlider .carousel-indicators {
+    margin-bottom: 12px;
+}
+
+#bannerSlider .carousel-indicators [data-bs-target] {
+    width: 24px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#bannerSlider .carousel-indicators .active {
+    width: 36px;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(79, 70, 229, 0.6);
+}
+
+/* Modern Control Arrows */
+#bannerSlider .carousel-control-prev,
+#bannerSlider .carousel-control-next {
+    width: 6%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#bannerSlider:hover .carousel-control-prev,
+#bannerSlider:hover .carousel-control-next {
+    opacity: 0.9;
+}
+
+#bannerSlider .carousel-control-prev-icon,
+#bannerSlider .carousel-control-next-icon {
+    background-color: rgba(15, 23, 42, 0.65);
+    border-radius: 50%;
+    padding: 20px;
+    background-size: 50%;
+    backdrop-filter: blur(8px);
+}

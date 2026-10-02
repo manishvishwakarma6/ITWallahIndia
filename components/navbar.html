@@ -1,0 +1,173 @@
+<!-- NAVBAR START (Dynamic, Active Link Highlight & Frosted Glass) -->
+<nav class="navbar navbar-expand-xl custom-navbar" id="navbar">
+    <div class="container-fluid px-2 px-md-4 px-xl-5">
+        <div class="d-flex align-items-center">
+            <div class="navbar__left d-flex align-items-center">
+                <!-- Company Logo -->
+                <a class="navbar-brand m-0 pe-2" href="index.html">
+                    <span class="logo-icon">
+                        <img src="./images/logo.png" alt="IT Wallah Logo" class="custom-logo">
+                    </span>
+                    <span>IT Wallah India</span>
+                </a>
+            </div>
+
+            <!-- All Courses Dropdown Menu -->
+            <div class="dropdown custom-dropdown-box mt-0 ms-2 ms-sm-3">
+                <button class="btn btn-all-courses" type="button" id="allCoursesBtn" aria-expanded="false">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span class="d-none d-md-inline text-nowrap">All Courses</span>
+                    <span class="d-inline d-md-none text-nowrap">All Courses</span>
+                </button>
+                <!-- Single Box Mega Submenu -->
+                <div class="dropdown-menu single-box-menu mt-2" aria-labelledby="allCoursesBtn">
+                    <h6 class="dropdown-header">Course Categories</h6>
+
+                    <div class="course-cats-list">
+                        <!-- Category 1: Programming -->
+                        <div class="course-cat">
+                            <button class="course-cat-header" type="button">
+                                <span><i class="fa-solid fa-code me-2" style="color:#818cf8;"></i> Programming</span>
+                                <i class="fa-solid fa-chevron-down cat-arrow"></i>
+                            </button>
+                            <div class="course-cat-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a class="dropdown-item sub-item" href="javaTutorial.html">Java</a></li>
+                                    <li><a class="dropdown-item sub-item" href="pythonTutorial.html">Python</a></li>
+                                    <li><a class="dropdown-item sub-item" href="plsqlTutorial.html">PL-SQL</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Category 2: Databases -->
+                        <div class="course-cat">
+                            <button class="course-cat-header" type="button">
+                                <span><i class="fa-solid fa-database me-2" style="color:#38bdf8;"></i> Databases</span>
+                                <i class="fa-solid fa-chevron-down cat-arrow"></i>
+                            </button>
+                            <div class="course-cat-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a class="dropdown-item sub-item" href="sqlTutorial.html">SQL</a></li>
+                                    <li><a class="dropdown-item sub-item" href="mysqlTutorial.html">MySQL</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Category 3: Tech Blogs -->
+                        <div class="course-cat">
+                            <button class="course-cat-header" type="button">
+                                <span><i class="fa-solid fa-newspaper me-2" style="color:#34d399;"></i> Tech Blogs</span>
+                                <i class="fa-solid fa-chevron-down cat-arrow"></i>
+                            </button>
+                            <div class="course-cat-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a class="dropdown-item sub-item" href="zohobook.html">Zoho Book</a></li>
+                                    <li><a class="dropdown-item sub-item" href="faceDetection.html">Face Detection</a></li>
+                                    <li><a class="dropdown-item sub-item" href="chatbot.html">ChatBot</a></li>
+                                    <li><a class="dropdown-item sub-item" href="aiTextDetection.html">AI Text Detection</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Toggle Button with Animated Hamburger -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggler">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Navbar Links & Nav Actions -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar__center mx-auto mt-4 mt-xl-0">
+                <div class="nav-pill-wrapper d-xl-flex">
+                    <ul class="navbar-nav align-items-xl-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="courses.html">Courses</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTutorials" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                Tutorials
+                            </a>
+                            <ul class="dropdown-menu border-0" aria-labelledby="navbarDropdownTutorials">
+                                <li><a class="dropdown-item" href="javaTutorial.html">Java</a></li>
+                                <li><a class="dropdown-item" href="pythonTutorial.html">Python</a></li>
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" id="navbarSubSubDropdown" role="button" aria-expanded="false">
+                                        SQL &amp; PL-SQL
+                                    </a>
+                                    <ul class="dropdown-menu border-0" aria-labelledby="navbarSubSubDropdown">
+                                        <li><a class="dropdown-item" href="sqlTutorial.html">SQL</a></li>
+                                        <li><a class="dropdown-item" href="plsqlTutorial.html">PL-SQL</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="mysqlTutorial.html">MySQL</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogs.html">Blogs</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNotes" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                Study Notes
+                            </a>
+                            <ul class="dropdown-menu border-0" aria-labelledby="navbarDropdownNotes">
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" id="navbarSubSubNotes" role="button" aria-expanded="false">
+                                        MCA Notes
+                                    </a>
+                                    <ul class="dropdown-menu border-0" aria-labelledby="navbarSubSubNotes">
+                                        <li><a class="dropdown-item" href="mcasem1.html">Semester I</a></li>
+                                        <li><a class="dropdown-item" href="mcasem2.html">Semester II</a></li>
+                                        <li><a class="dropdown-item" href="mcasem3.html">Semester III</a></li>
+                                        <li><a class="dropdown-item" href="mcasem4.html">Semester IV</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGallery" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                Gallery
+                            </a>
+                            <ul class="dropdown-menu border-0" aria-labelledby="navbarDropdownGallery">
+                                <li><a class="dropdown-item" href="awards.html">Awards</a></li>
+                                <li><a class="dropdown-item" href="certifications.html">Certifications</a></li>
+                                <li><a class="dropdown-item" href="memory.html">Memories</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right CTA -->
+            <div class="navbar__right mt-4 mt-xl-0 btn-book-wrapper">
+                <a href="contact.html" class="btn-book">
+                    Get In Touch
+                    <span class="icon-circle">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="19" x2="19" y2="5"></line>
+                            <polyline points="9 5 19 5 19 15"></polyline>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- NAVBAR END -->

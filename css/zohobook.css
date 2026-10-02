@@ -1,0 +1,447 @@
+/* Prevent horizontal scroll from row negative margins and set 1920 max */
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+/* Ensure all tables are responsive on mobile */
+@media (max-width: 768px) {
+    .table, .table-bordered {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Ensure no images bleed past boundaries */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Common styles for inside pages */
+.page-header {
+    background: linear-gradient(135deg, rgba(88, 28, 135, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%), url('../images/aboutBanner.jpg') center/cover;
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/*--------------- page header */
+
+.breadcrumb {
+    justify-content: center;
+    margin-bottom: 0;
+    background: transparent;
+}
+
+.breadcrumb-item a {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumb-item.active {
+    color: #e0e0e0;
+}
+
+/* Sidebar Navigation Layout */
+.sidebar {
+    background-color: #F8F9FA;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 150px;
+    margin-bottom: 30px;
+}
+
+.sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #8e44ad;
+    color: #1a1a2e;
+}
+
+.nav-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-vertical .nav-link {
+    padding: 12px 16px;
+    color: #495057;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-align: left;
+}
+
+.nav-vertical .nav-link:hover {
+    background-color: #f8f9fa;
+    color: #8e44ad;
+    border-color: #e9ecef;
+}
+
+.nav-vertical .nav-link.active {
+    background-color: #8e44ad;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(142, 68, 173, 0.3);
+}
+
+/* Right Content Area */
+.content-area {
+    background: #fff;
+    padding: 35px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    min-height: 500px;
+}
+
+.content-section {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-title {
+    color: #1a1a2e;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.8rem;
+}
+
+.content-body p {
+    line-height: 1.7;
+    color: #444;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.code-block {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    overflow-x: auto;
+    margin-bottom: 25px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.code-block pre {
+    margin: 0;
+}
+
+.code-comment {
+    color: #6a9955;
+}
+
+.code-keyword {
+    color: #569cd6;
+}
+
+.code-string {
+    color: #ce9178;
+}
+
+.step-badge {
+    background-color: #e8dbf2;
+    color: #8e44ad;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        position: static;
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.zoomable-img {
+    max-width: 100% !important;
+    height: auto;
+    cursor: zoom-in;
+    margin: 30px 0;
+    border: 0.3px solid var(--blue);
+    transition: all 0.3s ease;
+}
+
+/* Ensure main post banner image scales perfectly */
+.post-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* Added some nice modern rounding */
+}
+
+.zoomable-img:hover {
+    transform: scale(0.95);
+}
+
+.image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.image-overlay.active {
+    display: flex;
+}
+
+.image-overlay img {
+    max-width: 90% !important;
+    max-height: 100% !important;
+    cursor: zoom-out;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+    }
+
+    to {
+        transform: scale(1.5);
+    }
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.copy-icon {
+    text-align: right;
+    margin-bottom: -30px;
+    position: relative;
+    z-index: 10;
+    right: 10px;
+}
+
+.btn-copy {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.code-div {
+    background: #282c34;
+    padding: 25px 20px 20px;
+    border-radius: 6px;
+    margin: 15px 0;
+    overflow-x: auto;
+}
+
+.code-div code {
+    margin-top: 10px;
+    color: #abb2bf;
+    font-size: 0.95rem;
+    word-break: break-word;
+    display: block;
+}
+
+.sub-banner {
+    background-color: #1a1a2e;
+}
+
+.blog-left-section img {
+    border-radius: 8px;
+}
+
+.card-heading {
+    color: #1a2b6c;
+}
+
+.font-heading {
+    color: #d35400;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.create-points li {
+    margin-bottom: 10px;
+}
+
+.custom-scroller {
+    max-height: 85vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #d35400 #f1f1f1;
+    padding-right: 15px;
+}
+
+.custom-scroller::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scroller::-webkit-scrollbar-track {
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.custom-scroller::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #d35400, #e67e22);
+    border-radius: 10px;
+}
+
+.custom-scroller::-webkit-scrollbar-thumb:hover {
+    background: #b54700;
+}
+
+
+.site-main {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+/* Make all headers bold as requested */
+.site-main h1,
+.site-main h2,
+.site-main h3,
+.site-main h4,
+.site-main h5,
+.site-main h6,
+.step-badge,
+.p-bold {
+    font-weight: 800 !important;
+    color: #222;
+    /* making the dark headers pop more */
+}
+
+
+
+/* Attractive box styling for main content area */
+.site-main {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 992px) {
+    .site-main {
+        flex: 0 0 73% !important;
+        max-width: 73% !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .site-main {
+        padding: 25px 20px;
+        /* slightly smaller padding for mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: 40px 0;
+    }
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    .page-header p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .custom-scroller {
+        max-height: none;
+        overflow-y: visible;
+        border-right: none !important;
+        margin-bottom: 20px;
+    }
+
+    .order-1 {
+        order: 1;
+    }
+
+    .order-2 {
+        order: 2;
+    }
+
+    .code-div {
+        padding: 15px 15px 10px;
+        /* shrink padding on mobile */
+        margin: 10px 0;
+    }
+
+    .code-div code {
+        font-size: 0.8rem;
+        /* smaller code text */
+    }
+
+
+}

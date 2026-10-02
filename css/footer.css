@@ -1,0 +1,197 @@
+/* ==========================================================================
+   IT WALLAH INDIA - FOOTER STYLES
+   Sophisticated Midnight Slate Theme with Tech Indigo & Sky Accents
+   ========================================================================== */
+
+.footer-section {
+    background: #0b0f19;
+    color: #cbd5e1;
+    border-top: 1px solid #1e293b;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.4), transparent);
+}
+
+.footer-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -0.01em;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #4f46e5;
+    border-radius: 2px;
+}
+
+.footer-links {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 9px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-links a:hover {
+    color: #38bdf8;
+    transform: translateX(4px);
+    text-decoration: none;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    height: 38px;
+    width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    border-radius: 50%;
+    font-size: 14px;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icons a:hover {
+    background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    color: #ffffff;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+}
+
+/* Newsletter Input & Submit */
+.gmail {
+    margin-top: 15px;
+}
+
+.gmail .input-group {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 3px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gmail .input-group:focus-within {
+    border-color: #6366f1;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.25);
+}
+
+.gmail .form-control {
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-size: 0.88rem;
+    padding-left: 12px;
+    box-shadow: none !important;
+}
+
+.gmail .form-control::placeholder {
+    color: #64748b;
+}
+
+.gmail .btn {
+    background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px !important;
+    padding: 8px 16px;
+    transition: all 0.25s ease;
+}
+
+.gmail .btn:hover {
+    background: linear-gradient(135deg, #4338ca 0%, #0891b2 100%);
+    transform: scale(1.04);
+}
+
+.newsletter-feedback {
+    font-size: 0.8rem;
+    margin-top: 6px;
+    min-height: 18px;
+    transition: all 0.25s ease;
+}
+
+.newsletter-feedback.success {
+    color: #34d399;
+}
+
+.newsletter-feedback.error {
+    color: #f87171;
+}
+
+/* Copyright Row */
+.footer-section hr {
+    border-color: #1e293b;
+    margin: 30px 0 20px;
+    opacity: 0.8;
+}
+
+.copyright {
+    font-size: 0.88rem;
+    color: #64748b;
+    text-align: center;
+}
+
+.copyright a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin: 0 4px;
+    transition: color 0.2s ease;
+}
+
+.copyright a:hover {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer-title {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+}

@@ -1,0 +1,1022 @@
+/* ==========================================================================
+   IT WALLAH INDIA - CORE DESIGN SYSTEM & NAVBAR STYLES
+   Modern Neo-Slate & Tech Indigo Palette (Replaces Rainbow Palette)
+   ========================================================================== */
+
+:root {
+    /* Primary Colors - Indigo & Electric Cyan */
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --primary-light: #6366f1;
+    --primary-subtle: #eef2ff;
+    --primary-glow: rgba(79, 70, 229, 0.35);
+
+    /* Secondary / Accent */
+    --accent-cyan: #06b6d4;
+    --accent-sky: #0284c7;
+    --accent-light: #ecfeff;
+    --accent-amber: #f59e0b;
+
+    /* Slate & Neutral Backgrounds */
+    --bg-body: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #ffffff;
+    --bg-subtle: #f1f5f9;
+    --bg-dark: #0f172a;
+    --bg-dark-surface: #1e293b;
+    --bg-midnight: #0b0f19;
+
+    /* Text Hierarchy */
+    --text-heading: #0f172a;
+    --text-body: #334155;
+    --text-muted: #64748b;
+    --text-light: #94a3b8;
+    --text-inverse: #ffffff;
+
+    /* Borders & Shadows */
+    --border-color: #e2e8f0;
+    --border-subtle: #f1f5f9;
+    --border-dark: #334155;
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 12px 30px -4px rgba(15, 23, 42, 0.12);
+    --shadow-indigo: 0 10px 25px -5px rgba(79, 70, 229, 0.25);
+
+    /* Gradients */
+    --grad-primary: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    --grad-primary-hover: linear-gradient(135deg, #4338ca 0%, #0891b2 100%);
+    --grad-header: linear-gradient(90deg, #0b0f19 0%, #1e1b4b 50%, #0b0f19 100%);
+    --grad-navbar: rgba(15, 23, 42, 0.92);
+    --grad-active-pill: linear-gradient(135deg, rgba(79, 70, 229, 0.4), rgba(6, 182, 212, 0.3));
+
+    /* Legacy Theme Variables Compatible with other pages */
+    --bg-gradient: #f8fafc;
+    --text-color: #0f172a;
+    --nav-bg: rgba(15, 23, 42, 0.92);
+    --nav-link-color: #ffffff;
+    --nav-pill-bg: rgba(255, 255, 255, 0.08);
+    --nav-pill-border: rgba(255, 255, 255, 0.12);
+    --dropdown-bg: #1e293b;
+    --dropdown-item-color: #f8fafc;
+    --btn-book-bg: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    --btn-book-border: transparent;
+    --btn-book-color: #ffffff;
+    --btn-book-hover-bg: linear-gradient(135deg, #4338ca 0%, #0891b2 100%);
+    --overlay-gradient: none;
+    --hero-text-color: #0f172a;
+    --hamburger-color: #ffffff;
+}
+
+/* Global Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    cursor: default;
+    background-color: var(--bg-body);
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Base Headings & Links */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+/* ==========================================================================
+   TOP HEADER STYLES (Dynamic & Elegant Announcement Bar)
+   ========================================================================== */
+.top-header-wrapper {
+    position: relative;
+    z-index: 1060;
+    background: var(--grad-header);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.top-header-wrapper .header-slider {
+    width: 100%;
+    overflow: hidden;
+    color: #ffffff;
+    padding: 6px 0;
+}
+
+.top-header-wrapper .slider-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    will-change: transform;
+}
+
+.top-header-wrapper .slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(15px, 3vw, 35px);
+    padding: 2px 24px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.top-header-wrapper .badge-pill-live {
+    background: rgba(79, 70, 229, 0.3);
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    color: #a5b4fc;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.top-header-wrapper .badge-pill-live::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background-color: #34d399;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #34d399;
+    animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+.top-header-wrapper .slide-text {
+    font-size: clamp(13px, 1.1vw, 14px);
+    font-weight: 500;
+    color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-header-wrapper .social-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 16px;
+    margin-left: 8px;
+}
+
+.top-header-wrapper .social-links a {
+    color: #94a3b8;
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.25s ease;
+}
+
+.top-header-wrapper .social-links a:hover {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.15);
+    transform: translateY(-2px);
+}
+
+@media(max-width: 576px) {
+    .top-header-wrapper .slide-text {
+        font-size: 12px;
+    }
+    .top-header-wrapper .social-links {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   STICKY NAVBAR WRAPPER & MAIN NAVBAR
+   ========================================================================== */
+.sticky-top-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-navbar {
+    padding: 12px 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrolled state for dynamic header elevation */
+.sticky-top-wrapper.is-scrolled .custom-navbar {
+    padding: 8px 0;
+    background: rgba(11, 15, 25, 0.96);
+    border-bottom: 1px solid rgba(79, 70, 229, 0.25);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(79, 70, 229, 0.15);
+}
+
+/* Brand & Logo */
+.navbar-brand {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.35rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.02em;
+    transition: transform 0.25s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.02);
+}
+
+.logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.custom-logo {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(79, 70, 229, 0.4));
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .custom-logo {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+/* All Courses Mega Button */
+.btn-all-courses {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff !important;
+    border-radius: 10px;
+    padding: 7px 14px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+}
+
+.btn-all-courses svg {
+    color: #38bdf8;
+    transition: transform 0.25s ease;
+}
+
+.btn-all-courses:hover,
+.btn-all-courses[aria-expanded="true"] {
+    background: rgba(79, 70, 229, 0.3);
+    border-color: rgba(99, 102, 241, 0.5);
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.3);
+}
+
+.btn-all-courses:hover svg {
+    transform: rotate(90deg);
+}
+
+/* Nav Pill Wrapper */
+.nav-pill-wrapper {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 50px;
+    padding: 4px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar Links & ACTIVE STATE STYLES */
+.navbar-nav .nav-item {
+    position: relative;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    padding: 7px 16px !important;
+    border-radius: 30px;
+    font-size: 0.92rem;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+/* ACTIVE STATE FOR NAVBAR (Only one active heading) */
+.navbar-nav .nav-item.active > .nav-link,
+.navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    background: var(--grad-active-pill);
+    border: 1px solid rgba(99, 102, 241, 0.5);
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.35);
+}
+
+.navbar-nav {
+    gap: 8px; /* Adds space between all menu items */
+}
+
+.navbar-nav .nav-item.active > .nav-link::before,
+.navbar-nav .nav-link.active::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 3px;
+    background: #06b6d4;
+    border-radius: 3px;
+    box-shadow: 0 0 6px #06b6d4;
+}
+
+/* "Get In Touch" Call-To-Action Button */
+.btn-book {
+    background: var(--btn-book-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff !important;
+    border-radius: 50px;
+    padding: 5px 6px 5px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.35);
+}
+
+.btn-book:hover {
+    background: var(--btn-book-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.5);
+}
+
+.btn-book .icon-circle {
+    background: #ffffff;
+    color: #4f46e5;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.btn-book:hover .icon-circle {
+    transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   DROPDOWN & MEGA MENU STYLES (Instant Hover & Clickable UI)
+   ========================================================================== */
+.dropdown-menu {
+    background: var(--dropdown-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(79, 70, 229, 0.15);
+    padding: 8px;
+    min-width: 220px;
+    margin-top: 6px !important;
+    animation: dropdownFadeIn 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    color: var(--dropdown-item-color);
+    padding: 9px 14px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item.active {
+    background: rgba(79, 70, 229, 0.3);
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+.dropdown-header {
+    color: #94a3b8;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 6px 14px;
+}
+
+/* Mega Dropdown Single Box */
+.single-box-menu {
+    width: 320px;
+    max-width: 100%;
+    min-height: 280px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 14px;
+    padding: 12px;
+    background: #1e293b !important;
+}
+
+.single-box-menu::-webkit-scrollbar {
+    width: 5px;
+}
+.single-box-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   CUSTOM COURSE CATEGORIES — HOVER + CLICK EXPAND
+   Replaces Bootstrap accordion to avoid inline-style conflicts.
+   Expands on hover (CSS) AND on click (JS adds .open class).
+   ========================================================================== */
+.course-cats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.course-cat {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.course-cat:last-child {
+    border-bottom: none;
+}
+
+/* Category header button */
+.course-cat-header {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    text-align: left;
+}
+
+.course-cat-header:hover {
+    background: rgba(79, 70, 229, 0.2);
+    color: #38bdf8;
+}
+
+/* Chevron arrow */
+.cat-arrow {
+    font-size: 0.7rem;
+    color: #64748b;
+    transition: transform 0.25s ease, color 0.2s ease;
+    flex-shrink: 0;
+}
+
+/* Category body — hidden by default */
+.course-cat-body {
+    display: none;
+    padding: 0 4px 6px 4px;
+}
+
+/* ── CLICK or JS to toggle (.open class) ─────────────────────────── */
+.course-cat.open .course-cat-body {
+    display: block;
+}
+
+.course-cat.open .course-cat-header {
+    background: rgba(79, 70, 229, 0.2);
+    color: #38bdf8;
+}
+
+.course-cat.open .cat-arrow {
+    transform: rotate(180deg);
+    color: #38bdf8;
+}
+
+}
+
+
+.custom-accordion .accordion-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.custom-accordion .accordion-button {
+    background: transparent;
+    color: #ffffff;
+    box-shadow: none !important;
+    padding: 10px 12px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 8px !important;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    background: rgba(79, 70, 229, 0.2);
+    color: #38bdf8;
+}
+
+.custom-accordion .accordion-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.custom-accordion .accordion-button::after {
+    filter: invert(1);
+    transform: scale(0.8);
+}
+
+.custom-accordion .sub-item {
+    padding: 8px 14px 8px 24px;
+    font-size: 0.88rem;
+    color: #cbd5e1;
+    border-radius: 6px;
+    margin: 2px 4px;
+    display: block;
+    cursor: pointer;
+}
+
+.custom-accordion .sub-item:hover {
+    background: rgba(79, 70, 229, 0.25);
+    color: #ffffff;
+    padding-left: 28px;
+}
+
+/* ==========================================================================
+   ALL COURSES ACCORDION — HOVER TO EXPAND (CSS-driven, no JS needed)
+   Works on desktop (>= 1200px). Each category expands when hovered.
+   ========================================================================== */
+@media (min-width: 1200px) {
+    /* Show the accordion body on item hover */
+    .custom-accordion .accordion-item:hover .accordion-collapse {
+        display: block !important;
+        height: auto !important;
+    }
+
+    /* Highlight the button when item is hovered */
+    .custom-accordion .accordion-item:hover .accordion-button {
+        background: rgba(79, 70, 229, 0.2) !important;
+        color: #38bdf8 !important;
+    }
+
+    /* Rotate the chevron arrow when hovered */
+    .custom-accordion .accordion-item:hover .accordion-button::after {
+        transform: scale(0.8) rotate(180deg);
+    }
+}
+
+/* Submenu Base Positioning */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-item.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: auto;
+    vertical-align: middle;
+    content: "";
+    border-top: 0.3em solid transparent;
+    border-right: 0;
+    border-bottom: 0.3em solid transparent;
+    border-left: 0.3em solid currentColor;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px !important;
+    margin-left: 2px;
+    display: none;
+    position: absolute;
+}
+
+/* ==========================================================================
+   DESKTOP LAYOUT & SUB-DROPDOWN HOVER (Screens >= 1200px)
+   Main dropdowns are controlled via Bootstrap JS API in navbar.js (hover).
+   Only sub-dropdowns (.dropdown-submenu) use CSS hover here.
+   ========================================================================== */
+@media (min-width: 1200px) {
+    /* Open nested sub-dropdowns on hover */
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block !important;
+        top: 0 !important;
+        left: 100% !important;
+        margin-top: -6px !important;
+        margin-left: 2px !important;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Invisible hover bridge for sub-dropdowns to prevent gap flicker */
+    .dropdown-submenu > .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -16px;
+        width: 16px;
+        height: 100%;
+        background: transparent;
+        pointer-events: auto;
+    }
+
+    /* Invisible hover bridge for main dropdown menus to prevent gap flicker */
+    .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: -16px;
+        left: 0;
+        width: 100%;
+        height: 16px;
+        background: transparent;
+        pointer-events: auto;
+    }
+
+    .custom-navbar .container-fluid {
+        position: relative;
+    }
+
+    .navbar-collapse {
+        justify-content: flex-end;
+    }
+
+    .navbar__right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .navbar__center {
+        margin-left: 2rem;
+        margin-right: auto;
+        z-index: 10;
+    }
+}
+
+/* ==========================================================================
+   MOBILE NAVBAR TOGGLE & RESPONSIVENESS
+   ========================================================================== */
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.5);
+}
+
+.hamburger-icon {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 4px;
+    left: 0;
+    transition: .25s ease-in-out;
+}
+
+.hamburger-icon span:nth-child(1) { top: 0px; }
+.hamburger-icon span:nth-child(2) { top: 8px; }
+.hamburger-icon span:nth-child(3) { top: 16px; }
+
+.hamburger-icon.open span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+}
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+    left: -20px;
+}
+.hamburger-icon.open span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+}
+
+@media (max-width: 1199px) {
+    .navbar-collapse {
+        background: #111827;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 20px;
+        margin-top: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    .nav-pill-wrapper {
+        background: transparent;
+        border: none;
+        padding: 0;
+        box-shadow: none;
+    }
+    .navbar-nav {
+        gap: 4px;
+    }
+    .navbar-nav .nav-link {
+        width: 100%;
+        padding: 10px 14px !important;
+    }
+    .dropdown-menu {
+        background: #1f2937;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: none;
+        margin-top: 4px !important;
+        padding: 8px;
+    }
+    .dropdown-menu.show {
+        display: block;
+    }
+    
+    /* Fix: Mobile nested submenu drops below the item instead of to the right */
+    .dropdown-submenu > .dropdown-menu {
+        position: static !important;
+        margin-left: 15px !important;
+        margin-top: 5px !important;
+        padding-left: 10px;
+        width: auto !important;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        background: transparent;
+    }
+
+    .btn-book-wrapper {
+        margin-top: 15px;
+        width: 100%;
+    }
+    .btn-book {
+        width: 100%;
+        justify-content: space-between;
+        padding: 8px 14px 8px 20px;
+    }
+}
+
+/* ==========================================================================
+   DYNAMIC BACK TO TOP BUTTON WITH SCROLL PROGRESS
+   ========================================================================== */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(79, 70, 229, 0.4);
+}
+
+.back-to-top-btn svg.progress-ring {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 52px;
+    height: 52px;
+    transform: rotate(-90deg);
+    pointer-events: none;
+}
+
+.back-to-top-btn svg.progress-ring circle {
+    fill: none;
+    stroke: #06b6d4;
+    stroke-width: 3;
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+/* ==========================================================================
+   GLOBAL BRAND BUTTON STYLES (Matches "Get In Touch" Style Across All Pages)
+   ========================================================================== */
+.btn-primary,
+.btn-site-cta,
+.btn-custom {
+    background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%) !important;
+    background-color: #4f46e5 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.35);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-site-cta:hover,
+.btn-site-cta:focus,
+.btn-site-cta:active,
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active {
+    background: linear-gradient(135deg, #4338ca 0%, #0891b2 100%) !important;
+    background-color: #4338ca !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.5);
+    border: none !important;
+}
+
+/* Secondary / Outline Button Style (e.g. Back/Previous navigation) */
+.btn-outline-secondary {
+    border: 1.5px solid #cbd5e1 !important;
+    color: #334155 !important;
+    background: #ffffff !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+    border-color: #4f46e5 !important;
+    background: #eef2ff !important;
+    color: #4f46e5 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.15);
+}
+
+/* ==========================================================================
+   EXTRA SMALL DEVICES (Ensures Logo + Courses + Toggler fit in one row)
+   ========================================================================== */
+@media (max-width: 400px) {
+    .navbar-brand {
+        font-size: 1.15rem;
+        gap: 6px;
+    }
+    .custom-logo {
+        height: 32px;
+    }
+    .btn-all-courses {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+    .btn-all-courses svg {
+        width: 16px;
+        height: 16px;
+    }
+    .hamburger-icon {
+        width: 22px;
+    }
+}
+
+/* ==========================================================================
+   MOBILE NAVBAR LAYOUT (Two-row layout for Logo, Courses, and Hamburger)
+   ========================================================================== */
+@media (max-width: 575px) {
+    .custom-navbar .container-fluid {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: 
+            "logo logo"
+            "courses burger";
+        row-gap: 12px;
+        align-items: center;
+    }
+
+    .custom-navbar .container-fluid > .d-flex.align-items-center {
+        display: contents !important;
+    }
+
+    .custom-navbar .navbar__left {
+        grid-area: logo;
+        justify-content: flex-start;
+    }
+
+    .custom-navbar .custom-dropdown-box {
+        grid-area: courses;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    .custom-navbar .navbar-toggler {
+        grid-area: burger;
+        margin-left: auto;
+        align-self: center;
+    }
+    
+    .custom-navbar .navbar-collapse {
+        grid-column: 1 / -1;
+        margin-top: 15px;
+    }
+}

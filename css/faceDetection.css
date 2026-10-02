@@ -1,0 +1,263 @@
+/* Prevent horizontal scroll from row negative margins and set 1920 max */
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+/* Ensure all tables are responsive on mobile */
+@media (max-width: 768px) {
+    .table, .table-bordered {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Ensure no images bleed past boundaries */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Common styles for inside pages */
+.page-header {
+    background: linear-gradient(135deg, rgba(88, 28, 135, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%), url('../images/aboutBanner.jpg') center/cover;
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/*--------------- page header */
+
+.breadcrumb {
+    justify-content: center;
+    margin-bottom: 0;
+    background: transparent;
+}
+
+.breadcrumb-item a {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumb-item.active {
+    color: #e0e0e0;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.zoomable-img {
+    max-width: 100% !important;
+    height: auto;
+    cursor: zoom-in;
+    margin: 30px 0;
+    border: 0.3px solid var(--blue);
+    transition: all 0.3s ease;
+}
+
+/* Ensure main post banner image scales perfectly */
+.post-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* Added some nice modern rounding */
+}
+
+.zoomable-img:hover {
+    transform: scale(0.95);
+}
+
+.image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.image-overlay.active {
+    display: flex;
+}
+
+.image-overlay img {
+    max-width: 90% !important;
+    max-height: 100% !important;
+    cursor: zoom-out;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+    }
+
+    to {
+        transform: scale(1.5);
+    }
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.copy-icon {
+    text-align: right;
+    margin-bottom: -30px;
+    position: relative;
+    z-index: 10;
+    right: 10px;
+}
+
+.btn-copy {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.code-div {
+    background: #282c34;
+    padding: 25px 20px 20px;
+    border-radius: 6px;
+    margin: 15px 0;
+    overflow-x: auto;
+}
+
+.code-div code {
+    margin-top: 10px;
+    color: #abb2bf;
+    font-size: 0.95rem;
+    word-break: break-word;
+    display: block;
+}
+
+.card-heading {
+    color: #1a2b6c;
+}
+
+.font-heading {
+    color: #d35400;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+
+.site-main {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+/* Make all headers bold as requested */
+.site-main h1,
+.site-main h2,
+.site-main h3,
+.site-main h4,
+.site-main h5,
+.site-main h6,
+.step-badge,
+.p-bold {
+    font-weight: 800 !important;
+    color: #222;
+    /* making the dark headers pop more */
+}
+
+
+
+/* Attractive box styling for main content area */
+.site-main {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 992px) {
+    .site-main {
+        flex: 0 0 73% !important;
+        max-width: 73% !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .site-main {
+        padding: 25px 20px;
+        /* slightly smaller padding for mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: 40px 0;
+    }
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    .page-header p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+
+    .order-1 {
+        order: 1;
+    }
+
+    .order-2 {
+        order: 2;
+    }
+
+    .code-div {
+        padding: 15px 15px 10px;
+        /* shrink padding on mobile */
+        margin: 10px 0;
+    }
+
+    .code-div code {
+        font-size: 0.8rem;
+        /* smaller code text */
+    }
+
+
+}

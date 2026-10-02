@@ -1,0 +1,141 @@
+/* Common styles for inside pages */
+.page-header {
+    background: linear-gradient(135deg, rgba(88, 28, 135, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%), url('../images/aboutBanner.jpg') center/cover;
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.course-sidebar {
+    background-color: #fff;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    position: sticky;
+    top: 20px;
+}
+
+/* Custom Scrollbar for Sidebar */
+.course-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+.course-sidebar::-webkit-scrollbar-track {
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+.course-sidebar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+.course-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.course-sidebar .accordion-button {
+    font-size: 1rem;
+    padding: 0.8rem 0.5rem;
+}
+
+.course-sidebar .accordion-button:not(.collapsed) {
+    color: #000;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.course-sidebar .accordion-button:focus {
+    box-shadow: none;
+}
+
+.course-sidebar .nav-link {
+    font-size: 0.95rem;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    display: block;
+    text-decoration: none;
+}
+
+.course-sidebar .nav-link:hover {
+    color: #000 !important;
+    background-color: #f8f9fa;
+}
+
+.course-sidebar .nav-link.active {
+    color: #0d6efd !important;
+    font-weight: 600;
+    background-color: #e9ecef;
+}
+
+/* Sticky sidebar for larger screens */
+@media (min-width: 768px) {
+    #courseSidebarContainer {
+        position: sticky !important;
+        top: 100px; /* Offset for navbar */
+        height: calc(100vh - 120px);
+        overflow-y: auto;
+    }
+}
+
+/* Custom scrollbar */
+#courseSidebarContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+#courseSidebarContainer::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+#courseSidebarContainer::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Content section styling */
+.content-section {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.java-hero {
+    background-color: #e9ecef;
+    border-radius: 12px;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.java-hero::before {
+    content: '\f2b3'; /* fa-java icon unicode */
+    font-family: "Font Awesome 6 Brands";
+    position: absolute;
+    font-size: 15rem;
+    opacity: 0.05;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
