@@ -76,10 +76,11 @@ window.initDynamicNavbar = function () {
     // --------------------------------------------------------------------------
     function setActiveNavLink() {
         const path = window.location.pathname;
-        let page = path.split("/").pop() || "index.html";
+        const segments = path.split("/").filter(s => s.length > 0);
+        let page = segments.length > 0 ? segments[segments.length - 1] : "index.html";
         page = page.split("?")[0].split("#")[0];
-        if (!page || page === "") page = "index.html";
         page = page.replace(/\.html$/, ""); // Normalize by removing .html for Netlify clean URLs
+        if (!page || page === "") page = "index";
 
         // 1. Remove active state from EVERY nav item, nav-link, dropdown item, and course link first
         document.querySelectorAll(".custom-navbar .active").forEach(el => {
@@ -133,7 +134,7 @@ window.initDynamicNavbar = function () {
                 let hrefFile = href.split("/").pop().split("?")[0].split("#")[0];
                 hrefFile = hrefFile.replace(/\.html$/, ""); // Normalize by removing .html
                 
-                if (hrefFile === page || (page === "index" && href === "/")) {
+                if (hrefFile.toLowerCase() === page.toLowerCase() || (page.toLowerCase() === "index" && href === "/")) {
                     markParentsActive(link);
                     activeFound = true;
                 }
