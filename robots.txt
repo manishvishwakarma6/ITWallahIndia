@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://itwallah.in/sitemap.xml
